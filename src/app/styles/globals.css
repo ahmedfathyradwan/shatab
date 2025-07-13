@@ -1,0 +1,49 @@
+:root {
+  --primaryColor: #AB874B;
+  --secondaryColor: #C5A372;
+  --textColor: #11171C;
+  --backgroundColor: #FCF9F5;
+  --border-radius: 8px;
+  --fsH1: 4.5rem;
+  --fsH2: 3.5rem;
+  --fsH3: 2.5rem;
+  --fsH4: 1.5rem;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Changa';
+  direction: rtl;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--backgroundColor);
+  margin: 0 auto;
+}
+
+.mainContainer {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;  
+}
+
+.mobNav {
+  width: 100%;
+  position: absolute;
+  top: 90%;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+}

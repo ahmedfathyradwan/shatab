@@ -1,0 +1,37 @@
+.aboutUsSection {
+  width: calc(100% - 4rem);
+  text-align: center;
+  padding: 3rem;
+  margin: 0 2rem 3rem;
+  background-color: var(--backgroundColor);
+  border-radius: var(--br5);
+}
+
+.title {
+  font-size: var(--fs30);
+  font-weight: 600;
+  margin-bottom: 3rem;
+  color: var(--primaryColor);
+}
+
+.logo {
+  margin: 0 auto;
+  width: 8rem;
+  height: auto;
+}
+
+.shatab {
+  font-size: var(--fs25);
+  font-family: poppins;
+  font-weight: 600;
+  color: var(--primaryColor);
+  margin: 0 0 0.5rem;
+}
+.shatabSpan {
+  font-size: var(--fs20);
+  font-weight: 400;
+}
+.description {
+  font-size: var(--fs15);
+  font-weight: 400;
+}

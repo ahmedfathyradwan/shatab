@@ -1,0 +1,81 @@
+.homeContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.heroSection {
+  width: 100%;
+  margin: 0 auto;
+}
+.imgContainer {
+  width: 390px;
+  height: 390px;
+  position: relative;
+}
+.homeImg {
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  position: absolute;
+}
+.borderCont {
+  background: var(--whiteColor);
+  width: 100%;
+  border-radius: var(--br5);
+  padding: 0.1rem 0;
+  margin-top: -4.5rem;
+}
+.textContainer {
+  background: var(--backgroundColor);
+  width: calc(100% - 4rem);
+  border-radius: var(--br5);
+  padding: 3rem;
+  margin: 3rem 2rem 0;
+}
+.h1a {
+  font-family: poppins;
+  font-size: var(--fs35);
+  direction: ltr;
+  font-weight: 700;
+}
+.h1Span {
+  font-family: poppins;
+  font-size: var(--fs25);
+  direction: ltr; 
+  font-weight: 400;
+}
+.h3b {
+  color: var(--primaryColor);
+  font-weight: 500;
+  font-size: var(--fs20);
+}
+.h1b {
+  font-size: var(--fs40);
+  font-weight: 700;
+  margin-top: -0.5rem;
+}
+.h3c {
+  color: var(--primaryColor);
+  font-weight: 600;
+  font-size: var(--fs20);
+  line-height: 1;
+  margin-bottom: 1rem;
+}
+.h4 {
+  font-size: var(--fs15);
+  font-weight: 500;
+}
+.gallery {
+  width: 100%;
+}
+.finishChoiceCard {
+  width: 100%;
+}
+.aboutUs {
+  width: 100%;
+}
+.contactUs {
+  width: 100%;
+}

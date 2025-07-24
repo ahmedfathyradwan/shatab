@@ -1,0 +1,158 @@
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.title {
+  font-size: var(--fs25);
+  text-align: center;
+  margin: 3rem 0 0.5rem;
+}
+
+.description {
+  font-size: var(--fs15);
+  text-align: center;
+  margin: 0 0 1rem;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-size: var(--fs15);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  margin: 0 1rem 0.5rem;
+}
+
+.select,
+.input {
+  border: none;
+  outline: none;
+  padding: 1rem;
+  border: 1px solid var(--primaryColor);
+  border-radius: 5rem;
+  font-size: var(--fs15);
+  background-color: var(--whiteColor);
+  font-family: var(--ar);
+  color: var(--textColor);
+  margin: 0 1rem 2rem;
+  appearance: none; 
+}
+.select option {
+  background-color: var(--whiteColor);
+  color: var(--textColor);
+  font-size: 15px;
+  padding: 10px;
+}
+.select option:hover {
+  background-color: var(--primaryColor);
+}
+.selectWrapper {
+  margin-bottom: 2rem;
+}
+
+.selectWrapper .react-select__control {
+  border-radius: 5rem;
+  border: 1px solid var(--primaryColor);
+}
+.typeCont {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.note {
+  font-size: 1.3rem;
+  text-align: right;
+  margin-right: 1rem;
+}
+.calculateButton {
+  padding: 0.8rem;
+  background-color: var(--primaryColor);
+  border: none;
+  border-radius: 5rem;
+  border: 1px solid var(--primaryColor);
+  font-size: var(--fs15);
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+  font-family: var(--ar);
+  color: var(--backgroundColor);
+  margin: 1rem;
+}
+
+.calculateButton:hover {
+  border: 1px solid var(--textColor);
+}
+
+.result {
+  background-color: var(--whiteColor);
+  padding: 2rem;
+  border-radius: 5rem;
+  text-align: center;
+  font-weight: 600;
+  font-size: var(--fs15);
+  margin-top: 1rem;
+}
+.cash {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  font-size: var(--fs15);
+  color: var(--textColor);
+}
+.cashNum {
+  margin: 0 0.5rem;
+  color: var(--primaryColor);
+  font-size: var(--fs20);
+}
+.timestamp {
+  font-size: var(--fs10);
+  margin-top: 0.4rem;
+}
+
+.finishingDetails {
+  margin: 3rem 0 9rem;
+}
+
+.sectionTitle {
+  font-size: var(--fs20);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.finishingType {
+  margin-bottom: 1.5rem;
+  background-color: var(--whiteColor);
+  border-radius: 5rem;
+  padding: 2rem 4rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+}
+
+.finishingTitle {
+  font-size: var(--fs15);
+  margin-bottom: 0.5rem;
+  color: var(--primaryColor);
+}
+
+.finishingSubtitle {
+  font-size: var(--fs10);
+  margin-bottom: 0.6rem;
+  font-weight: 600;
+}
+
+.finishingList {
+  list-style: disc;
+  padding-right: 2rem;
+  font-size: var(--fs10);
+}

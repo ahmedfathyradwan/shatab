@@ -1,0 +1,154 @@
+.container {
+  width: calc(100% - 4rem);
+  margin: 3rem 2rem 20rem;
+  padding: 3rem;
+  background-color: var(--backgroundColor);
+  border-radius: var(--br5);
+}
+
+.formContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: var(--fs25);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.description {
+  font-size: var(--fs15);
+  text-align: center;
+  margin: 0 0 1rem;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.label {
+  font-size: var(--fs15);
+  font-weight: 500;
+  margin: 0 1rem 0.5rem;
+  padding: 0 1rem;
+}
+
+.select,
+.input {
+  border: none;
+  outline: none;
+  padding: 1rem 2.5rem;
+  border: 1px solid var(--primaryColor);
+  border-radius: 5rem;
+  font-size: var(--fs15);
+  background-color: #fff;
+  font-family: changa;
+  color: var(--textColor);
+  margin: 0 0rem 2rem;
+  appearance: none;
+  width: 100%;
+}
+.descriptionInput {
+    height: 10rem;
+}
+.selectWrapper {
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.uploadWrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.uploadButton {
+  border: none;
+  outline: none;
+  padding: 1rem 2.5rem;
+  border: 1px solid var(--primaryColor);
+  border-radius: var(--br5);
+  font-size: var(--fs15);
+  background-color: var(--whiteColor);
+  font-family: changa;
+  color: var(--textColor);
+  margin: 0 0rem 2rem;
+  appearance: none;
+  width: 100%;
+  cursor: pointer;
+  width: 100%;
+}
+
+.hiddenInput {
+  display: none;
+}
+
+.note {
+  font-size: var(--fs15);
+  text-align: center;
+  color: var(--textGray);
+  margin: 1rem 0;
+}
+
+.typeCont {
+  display: flex;
+  align-items: center;
+}
+
+.termsLink {
+  font-size: var(--fs15);
+  color: var(--primaryColor);
+  text-decoration: underline;
+}
+.calculateButton {
+  margin-top: 2rem;
+  background-color: var(--primaryColor);
+  color: var(--backgroundColor);
+  padding: 1rem 2rem;
+  border-radius: var(--br5);
+  font-size: var(--fs20);
+  font-family: changa;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+  border: 1px solid var(--primaryColor);
+}
+
+.calculateButton:hover {
+  border: 1px solid var(--textColor);
+}
+
+.result {
+  margin-top: 2rem;
+  font-size: var(--fs15);
+  padding: 1rem;
+  border: 1px solid var(--primaryColor);
+  border-radius: var(--br5);
+  text-align: center;
+  color: var(--primaryColor);
+  background-color: var(--backgroundColor);
+}
+
+
+
+
+/* صفحة الشروط والأحكام */
+.termsTitel{
+  font-size: var(--fs25);
+  text-align: center;
+  margin: 2rem 0 1.5rem;
+  color: var(--primaryColor);
+}
+.termsContent {
+  font-size: var(--fs15);
+  color: var(--textColor);
+  margin: 1rem 0;
+}
+.termsPar {
+  font-size: var(--fs15);
+  color: var(--textColor);
+  margin: 3rem 0 0;
+}

@@ -1,0 +1,80 @@
+.contactUsSection {
+  text-align: center;
+  padding: 3rem;
+  width: calc(100% - 4rem);
+  background-color: var(--backgroundColor);
+  margin: 0 2rem 3rem;
+  border-radius: var(--br5);
+}
+
+.title {
+  font-size: var(--fs30);
+  font-weight: 600;
+  margin-bottom: 5rem;
+  color: var(--primaryColor);
+}
+
+.description {
+  font-size: var(--fs20);
+}
+
+.chatButtons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 1.5rem 0 3rem;
+  flex-wrap: wrap;
+}
+
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+
+.whatsappButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--primaryColor);
+  color: var(--backgroundColor);
+  padding: 0.5rem 1.5rem;
+  border-radius: var(--br5);
+  text-decoration: none;
+  font-weight: 400;
+  font-size: var(--fs15);
+  transition: background-color 0.3s;
+}
+
+.whatsappButton:hover {
+  background-color: #1ebe5d;
+}
+
+.telegramButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: var(--primaryColor);
+  color: var(--backgroundColor);
+  padding: 0.5rem 1.5rem;
+  border-radius: var(--br5);
+  text-decoration: none;
+  font-weight: 400;
+  font-size: var(--fs15);
+  transition: background-color 0.3s;
+}
+
+.telegramButton:hover {
+  background-color: #007ab8;
+}
+
+.footer {
+  text-align: center;
+  font-size: var(--fs15);
+  margin: 2rem 0 12rem;
+  padding: 1rem 0;
+}

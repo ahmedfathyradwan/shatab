@@ -2,11 +2,12 @@
   display: flex;
   align-items: center;
   background-color: var(--primaryColor);
+  border: 1px solid var(--backgroundColor);
   height: 50px;
   width: 235px;
   z-index: 15;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-  border-radius: 50px;
+  border-radius: var(--br5);
 }
 
 .button {
@@ -28,7 +29,7 @@
   fill: var(--backgroundColor);
   stroke: var(--backgroundColor);
   transition: stroke 0.3s ease, fill 0.3s ease, background-color 0.3s ease;
-  border-radius: 50px;
+  border-radius: var(--br5);
   padding: 10px 24px;
   display: flex;
   justify-content: center;
@@ -36,13 +37,13 @@
 }
 
 .icon:hover {
-  fill: var(--textColor);
-  stroke: var(--textColor);
+  fill: var(--backgroundColor);
+  stroke: var(--backgroundColor);
   background-color: var(--secondaryColor);
 }
 
 .activeIcon {
-  fill: var(--textColor);
-  stroke: var(--textColor);
+  fill: var(--backgroundColor);
+  stroke: var(--backgroundColor);
   background-color: var(--secondaryColor);
 }

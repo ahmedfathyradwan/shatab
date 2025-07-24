@@ -1,0 +1,101 @@
+.container {
+  padding: 3rem;
+  width: calc(100% - 4rem);
+  margin: 3rem 2rem;
+  background-color: var(--backgroundColor);
+  border-radius: var(--br5);
+  text-align: center;
+  position: relative;
+}
+
+.title {
+  font-size: var(--fs25);
+  margin-bottom: 2rem;
+  color: var(--primaryColor);
+}
+
+.cardsGrid {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.card {
+  width: 16.5rem;
+  height: 15.5rem;
+  border-radius: var(--br5);
+  overflow: hidden;
+  background-color: var(--whiteColor);
+  border: 1px solid var(--primaryColor);
+  transition: transform 0.3s ease;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+}
+
+.card:hover {
+  transform: translateY(-3px);
+}
+
+.cardImage {
+  width: 100%;
+  height: 75%;
+  object-fit: cover;
+}
+
+.cardFooter {
+  width: 100%;
+  height: 25%;
+  display: flex;
+  align-items: center;
+  padding: 0 2.5rem 1rem 0;
+  font-size: var(--fs10);
+  position: relative;
+}
+
+
+.arrowButton {
+    background: var(--primaryColor);
+    border: none;
+    border-radius: 50%;
+    padding: 0.2rem;
+    color: var(--backgroundColor);
+    transition: color 0.3s;
+    cursor: pointer;
+    position: absolute;
+    left: 2.5rem;
+}
+
+.arrowButton:hover {
+    color: var(--textColor);
+}
+
+.icon {
+    width: 1.5rem;
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.closeButton {
+  background: none;
+  border: none;
+  position: fixed;
+  bottom: 4.4rem;
+  right: 3rem;
+  rotate: 180deg;
+}
+
+.closeIcon {
+  width: 5rem;
+  height: 5rem;
+  border-radius: 5rem;
+  color: var(--backgroundColor);
+  background-color: var(--primaryColor);
+  border: 1px solid var(--backgroundColor);
+}
+.marginBottom {
+  margin-bottom: 7rem;
+}

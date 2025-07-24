@@ -1,0 +1,165 @@
+.galleryContainer {
+  margin: 3rem 2rem;
+  padding: 3rem;
+  text-align: center;
+  justify-content: center;
+  border-radius: var(--br5);
+  background-color: var(--backgroundColor);
+}
+
+.title {
+  font-size: var(--fs30);
+  color: var(--primaryColor);
+}
+
+.description {
+  font-size: var(--fs20);
+  padding: 0.5rem 0 5rem 0;
+}
+
+.buttonsWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+.tabButton {
+  padding: 0.5rem 1.2rem 0.6rem;
+  font-size: var(fs20);
+  font-weight: 600;
+  font-family: 'Changa';
+  background-color: var(--whiteColor);
+  border: 1px solid var(--secondaryColor);
+  border-radius: var(--br5);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.tabButton:hover {
+  background-color: var(--primaryColor);
+  color: var(--backgroundColor);
+  border-color: var(--secondaryColor);
+}
+
+.active {
+  background-color: var(--primaryColor);
+  color: var(--backgroundColor);
+  border-color: var(--secondaryColor);
+}
+
+.imageWrapper {
+  width: 100%;
+  max-width: 350px;
+  aspect-ratio: 1 / 1;
+  margin: 0 auto 1.2rem;
+  border-radius: var(--br5);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image {
+  width: 100%;
+  margin: 0 auto;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  border-radius: var(--br5);
+}
+
+.downloadWrapper {
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.downloadButton {
+  background-color: var(--primaryColor);
+  color: var(--backgroundColor);
+  padding: 0.5rem 1rem;
+  border-radius: 5rem;
+  text-decoration: none;
+  transition: 0.3s ease;
+  font-size: var(--fs10);
+  font-weight: 500;
+  border: 1px solid var(--backgroundColor);
+}
+
+.downloadButton:hover {
+  border: 1px solid var(--textColor);
+}
+
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+.dots {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+.dot {
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background-color: var(--secondaryColor);
+  opacity: 0.5;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 1.5rem;
+}
+
+.dot:hover {
+  background-color: var(--primaryColor);
+}
+
+.activeDot {
+  background-color: var(--primaryColor);
+  opacity: 1;
+  border: 1px solid var(--textColor);
+}
+
+.boardWrapper {
+  border: 1px solid var(--primaryColor);
+  background-color: var(--whiteColor);
+  padding: 3rem 2.5rem;
+  border-radius: var(--br5);
+  width: fit-content;
+  margin: 0 auto 3rem;
+}
+
+.notice {
+  font-size: var(--fs20);
+}
+
+.linkButtons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.linkButton {
+  display: inline-block;
+  font-size: var(--fs15);
+  background-color: var(--primaryColor);
+  color: var(--backgroundColor);
+  padding: 0.6rem 1.8rem;
+  border-radius: var(--br5);
+  text-decoration: none;
+  transition: 0.3s;
+  border: 1px solid var(--backgroundColor);
+}
+
+.linkButton:hover {
+  border: 1px solid var(--textColor);
+}

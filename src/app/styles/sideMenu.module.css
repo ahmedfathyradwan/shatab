@@ -49,12 +49,12 @@
 
 .firstLink {
   color: var(--backgroundColor);
-  font-size: 2rem;
+  font-size: var(--fs20);
   font-weight: 500;
 }
 .secLink {
   color: var(--textColor);
-  font-size: 1.8rem;
-  font-weight: 400;
+  font-size: var(--fs15);
+  font-weight: 500;
   margin-right: 2.5rem;
 }

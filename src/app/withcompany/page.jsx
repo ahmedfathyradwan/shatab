@@ -16,7 +16,7 @@ const withcompany = () => {
     {
       title: 'نشر طلب تشطيب',
       image: '/images/freelance/3.jpg',
-      link: '/withcompany/cpost',
+      link: '/withcompany/post',
     },
     {
       title: 'شركات التشطيب',

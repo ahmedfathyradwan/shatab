@@ -1,26 +1,40 @@
 'use client';
 
-import React, { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import styles from '../../form.module.css';
+import governoratesData from '../../../data/governorates.json';
+import MySelect from '../../../components/MySelect.jsx';
 
-const ClientRegister = () => {
+export default function MaintenanceCompanyRegisterPage() {
   const router = useRouter();
+
+  const [isClient, setIsClient] = useState(false);
+  const [governorate, setGovernorate] = useState(null);
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
+  const governorateOptions = governoratesData.map((item) => ({
+    label: item,
+    value: item,
+  }));
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (password.length < 6) {
-      setError('كلمة المرور يجب أن تكون 6 أحرف أو أكثر');
+    if (!governorate) {
+      setError('يرجى اختيار المحافظة');
       return;
     }
 
-    if (!/^01[0125][0-9]{8}$/.test(phone)) {
-      setError('رقم الهاتف غير صالح، يجب أن يبدأ بـ 010 أو 011 أو 012 أو 015 ويتكون من 11 رقمًا');
+    if (password.length < 6) {
+      setError('كلمة المرور يجب أن تكون 6 أحرف أو أكثر');
       return;
     }
 
@@ -28,24 +42,21 @@ const ClientRegister = () => {
       name,
       phone,
       password,
-      accountType: 'client',
+      governorate: governorate.value,
+      accountType: 'maintenance-company',
     };
 
-    // نحفظ البيانات مؤقتًا إلى أن يتم تأكيد الكود
     localStorage.setItem('registerData', JSON.stringify(data));
-
-    // توجيه المستخدم لصفحة التحقق
     router.push('/auth/verify');
   };
 
   return (
     <div className={styles.container}>
       <div className={styles.formContainer}>
-        <h2 className={styles.title}>إنشاء حساب عميل</h2>
-
+        <h2 className={styles.title}>إنشاء حساب شركة صيانة</h2>
         <form className={styles.form} onSubmit={handleSubmit}>
-          <div className={styles.group}>
-            <label className={styles.label}>الإسم ثنائي بالعربية</label>
+          <div className={styles.formGroup}>
+            <label className={styles.label}>الاسم ثنائي</label>
             <input
               type="text"
               className={styles.input}
@@ -55,14 +66,27 @@ const ClientRegister = () => {
             />
           </div>
 
-          <div className={styles.group}>
+          {isClient && (
+            <div className={styles.formGroup}>
+              <label className={styles.label}>العنوان</label>
+              <MySelect
+                key="gov-select"
+                value={governorate}
+                onChange={setGovernorate}
+                options={governorateOptions}
+                placeholder="اختيار من قائمة محافظات مصر"
+              />
+            </div>
+          )}
+
+          <div className={styles.formGroup}>
             <label className={styles.label}>رقم الهاتف</label>
             <input
               type="tel"
               className={styles.input}
+              placeholder="يفضل يكون به حساب واتساب"
               value={phone}
               onChange={(e) => setPhone(e.target.value)}
-              placeholder="يفضل يكون به حساب واتساب"
               required
               pattern="^01[0125][0-9]{8}$"
               maxLength={11}
@@ -70,7 +94,7 @@ const ClientRegister = () => {
             />
           </div>
 
-          <div className={styles.group}>
+          <div className={styles.formGroup}>
             <label className={styles.label}>كلمة المرور</label>
             <input
               type="password"
@@ -90,6 +114,4 @@ const ClientRegister = () => {
       </div>
     </div>
   );
-};
-
-export default ClientRegister;
+}

@@ -21,7 +21,7 @@ const Freelance = () => {
     {
       title: 'طلب تشطيب',
       image: '/images/freelance/3.jpg',
-      link: '/freelance/tpost',
+      link: '/freelance/post',
     },
     {
       title: 'مقاولون',

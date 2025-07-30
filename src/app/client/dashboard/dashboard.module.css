@@ -1,0 +1,121 @@
+.container {
+  width: 100%;
+  min-height: 100vh;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  background-color: var(--backgroundColor);
+  display: flex;
+  align-items: center;
+  width: calc(100% - 4rem);
+  border-radius: var(--br5);
+  padding: 3rem;
+  margin: 2rem 0 0;
+}
+
+.avatarWrapper {
+  width: 70px;
+  cursor: pointer;
+}
+
+.avatar {
+  width: 100%;
+  height: auto;
+  border-radius: 50%;
+  object-fit: contain;
+  background-color: #ddd;
+  transition: 0.3s;
+}
+
+.userInfo {
+  margin-right: 1rem;
+    display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.userName {
+  font-size: var(--fs25);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.editButton {
+  background-color: var(--primaryColor);
+  border-radius: var(--br5);
+  color: var(--backgroundColor);
+  font-size: var(--fs10);
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  font-family: var(--ar);
+}
+
+.buttonsContainer {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.switchButton {
+  padding: 0.5rem 1rem;
+  font-size: var(--fs15);
+  background-color: var(--backgroundColor);
+  color: var(--primaryColor);
+  border: 1px solid var(--primaryColor);
+  border-radius: var(--br5);
+  cursor: pointer;
+  transition: 0.3s;
+  font-family: var(--ar);
+  font-weight: 600;
+}
+.switchButton:hover {
+  border: 1px solid var(--textColor);
+}
+
+.activeButton {
+  background-color: var(--primaryColor);
+  color: var(--backgroundColor);
+  border: 1px solid var(--primaryColor);
+}
+
+.content {
+  background-color: var(--backgroundColor);
+  background-color: orangered;
+  border-radius: var(--br5);
+  padding: 3rem;
+  width: calc(100% - 4rem);
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* Modal styles */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fullImage {
+  max-width: 90%;
+  height: auto;
+  border-radius: var(--br5);
+  box-shadow: 0 0 20px black;
+}

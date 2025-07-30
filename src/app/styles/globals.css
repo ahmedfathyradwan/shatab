@@ -61,3 +61,31 @@ body {
   display: flex;
   justify-content: center;
 }
+/* not-found & error & loading */
+.cont {
+  background-color: var(--backgroundColor);
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 3rem;
+}
+.tit {
+  font-size: var(--fs25);
+  color: var(--textColor);
+  font-weight: 700;
+}
+.btn{
+  padding: 0.5rem 1.5rem;
+  background-color: var(--primaryColor);
+  text-decoration: none;
+  color: var(--backgroundColor);
+  font-size: var(--fs15);
+  border-radius: var(--br5);
+  border: 1px solid var(--primaryColor);
+}
+.btn:hover {
+  border: 1px solid var(--textColor);
+}

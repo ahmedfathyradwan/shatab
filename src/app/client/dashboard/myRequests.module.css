@@ -1,0 +1,39 @@
+.container {
+  width: 100%;
+}
+.title {
+  font-size: var(--fs20);
+  text-align: center;
+  font-weight: 700;
+  margin-bottom: 3rem;
+}
+.requestCard {
+  width: 100%;
+  background-color: var(--whiteColor);
+  border: 1px solid var(--primaryColor);
+  border-radius: var(--br5);
+  padding: 3rem;
+  margin-bottom: 1.5rem;
+}
+.label {
+  font-size: var(--fs15);
+  color: var(--primaryColor);
+  margin: 0 0 0.3rem 0.5rem;
+  display: inline;
+  font-weight: 500;
+}
+.value {
+  display: inline;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  font-size: var(--fs15);
+}
+
+.image {
+  width: auto;
+  max-width: 300px;
+  max-height: 150px;
+  border-radius: var(--br5);
+  margin: 0 auto 1rem;
+  display: block;
+}

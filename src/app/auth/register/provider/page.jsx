@@ -21,53 +21,23 @@ const ProviderTypePage = () => {
         <div className={styles.formProvider}>
           <button
             className={styles.providerBtn}
-            onClick={() => handleSelect("فني", "/auth/register/technician")}
+            onClick={() => handleSelect("فردي", "/auth/register/freelancer")}
           >
-            إنشاء حساب فني
+            إنشاء حساب فردي
           </button>
 
           <button
             className={styles.providerBtn}
-            onClick={() => handleSelect("معرض (مورد خامات)", "/auth/register/materials")}
+            onClick={() => handleSelect("معرض", "/auth/register/materials")}
           >
             إنشاء حساب معرض
           </button>
 
           <button
             className={styles.providerBtn}
-            onClick={() => handleSelect("مقاول", "/auth/register/contractor")}
+            onClick={() => handleSelect("شركة", "/auth/register/company")}
           >
-            إنشاء حساب مقاول
-          </button>
-
-          <button
-            className={styles.providerBtn}
-            onClick={() => handleSelect("شركة صيانة", "/auth/register/maintenance-company")}
-          >
-            إنشاء حساب شركة صيانة
-          </button>
-
-          <button
-            className={styles.providerBtn}
-            onClick={() => handleSelect("مهندس تنفيذ", "/auth/register/engineer")}
-          >
-            إنشاء حساب إشراف أو تنفيذ
-          </button>
-
-          <button
-            className={styles.providerBtn}
-            onClick={() => handleSelect("شركة تشطيب", "/auth/register/finishing-company")}
-          >
-            إنشاء حساب شركة تشطيب
-          </button>
-
-          <button
-            className={styles.providerBtn}
-            onClick={() =>
-              handleSelect("مصمم داخلي / شركة تصميم / رسام أوتوكاد", "/auth/register/designer")
-            }
-          >
-            إنشاء حساب مصمم أو رسام
+            إنشاء حساب شركة أو مكتب
           </button>
 
           <p className={styles.contactText}>

@@ -15,42 +15,49 @@
   border-radius: var(--br5);
   padding: 3rem;
   margin: 2rem 0 0;
+  flex-direction: column;
 }
 
+.topHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+
+/* ✅ تعديل الصورة */
 .avatarWrapper {
-  width: 70px;
+  width: 60px;
+  height: 60px;
   cursor: pointer;
+  border: 1px solid var(--primaryColor);
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
 }
 
 .avatar {
   width: 100%;
-  height: auto;
-  border-radius: 50%;
-  object-fit: contain;
-  background-color: #ddd;
+  height: 100%;
+  object-fit: cover;
+  background-color: var(--backgroundColor);
   transition: 0.3s;
-}
-
-.userInfo {
-  margin-right: 1rem;
-    display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-  width: 100%;
 }
 
 .userName {
   font-size: var(--fs25);
   font-weight: 600;
-  margin-bottom: 0.5rem;
+  margin: 0 2rem 0 0;
 }
 
 .editButton {
   background-color: var(--primaryColor);
   border-radius: var(--br5);
   color: var(--backgroundColor);
-  font-size: var(--fs10);
+  font-size: var(--fs15);
   border: none;
   cursor: pointer;
   text-decoration: none;
@@ -92,7 +99,6 @@
 
 .content {
   background-color: var(--backgroundColor);
-  background-color: orangered;
   border-radius: var(--br5);
   padding: 3rem;
   width: calc(100% - 4rem);
@@ -102,7 +108,33 @@
   flex-direction: column;
 }
 
-/* Modal styles */
+/* ✅ أزرار الخروج والحذف */
+.editToggleRow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.logoutBtn,
+.deleteBtn {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--primaryColor);
+  border-radius: var(--br5);
+  font-size: var(--fs15);
+  cursor: pointer;
+  background-color: var(--primaryColor);
+  color: var(--backgroundColor);
+  font-weight: 500;
+  font-family: var(--ar);
+}
+.logoutBtn:hover,
+.deleteBtn:hover {
+  border: 1px solid var(--textColor);
+}
+
+/* ✅ Modal */
 .modal {
   position: fixed;
   inset: 0;
@@ -118,4 +150,62 @@
   height: auto;
   border-radius: var(--br5);
   box-shadow: 0 0 20px black;
+}
+
+/* ✅ تأكيد الخروج والحذف */
+.confirmOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.confirmModal {
+  background-color: var(--backgroundColor);
+  border-radius: var(--br5);
+  padding: 2rem;
+  max-width: 300px;
+  width: 90%;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  font-size: var(--fs15);
+  font-weight: 500;
+  font-family: var(--ar);
+}
+
+.confirmActions {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.confirmDelete {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: var(--br5);
+  font-size: var(--fs15);
+  font-weight: 500;
+  font-family: var(--ar);
+  cursor: pointer;
+}
+
+.cancelDelete {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 0.5rem 1.5rem;
+  border-radius: var(--br5);
+  font-size: var(--fs15);
+  font-weight: 500;
+  font-family: var(--ar);
+  cursor: pointer;
 }

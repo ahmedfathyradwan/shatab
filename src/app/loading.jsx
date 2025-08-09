@@ -3,7 +3,7 @@ export default function Loading() {
   return (
     <div className="cont">
       <p className="tit">
-         جاري التحميل...⏳
+         جاري التحميل...
       </p>
     </div>
   );

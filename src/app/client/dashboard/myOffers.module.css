@@ -1,0 +1,94 @@
+.container {
+  width: 100%;
+}
+
+.title {
+  font-size: var(--fs25);
+  text-align: center;
+  font-weight: 600;
+  margin-bottom: 3rem;
+}
+
+.cardsWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--whiteColor);
+  border: 1px solid var(--primaryColor);
+  border-radius: var(--br5);
+}
+
+.details {
+  width: 100%;
+  padding: 3rem 2rem;
+  text-align: right;
+  direction: rtl;
+}
+
+.avatarRow {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 1px solid var(--primaryColor);
+}
+
+.name {
+  font-weight: 500;
+  font-size: var(--fs25);
+  color: var(--primaryColor);
+}
+
+.label {
+  color: var(--primaryColor);
+  font-weight: 600;
+  font-size: var(--fs20);
+  display: inline;
+  margin-left: 0.5rem;
+}
+
+.value {
+  font-weight: 500;
+  font-size: var(--fs20);
+  display: inline;
+}
+
+.contactButtons {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.contactBtn {
+  background-color: var(--primaryColor);
+  color: var(--backgroundColor);
+  padding: 0.5rem 1rem;
+  border-radius: var(--br5);
+  font-size: var(--fs15);
+  border: 1px solid var(--primaryColor);
+  font-weight: 500;
+}
+
+.contactBtn:hover {
+  border: 1px solid var(--textColor);
+}
+
+.noResults {
+  text-align: center;
+  font-size: var(--fs25);
+  padding: 2rem 1rem;
+}

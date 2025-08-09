@@ -1,6 +1,6 @@
 'use client';
 
-import requests from '../../mockData/requests.js';
+import requests from '../../mockData/requests';
 import styles from './myRequests.module.css';
 
 export default function MyRequests() {
@@ -31,6 +31,11 @@ export default function MyRequests() {
           <br />
           <p className={styles.label}>تاريخ الطلب:</p>
           <p className={styles.value}>{req.date}</p>
+
+          {/* زر حذف الطلب */}
+          <button className={styles.deleteButton}>
+            حذف الطلب
+          </button>
         </div>
       ))}
     </div>

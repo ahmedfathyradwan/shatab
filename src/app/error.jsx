@@ -10,7 +10,7 @@ export default function Error({ error, reset }) {
   return (
     <div className="cont">
         <p className="tit">
-            حدث خطأ أثناء تحميل الصفحة. ❌
+            حدث خطأ أثناء تحميل الصفحة.
         </p>
       <br />
       <button

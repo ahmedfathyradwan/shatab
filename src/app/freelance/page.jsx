@@ -24,6 +24,16 @@ const Freelance = () => {
       link: '/freelance/post',
     },
     {
+      title: 'مشرفيين ومنفذين',
+      image: '/images/freelance/7.jpg',
+      link: '/freelance/suppliers',
+    },
+    {
+      title: 'مصممين ورسامين',
+      image: '/images/freelance/7.jpg',
+      link: '/freelance/suppliers',
+    },
+    {
       title: 'مقاولون',
       image: '/images/freelance/4.jpg',
       link: '/freelance/contractors',

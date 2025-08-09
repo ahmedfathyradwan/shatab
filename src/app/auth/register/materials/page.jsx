@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import styles from '../../form.module.css';
-import materialTypes from '../../../data/materialTypes.json';
+import companyType from '../../../data/companyType.json';
 import governoratesData from '../../../data/governorates.json';
 import MySelect from '../../../components/MySelect.jsx';
 
@@ -17,7 +17,7 @@ export default function MaterialsRegisterPage() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
-  const materialTypeOptions = materialTypes.map((item) => ({ label: item, value: item }));
+  const materialTypeOptions = companyType.map((item) => ({ label: item, value: item }));
   const governorateOptions = governoratesData.map((item) => ({ label: item, value: item }));
 
   useEffect(() => {

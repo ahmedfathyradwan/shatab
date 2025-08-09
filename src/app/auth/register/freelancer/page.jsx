@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import styles from '../../form.module.css';
-import jobTitlesData from '../../../data/jobTitles.json';
+import freelancer from '../../../data/freelancer.json';
 import governoratesData from '../../../data/governorates.json';
 import MySelect from '../../../components/MySelect.jsx';
 
@@ -18,7 +18,7 @@ export default function TechnicianRegisterPage() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
-  const jobTitleOptions = jobTitlesData.map((item) => ({ label: item, value: item }));
+  const jobTitleOptions = freelancer.map((item) => ({ label: item, value: item }));
   const governorateOptions = governoratesData.map((item) => ({ label: item, value: item }));
 
   useEffect(() => {
@@ -55,7 +55,7 @@ export default function TechnicianRegisterPage() {
   return (
     <div className={styles.container}>
       <div className={styles.formContainer}>
-        <h2 className={styles.title}>إنشاء حساب فني</h2>
+        <h2 className={styles.title}>إنشاء حساب فردي</h2>
         <form className={styles.form} onSubmit={handleSubmit}>
           <div className={styles.formGroup}>
             <label className={styles.label}>الاسم ثنائي بالعربية</label>
@@ -77,7 +77,7 @@ export default function TechnicianRegisterPage() {
                   value={jobTitle}
                   onChange={setJobTitle}
                   options={jobTitleOptions}
-                  placeholder="قائمة اختيار"
+                  placeholder="مهندس - مقاول - مصمم - فني ..."
                 />
               </div>
 

@@ -16,12 +16,12 @@ const withcompany = () => {
     {
       title: 'نشر طلب تشطيب',
       image: '/images/freelance/3.jpg',
-      link: '/withcompany/post',
+      link: '/freelance/post',
     },
     {
       title: 'شركات التشطيب',
       image: '/images/withcompany/1.jpg',
-      link: '/withcompany/companies',
+      link: '/withcompany/company',
     }
   ];
 

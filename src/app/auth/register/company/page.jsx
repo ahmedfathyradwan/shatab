@@ -3,6 +3,7 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import styles from '../../form.module.css';
+import companyType from '../../../data/companyType.json';
 import governoratesData from '../../../data/governorates.json';
 import MySelect from '../../../components/MySelect.jsx';
 
@@ -10,16 +11,15 @@ export default function MaintenanceCompanyRegisterPage() {
   const router = useRouter();
 
   const [isClient, setIsClient] = useState(false);
+  const [jobTitle, setJobTitle] = useState(null);
   const [governorate, setGovernorate] = useState(null);
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
-  const governorateOptions = governoratesData.map((item) => ({
-    label: item,
-    value: item,
-  }));
+  const jobTitleOptions = companyType.map((item) => ({ label: item, value: item })); // جديد
+  const governorateOptions = governoratesData.map((item) => ({ label: item, value: item }));
 
   useEffect(() => {
     setIsClient(true);
@@ -28,8 +28,8 @@ export default function MaintenanceCompanyRegisterPage() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!governorate) {
-      setError('يرجى اختيار المحافظة');
+    if (!jobTitle || !governorate) {
+      setError('يرجى اختيار المسمى الوظيفي والمحافظة');
       return;
     }
 
@@ -40,9 +40,10 @@ export default function MaintenanceCompanyRegisterPage() {
 
     const data = {
       name,
+      jobTitle: jobTitle.value,
+      governorate: governorate.value,
       phone,
       password,
-      governorate: governorate.value,
       accountType: 'maintenance-company',
     };
 
@@ -53,7 +54,7 @@ export default function MaintenanceCompanyRegisterPage() {
   return (
     <div className={styles.container}>
       <div className={styles.formContainer}>
-        <h2 className={styles.title}>إنشاء حساب شركة صيانة</h2>
+        <h2 className={styles.title}>إنشاء حساب شركة أو مكتب</h2>
         <form className={styles.form} onSubmit={handleSubmit}>
           <div className={styles.formGroup}>
             <label className={styles.label}>الاسم ثنائي</label>
@@ -67,16 +68,29 @@ export default function MaintenanceCompanyRegisterPage() {
           </div>
 
           {isClient && (
-            <div className={styles.formGroup}>
-              <label className={styles.label}>العنوان</label>
-              <MySelect
-                key="gov-select"
-                value={governorate}
-                onChange={setGovernorate}
-                options={governorateOptions}
-                placeholder="اختيار من قائمة محافظات مصر"
-              />
-            </div>
+            <>
+              <div className={styles.formGroup}>
+                <label className={styles.label}>التخصص</label>
+                <MySelect
+                  key="job-select"
+                  value={jobTitle}
+                  onChange={setJobTitle}
+                  options={jobTitleOptions}
+                  placeholder="شركة تشطيب - شركة صيانة ..."
+                />
+              </div>
+
+              <div className={styles.formGroup}>
+                <label className={styles.label}>العنوان</label>
+                <MySelect
+                  key="gov-select"
+                  value={governorate}
+                  onChange={setGovernorate}
+                  options={governorateOptions}
+                  placeholder="اختيار من قائمة محافظات مصر"
+                />
+              </div>
+            </>
           )}
 
           <div className={styles.formGroup}>

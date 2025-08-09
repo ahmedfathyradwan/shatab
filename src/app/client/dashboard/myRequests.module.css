@@ -2,9 +2,9 @@
   width: 100%;
 }
 .title {
-  font-size: var(--fs20);
+  font-size: var(--fs25);
   text-align: center;
-  font-weight: 700;
+  font-weight: 600;
   margin-bottom: 3rem;
 }
 .requestCard {
@@ -13,10 +13,10 @@
   border: 1px solid var(--primaryColor);
   border-radius: var(--br5);
   padding: 3rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 3rem;
 }
 .label {
-  font-size: var(--fs15);
+  font-size: var(--fs20);
   color: var(--primaryColor);
   margin: 0 0 0.3rem 0.5rem;
   display: inline;
@@ -26,7 +26,7 @@
   display: inline;
   margin-bottom: 1rem;
   font-weight: 500;
-  font-size: var(--fs15);
+  font-size: var(--fs20);
 }
 
 .image {
@@ -34,6 +34,23 @@
   max-width: 300px;
   max-height: 150px;
   border-radius: var(--br5);
-  margin: 0 auto 1rem;
+  margin: 0 auto 1.5rem;
   display: block;
+}
+.deleteButton {
+  display: block;
+  margin: 1.5rem auto 0;
+  padding: 0.5rem 1.5rem;
+  font-size: var(--fs15);
+  background-color: var(--primaryColor);
+  color: var(--whiteColor);
+  border: none;
+  border-radius: var(--br5);
+  font-weight: 500;
+  font-family: var(--ar);
+  cursor: pointer;
+}
+
+.deleteButton:hover {
+  background-color: #c0392b;
 }

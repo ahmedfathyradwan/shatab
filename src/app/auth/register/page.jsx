@@ -30,7 +30,7 @@ const Register = () => {
             className={styles.providerButton}
             onClick={() => handleSelect("provider")}
           >
-            حساب مقدم خدمة <br /><span className={styles.btnSpan}>(فني / معرض / شركة تشطيب ...إلخ)</span>
+            حساب مقدم خدمة <br /><span className={styles.btnSpan}>( مهندس / رسام / فني / مقاول / معرض<br />  مكتب / شركة ...إلخ )</span>
           </button>
         </div>
       </div>

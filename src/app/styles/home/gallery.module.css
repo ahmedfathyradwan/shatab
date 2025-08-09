@@ -35,6 +35,8 @@
   border-radius: var(--br5);
   cursor: pointer;
   transition: background-color 0.3s;
+  text-decoration: none;
+  color: var(--textColor);
 }
 
 .tabButton:hover {

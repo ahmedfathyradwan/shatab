@@ -2,7 +2,7 @@
 
 import { useState } from 'react';
 import styles from './dashboard.module.css';
-import providerData from '../../mockData/clientRequests.js'; // Assuming this is the correct path to your mock data
+import providerData from '../../mockData/clientRequests.js';
 import ProviderProfile from './ProviderProfile.jsx';
 import AvailableRequests from './AvailableRequests.jsx';
 
@@ -37,6 +37,5 @@ export default function ProviderDashboard() {
         </div>
       )}
     </div>
-
   );
 }

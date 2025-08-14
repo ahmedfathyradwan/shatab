@@ -1,0 +1,81 @@
+.container {
+  background-color: var(--backgroundColor);
+  margin: 3rem 2rem 10rem;
+  border-radius: var(--br5);
+  padding: 3rem 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.title {
+  font-size: var(--fs30);
+  font-weight: 600;
+  color: var(--primaryColor);
+  margin-bottom: 2rem;
+}
+
+.imageCont {
+    width: 80%;
+    aspect-ratio: 2 / 1.5;
+    overflow: hidden;
+    border-radius: var(--br5);
+    margin-bottom: 2rem;
+    border: 1px solid var(--primaryColor);
+}
+
+.image {
+  width: 100%;
+  height: auto;
+  border-radius: var(--br5);
+}
+
+.textCont {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.section {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.subTitle {
+  font-size: var(--fs20);
+  font-weight: 500;
+  color: var(--primaryColor);
+}
+
+.text {
+  font-size: var(--fs20);
+  font-weight: 500;
+}
+
+.notFound {
+  padding: 20px;
+  color: red;
+  font-size: var(--fs20);
+}
+
+.subTitle2 {
+  font-size: var(--fs20);
+  font-weight: 500;
+  color: var(--primaryColor);
+  margin: 2rem 0 1.5rem;
+}
+
+.videoWrapper {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: var(--br5);
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--primaryColor);
+  overflow: hidden;
+}
+
+.videoWrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}

@@ -1,0 +1,69 @@
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    padding: 3rem;
+    width: calc(100% - 4rem);
+    gap: 2rem;
+    margin: 3rem 2rem 12rem;
+    background-color: var(--backgroundColor);
+    border-radius: var(--br5);
+}
+.title {
+    font-size: var(--fs30);
+    color: var(--primaryColor);
+    text-align: center;
+    width: 100%;
+}
+.card {
+    width: calc(100%/2.2);
+    aspect-ratio: 7 / 6;
+    border-radius: var(--br5);
+    overflow: hidden;
+    background-color: var(--whiteColor);
+    border: 1px solid var(--primaryColor);
+}
+
+.cardImage {
+    width: 100%;
+    height: 75%;
+    object-fit: cover;
+}
+
+.cardFooter {
+    width: 100%;
+    height: 25%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 1.5rem 1rem;
+}
+
+.cardTitle {
+    font-size: var(--fs10);
+    font-weight: 600;
+}
+
+.arrowButton {
+    background: var(--primaryColor);
+    border: none;
+    border-radius: 50%;
+    padding: 0.3rem;
+    color: var(--backgroundColor);
+    transition: color 0.3s;
+    cursor: pointer;
+}
+
+.arrowButton:hover {
+    color: var(--textColor);
+}
+
+.icon {
+    width: 1rem;
+    height: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

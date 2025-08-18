@@ -1,10 +1,16 @@
 :root {
+  /* Colors */
   --primaryColor: #AB874B;
   --secondaryColor: #C5A372;
   --textColor: #11171C;
   --backgroundColor: #FCF9F5;
   --whiteColor: #FFFFFF;
+
+  /* Border radius */
   --border-radius: 8px;
+  --br5: 5rem;
+
+  /* Font sizes */
   --fs45: 4.5rem;
   --fs40: 4rem;
   --fs35: 3.5rem;
@@ -13,30 +19,30 @@
   --fs20: 2rem;
   --fs15: 1.5rem;
   --fs10: 1rem;
-  --br5: 5rem;
-  --ar: 'Changa', sans-serif;
-  --en: 'Poppins', sans-serif;
+  
+  --ar: var(--font-changa);
+  --en: var(--font-poppins);
 }
 
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  
 }
 
 html,
 body {
   overflow-x: hidden;
   font-size: 62.5%;
-  
 }
+
 ::selection {
-    background-color: var(--primaryColor);
-    color: var(--whiteColor);
-  }
+  background-color: var(--primaryColor);
+  color: var(--whiteColor);
+}
+
 body {
-  font-family: var(--ar), sans-serif;
+  font-family: var(--ar), sans-serif; /* Arabic font */
   direction: rtl;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -45,6 +51,12 @@ body {
   margin: 0 auto;
 }
 
+/* Titles بالإنجليزي */
+h1, h2, h3 {
+  font-family: var(--en), sans-serif;
+}
+
+/* Main container */
 .mainContainer {
   width: 100vw;
   height: auto;
@@ -53,6 +65,7 @@ body {
   position: relative;  
 }
 
+/* Mobile nav */
 .mobNav {
   width: 100%;
   position: fixed;
@@ -61,6 +74,7 @@ body {
   display: flex;
   justify-content: center;
 }
+
 /* not-found & error & loading */
 .cont {
   background-color: var(--backgroundColor);
@@ -72,12 +86,14 @@ body {
   flex-direction: column;
   gap: 3rem;
 }
+
 .tit {
   font-size: var(--fs25);
   color: var(--textColor);
   font-weight: 700;
 }
-.btn{
+
+.btn {
   padding: 0.5rem 1.5rem;
   background-color: var(--primaryColor);
   text-decoration: none;
@@ -86,6 +102,7 @@ body {
   border-radius: var(--br5);
   border: 1px solid var(--primaryColor);
 }
+
 .btn:hover {
   border: 1px solid var(--textColor);
 }

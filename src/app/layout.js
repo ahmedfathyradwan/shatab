@@ -1,4 +1,3 @@
-import "./styles/fonts.module.css";
 import "../app/styles/globals.css";
 import localFont from "next/font/local";
 import AppWrapper from "./components/AppWrapper";
@@ -39,11 +38,8 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="ar">
-      <body className={`
-        ${changa.variable} 
-        ${poppins.variable}
-      `}>
+    <html lang="ar" className={`${changa.variable} ${poppins.variable}`}>
+      <body>
         <AppWrapper>{children}</AppWrapper>
       </body>
     </html>

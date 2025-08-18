@@ -4,16 +4,46 @@ import { useParams } from 'next/navigation';
 import guideData from '../../../../data/finishingStepsDetails.js';
 import styles from './slug.module.css';
 
-// دالة لتحويل رابط يوتيوب لرابط embed
+// دالة لتحويل أي لينك يوتيوب/فيميو لرابط embed
 const getEmbedUrl = (url) => {
   if (!url) return '';
-  if (url.includes('watch?v=')) {
-    return url.replace('watch?v=', 'embed/');
+
+  try {
+    const u = new URL(url);
+
+    // YouTube
+    if (u.hostname.includes('youtube.com')) {
+      // watch?v=...
+      if (u.pathname === '/watch') {
+        const id = u.searchParams.get('v');
+        const list = u.searchParams.get('list');
+        return `https://www.youtube.com/embed/${id}${list ? `?list=${list}` : ''}`;
+      }
+      // shorts
+      if (u.pathname.startsWith('/shorts/')) {
+        const id = u.pathname.split('/')[2];
+        return `https://www.youtube.com/embed/${id}`;
+      }
+      // embed جاهز
+      if (u.pathname.startsWith('/embed/')) return url;
+    }
+
+    // youtu.be
+    if (u.hostname === 'youtu.be') {
+      const id = u.pathname.slice(1);
+      return `https://www.youtube.com/embed/${id}`;
+    }
+
+    // Vimeo
+    if (u.hostname.includes('vimeo.com')) {
+      const id = u.pathname.split('/').filter(Boolean)[0];
+      return `https://player.vimeo.com/video/${id}`;
+    }
+
+    return url;
+  } catch {
+    return url;
   }
-  if (url.includes('youtu.be/')) {
-    return url.replace('youtu.be/', 'www.youtube.com/embed/');
-  }
-  return url; // لو أصلاً embed أو نوع تاني من الفيديو
 };
 
 export default function StepDetailsPage() {
@@ -38,7 +68,7 @@ export default function StepDetailsPage() {
 
       <div className={styles.textCont}>
         <div className={styles.section}>
-          <h3 className={styles.subTitle}>المطلوب تنفيذه :</h3>
+          <h3 className={styles.subTitle}>المطلوب تنفيذه في هذه المرحلة :</h3>
           <p className={styles.text}>{step.tasks}</p>
         </div>
 
@@ -61,22 +91,22 @@ export default function StepDetailsPage() {
           <h3 className={styles.subTitle}>طريقة التأكد من جودة التنفيذ :</h3>
           <p className={styles.text}>{step.qualityCheck}</p>
         </div>
-      </div>
-
-      {step.videoUrls && step.videoUrls.length > 0 && (
-        <>
-          <h3 className={styles.subTitle2}>محتوى خاص بالمرحلة</h3>
+        {step.videoUrls && step.videoUrls.length > 0 && (
+        <div>
+          <h3 className={styles.subTitle2}>فيديوهات متعلقة بالمرحلة :</h3>
           {step.videoUrls.map((url, index) => (
             <div key={index} className={styles.videoWrapper}>
               <iframe
                 src={getEmbedUrl(url)}
                 title={`${step.title} - فيديو ${index + 1}`}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 allowFullScreen
-              ></iframe>
+              />
             </div>
           ))}
-        </>
+        </div>
       )}
+      </div>
     </div>
   );
 }

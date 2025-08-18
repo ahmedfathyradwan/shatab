@@ -1,14 +1,39 @@
 'use client';
 
-import CloseArrowIcon from '../../../components/icons/CloseArrowIcon';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import styles from './internal.module.css';
 import guideData from '../../../data/finishingSteps';
 
 export default function InternalGuidePage() {
   const router = useRouter();
+  const [checkedSteps, setCheckedSteps] = useState([]);
 
-  // فلترة المراحل الداخلية فقط
+  // تحميل البيانات من localStorage أول مرة
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      const saved = localStorage.getItem('checkedSteps');
+      if (saved) {
+        setCheckedSteps(JSON.parse(saved));
+      }
+    }
+  }, []);
+
+  // حفظ التغيرات في localStorage
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      localStorage.setItem('checkedSteps', JSON.stringify(checkedSteps));
+    }
+  }, [checkedSteps]);
+
+  const toggleCheck = (id) => {
+    setCheckedSteps((prev) =>
+      prev.includes(id)
+        ? prev.filter((stepId) => stepId !== id)
+        : [...prev, id]
+    );
+  };
+
   const internalSteps = Array.isArray(guideData)
     ? guideData.filter((step) => step.link?.startsWith('/internal'))
     : [];
@@ -16,30 +41,47 @@ export default function InternalGuidePage() {
   return (
     <div className={styles.container}>
       <h2 className={styles.title}>التشطيب الداخلي</h2>
-      {internalSteps.map((card) => (
-        <div
-          key={card.id}
-          className={styles.card}
-          onClick={() =>
-            router.push(`/freelance/guide/internal/${card.slug}`)
-          }
-          style={{ cursor: 'pointer' }}
-        >
-          <img src={card.image} alt={card.title} className={styles.cardImage} />
-          <div className={styles.cardFooter}>
-            <h3 className={styles.cardTitle}>{card.title}</h3>
-            <button
-              className={styles.arrowButton}
-              onClick={(e) => {
-                e.stopPropagation(); // عشان ما يشغلش حدث الكارت
-                router.push(`/freelance/guide/internal/${card.slug}`);
-              }}
+      {internalSteps.map((card) => {
+        const isChecked = checkedSteps.includes(card.id);
+
+        return (
+          <div
+            key={card.id}
+            className={styles.card}
+            onClick={() =>
+              router.push(`/freelance/guide/internal/${card.slug}`)
+            }
+            style={{ cursor: 'pointer' }}
+          >
+            <img
+              src={card.image}
+              alt={card.title}
+              className={styles.cardImage}
+            />
+
+            <div
+              className={`${styles.cardFooter} ${
+                isChecked ? styles.checked : ''
+              }`}
             >
-              <CloseArrowIcon className={styles.icon} />
-            </button>
+              <h3 className={styles.cardTitle}>{card.title}</h3>
+
+              {/* البوكس الصغير */}
+              <div
+                className={`${styles.checkBox} ${
+                  isChecked ? styles.activeBox : ''
+                }`}
+                onClick={(e) => {
+                  e.stopPropagation();
+                  toggleCheck(card.id);
+                }}
+              >
+                {isChecked && <span className={styles.checkMark}>✔</span>}
+              </div>
+            </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 }

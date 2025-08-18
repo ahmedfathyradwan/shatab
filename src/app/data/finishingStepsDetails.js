@@ -1,9 +1,7 @@
-// data/finishingStepsDetails.js
-
 const finishingStepsDetails = [
   {
     id: 1,
-    title: "تحديد كل تفاصيل التشطيب",
+    title: "التصور النهائي للتشطيب وتحديد التفاصيل",
     slug: "details-definition",
     image: "/images/finishingSteps/1.jpeg",
     tasks: "تحديد جميع التفاصيل المطلوبة مثل نوع الأرضيات، ألوان الدهانات، نوع الأبواب، أماكن الإضاءة، وأي تعديلات معمارية.",
@@ -13,8 +11,9 @@ const finishingStepsDetails = [
     qualityCheck: "التأكد أن جميع البنود موثقة وموقعة من جميع الأطراف قبل بدء التنفيذ.",
     videoUrls: [
       "https://youtu.be/NIg3GYmzDDw?si=8BDSp5U3g_y6cU3Y",
-      "https://youtu.be/c7K3uiKQTQ8?si=GoLOw6TkO0rGx7GK"
-    ]
+      "https://youtu.be/NIg3GYmzDDw?si=8BDSp5U3g_y6cU3Y",
+      "https://youtu.be/NIg3GYmzDDw?si=8BDSp5U3g_y6cU3Y"
+    ] 
   },
   {
     id: 2,
@@ -26,7 +25,11 @@ const finishingStepsDetails = [
     averageCost: "1000 - 2000 جنيه",
     notes: "يجب معالجة الأخطاء قبل بدء أي أعمال تشطيب لتجنب المشاكل لاحقًا.",
     qualityCheck: "استخدام ميزان المياه والليزر للتأكد من استقامة الحوائط والأسقف.",
-    videoUrl: "https://youtu.be/hw23jkagyxM?si=ZYeOEiWRc0QEN0wA"
+    videoUrls: [
+      "https://youtu.be/NIg3GYmzDDw?si=8BDSp5U3g_y6cU3Y",
+      "https://youtu.be/NIg3GYmzDDw?si=8BDSp5U3g_y6cU3Y",
+      "https://youtu.be/NIg3GYmzDDw?si=8BDSp5U3g_y6cU3Y"
+    ] 
   },
   {
     id: 3,
@@ -38,7 +41,11 @@ const finishingStepsDetails = [
     averageCost: "3000 - 6000 جنيه",
     notes: "يجب الحصول على موافقة هندسية قبل تنفيذ أي تعديلات إنشائية.",
     qualityCheck: "التأكد من أن جميع الحوائط الجديدة متعامدة ومتساوية السمك.",
-    videoUrl: "https://www.youtube.com/watch?v=xxxx"
+    videoUrls: [
+      "https://youtu.be/NIg3GYmzDDw?si=8BDSp5U3g_y6cU3Y",
+      "https://youtu.be/NIg3GYmzDDw?si=8BDSp5U3g_y6cU3Y",
+      "https://youtu.be/NIg3GYmzDDw?si=8BDSp5U3g_y6cU3Y"
+    ]    
   },
   {
     id: 4,
@@ -62,7 +69,11 @@ const finishingStepsDetails = [
     averageCost: "5000 - 9000 جنيه",
     notes: "استخدام خامات جيدة لتجنب الأعطال المستقبلية.",
     qualityCheck: "اختبار التوصيلات بالمياه قبل الإغلاق.",
-    videoUrl: "https://www.youtube.com/watch?v=xxxx"
+    videoUrls: [
+      "https://youtu.be/NIg3GYmzDDw?si=8BDSp5U3g_y6cU3Y",
+      "https://youtu.be/NIg3GYmzDDw?si=8BDSp5U3g_y6cU3Y",
+      "https://youtu.be/NIg3GYmzDDw?si=8BDSp5U3g_y6cU3Y"
+    ] 
   },
   {
     id: 6,
@@ -126,7 +137,7 @@ const finishingStepsDetails = [
   },
   {
     id: 13,
-    title: "المحارة",
+    title: "معالجة الحوائط - تركيب سلك للفواصل - المحارة",
     slug: "plastering",
     image: "/images/finishingSteps/13.jpeg",
     tasks: "تسوية الحوائط والأسقف بطبقة من المونة الرملية والأسمنتية.",
@@ -162,7 +173,7 @@ const finishingStepsDetails = [
   },
   {
     id: 16,
-    title: "الجبسوم بورد",
+    title: ")اختياري(الجبسوم بورد",
     slug: "gypsum-board",
     image: "/images/finishingSteps/16.jpeg",
     tasks: "تنفيذ أسقف معلقة أو ديكورات باستخدام الجبسوم بورد.",

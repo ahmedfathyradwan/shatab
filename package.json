@@ -21,7 +21,7 @@
     "eslint-config-next": "15.3.3"
   },
   "engines": {
-    "node": ">=18.18.0",
-    "npm": "10.x"
+  "node": "16.x",
+  "npm": "10.x"
   }
 }

@@ -20,6 +20,7 @@
   --fs15: 1.5rem;
   --fs10: 1rem;
   
+  /* Font aliases */
   --ar: var(--font-changa);
   --en: var(--font-poppins);
 }
@@ -51,7 +52,7 @@ body {
   margin: 0 auto;
 }
 
-/* Titles بالإنجليزي */
+/* Titles in English */
 h1, h2, h3 {
   font-family: var(--en), sans-serif;
 }
@@ -101,8 +102,10 @@ h1, h2, h3 {
   font-size: var(--fs15);
   border-radius: var(--br5);
   border: 1px solid var(--primaryColor);
+  transition: 0.3s ease;
 }
 
 .btn:hover {
   border: 1px solid var(--textColor);
+  background-color: var(--secondaryColor);
 }

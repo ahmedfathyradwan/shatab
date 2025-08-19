@@ -39,7 +39,7 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="ar" className={`${changa.variable} ${poppins.variable}`}>
+    <html lang="ar" dir="rtl" className={`${changa.variable} ${poppins.variable}`}>
       <body>
         <AppWrapper>{children}</AppWrapper>
       </body>

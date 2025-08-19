@@ -1,10 +1,10 @@
 [build]
   command = "npm run build"
-  publish = "out" # لو Next.js عندك بستخدم export, لو SSR ممكن تحذف السطر ده
+  publish = "out" # لو مشروعك SSR ممكن تحذف السطر ده
 
 [build.environment]
-  NODE_VERSION = "18.17.1" # نسخة مستقرة من Node
-  NPM_VERSION = "10"       # تحديد نسخة npm المناسبة
+  NODE_VERSION = "18.18.0" # نسخة مدعومة لكل من Next.js و espree
+  NPM_VERSION = "10"        # النسخة المناسبة من npm
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"

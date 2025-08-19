@@ -3,8 +3,8 @@
   publish = "out" # لو مشروعك SSR ممكن تحذف السطر ده
 
 [build.environment]
-  NODE_VERSION = "16"
-  NPM_VERSION = "10"
+  NODE_VERSION = "18.18.0" # نسخة مدعومة لكل من Next.js و espree
+  NPM_VERSION = "10"        # النسخة المناسبة من npm
 
 [[plugins]]
   package = "@netlify/plugin-nextjs"

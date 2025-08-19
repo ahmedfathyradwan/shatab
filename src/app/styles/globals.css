@@ -19,10 +19,10 @@
   --fs20: 2rem;
   --fs15: 1.5rem;
   --fs10: 1rem;
-  
+
   /* Font aliases */
-  --ar: var(--font-changa);
-  --en: var(--font-poppins);
+  --ar: 'Changa', sans-serif;
+  --en: 'Poppins', sans-serif;
 }
 
 * {
@@ -43,7 +43,7 @@ body {
 }
 
 body {
-  font-family: var(--ar), sans-serif; /* Arabic font */
+  font-family: var(--ar); /* Arabic font */
   direction: rtl;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -54,7 +54,7 @@ body {
 
 /* Titles in English */
 h1, h2, h3 {
-  font-family: var(--en), sans-serif;
+  font-family: var(--en);
 }
 
 /* Main container */

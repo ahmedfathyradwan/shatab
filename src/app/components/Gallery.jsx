@@ -94,7 +94,7 @@ export default function Gallery() {
     setActiveImageIndex(1);
   };
 
-  const imagePath = `/images/gallery/${activeTab}/${activeImageIndex}.jpg`;
+  const imagePath = `/shatab/images/gallery/${activeTab}/${activeImageIndex}.jpg`;
 
   return (
     <div className={styles.galleryContainer}>

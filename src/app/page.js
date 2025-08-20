@@ -11,7 +11,7 @@ export default function Home() {
     <div className={styles.homeContainer}>
       <div className={styles.heroSection}>
         <div className={styles.imgContainer}>
-          <img src="/images/homeMob.jpg" className={styles.homeImg} />
+          <img src="/shatab/images/homeMob.jpg" className={styles.homeImg} />
         </div>
         <div className={styles.borderCont}>
           <div className={styles.textContainer}>

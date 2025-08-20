@@ -8,7 +8,7 @@ import MyOffers from './MyOffers'; // ✅ استيراد MyOffers
 export default function ClientDashboard() {
   const [activeTab, setActiveTab] = useState('requests');
   const [isPreviewOpen, setIsPreviewOpen] = useState(false);
-  const [imageUrl, setImageUrl] = useState('/images/avatar.png');
+  const [imageUrl, setImageUrl] = useState('/shatab/images/avatar.png');
   const [confirmLogout, setConfirmLogout] = useState(false);
   const [confirmDelete, setConfirmDelete] = useState(false);
   const fileInputRef = useRef(null);

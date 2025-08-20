@@ -34,7 +34,7 @@ const LoginPage = () => {
   return (
     <div className={styles.container}>
       <div className={styles.imgContainer}>
-        <img src="/images/signMob.jpg" className={styles.signImg} />
+        <img src="/shatab/images/signMob.jpg" className={styles.signImg} />
       </div>
 
       <div className={styles.borderCont}>

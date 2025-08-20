@@ -25,17 +25,22 @@
   --en: 'Poppins', sans-serif;
 }
 
+/* Reset + basic styles */
 * {
-  box-sizing: border-box;
-  padding: 0;
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 html,
 body {
-  overflow-x: hidden;
-  font-size: 62.5%;
+  height: 100%;
+  font-family: 'Changa', 'Poppins', sans-serif;
+  background: #fff;
+  color: #000;
+  direction: rtl;
 }
+
 
 ::selection {
   background-color: var(--primaryColor);

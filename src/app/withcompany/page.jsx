@@ -10,17 +10,17 @@ const withcompany = () => {
   const cards = [
     {
       title: 'دليل التشطيب',
-      image: '/images/freelance/2.jpg',
+      image: '/shatab/images/freelance/2.jpg',
       link: '/freelance/guide',
     },
     {
       title: 'نشر طلب تشطيب',
-      image: '/images/freelance/3.jpg',
+      image: '/shatab/images/freelance/3.jpg',
       link: '/freelance/post',
     },
     {
       title: 'شركات التشطيب',
-      image: '/images/withcompany/1.jpg',
+      image: '/shatab/images/withcompany/1.jpg',
       link: '/withcompany/company',
     }
   ];

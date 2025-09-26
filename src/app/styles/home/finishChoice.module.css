@@ -15,14 +15,16 @@
     font-size: var(--fs30);
     color: var(--primaryColor);
     margin-bottom: -3.5rem;
+    font-family: var(--ar);
 }
 .description {
     font-size: var(--fs15);
     text-align: center;
+    font-family: var(--ar);
 }
 .card {
-    width: 28rem;
-    height: 24rem;
+    width: 100%;
+    aspect-ratio: 7 / 6;
     border-radius: var(--br5);
     overflow: hidden;
     background-color: var(--whiteColor);
@@ -53,6 +55,7 @@
 .cardTitle {
     font-size: var(--fs20);
     font-weight: 600;
+    font-family: var(--ar);
 }
 
 .arrowButton {

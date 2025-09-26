@@ -12,9 +12,11 @@
   font-weight: 600;
   margin-bottom: 5rem;
   color: var(--primaryColor);
+  font-family: var(--ar);
 }
 
 .description {
+  font-family: var(--ar);
   font-size: var(--fs20);
 }
 

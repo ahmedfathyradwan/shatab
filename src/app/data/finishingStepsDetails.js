@@ -1,296 +1,563 @@
-const finishingStepsDetails = [
+const guideData = [
   {
     id: 1,
-    title: "التصور النهائي للتشطيب وتحديد التفاصيل",
+    title: "التصور النهائي للتشطيب وتحديد المتطليات",
     slug: "details-definition",
-    image: "/shatab/images/finishingSteps/1.jpeg",
-    tasks: "تحديد جميع التفاصيل المطلوبة مثل نوع الأرضيات، ألوان الدهانات، نوع الأبواب، أماكن الإضاءة، وأي تعديلات معمارية.",
-    averageTime: "2 - 3 أيام",
-    averageCost: "بدون تكلفة مباشرة (مرحلة تخطيط)",
-    notes: "يفضل كتابة جميع التفاصيل في ملف أو كراسة مواصفات لتجنب النسيان أو التغيير أثناء التنفيذ.",
-    qualityCheck: "التأكد أن جميع البنود موثقة وموقعة من جميع الأطراف قبل بدء التنفيذ.",
+    image: "/images/finishingSteps/1.jpeg",
+    tasks: [
+      {
+        text: "اختيار نوع التشطيب",
+        link: { href: "/freelance/guide/internal/tasks/finishing-type", label: " أشهر أنواع التشطيبات" }
+      },
+      {
+        text: "اختيار الألوان",
+        link: { href: "/freelance/guide/internal/tasks/colors", label: " كيفية اختيار الألوان" }
+      },
+      {
+        text: "تحديد متطلبات التشطيب",
+        link: { href: "/freelance/guide/internal/tasks/checklist", label: " قائمة المتطلبات" }
+      }
+    ],
+    averageTime: "بدون وقت محدد (حسب سرعة اتخاذ القرار)",
+    averageCost: "بدون تكلفة مباشرة",
+    notes : [
+      "التصور الجيد يوفر عليك الكثير من الوقت والمال خلال التنفيذ.",
+      "التصور الجيد يوفر عليك الكثير من الوقت والمال خلال التنفيذ.",
+      "التصور الجيد يوفر عليك الكثير من الوقت والمال خلال التنفيذ.",
+    ],
+    qualityCheck: [
+      "التأكد أن جميع البنود موثقة وموقعة من جميع الأطراف قبل بدء التنفيذ."
+    ],
     videoUrls: [
       "https://youtu.be/NIg3GYmzDDw?si=8BDSp5U3g_y6cU3Y",
       "https://youtu.be/NIg3GYmzDDw?si=8BDSp5U3g_y6cU3Y",
       "https://youtu.be/NIg3GYmzDDw?si=8BDSp5U3g_y6cU3Y"
-    ] 
+    ]
   },
   {
     id: 2,
     title: "البحث عن أخطاء بالبناء",
     slug: "construction-mistakes",
-    image: "/shatab/images/finishingSteps/2.jpeg",
-    tasks: "فحص الجدران، الأعمدة، الأسقف، والزوايا لاكتشاف أي ميل أو شروخ أو عدم تطابق في المقاسات.",
+    image: "/images/finishingSteps/2.jpeg",
+    tasks: [
+      "فحص الجدران، الأعمدة، الأسقف، والزوايا لاكتشاف أي ميل أو شروخ أو عدم تطابق في المقاسات."
+    ],
     averageTime: "1 - 2 يوم",
     averageCost: "1000 - 2000 جنيه",
-    notes: "يجب معالجة الأخطاء قبل بدء أي أعمال تشطيب لتجنب المشاكل لاحقًا.",
-    qualityCheck: "استخدام ميزان المياه والليزر للتأكد من استقامة الحوائط والأسقف.",
+    notes: [
+      "يجب معالجة الأخطاء قبل بدء أي أعمال تشطيب لتجنب المشاكل لاحقًا."
+    ],
+    qualityCheck: [
+      "استخدام ميزان المياه والليزر للتأكد من استقامة الحوائط والأسقف."
+    ],
     videoUrls: [
       "https://youtu.be/NIg3GYmzDDw?si=8BDSp5U3g_y6cU3Y",
       "https://youtu.be/NIg3GYmzDDw?si=8BDSp5U3g_y6cU3Y",
       "https://youtu.be/NIg3GYmzDDw?si=8BDSp5U3g_y6cU3Y"
-    ] 
+    ]
   },
   {
     id: 3,
-    title: "التعديلات المعمارية",
+    title: "التعديلات المعمارية (اختياري)",
     slug: "demolition-and-construction",
-    image: "/shatab/images/finishingSteps/3.jpeg",
-    tasks: "إزالة أو بناء حوائط جديدة، تعديل الفتحات للأبواب والنوافذ.",
+    image: "/images/finishingSteps/3.jpeg",
+    tasks: [
+      "إزالة أو بناء حوائط جديدة، تعديل الفتحات للأبواب والنوافذ."
+    ],
     averageTime: "3 - 5 أيام",
     averageCost: "3000 - 6000 جنيه",
-    notes: "يجب الحصول على موافقة هندسية قبل تنفيذ أي تعديلات إنشائية.",
-    qualityCheck: "التأكد من أن جميع الحوائط الجديدة متعامدة ومتساوية السمك.",
+    notes: [
+      "يجب الحصول على موافقة هندسية قبل تنفيذ أي تعديلات إنشائية."
+    ],
+    qualityCheck: [
+      "التأكد من أن جميع الحوائط الجديدة متعامدة ومتساوية السمك."
+    ],
     videoUrls: [
       "https://youtu.be/NIg3GYmzDDw?si=8BDSp5U3g_y6cU3Y",
       "https://youtu.be/NIg3GYmzDDw?si=8BDSp5U3g_y6cU3Y",
       "https://youtu.be/NIg3GYmzDDw?si=8BDSp5U3g_y6cU3Y"
-    ]    
+    ]
   },
   {
     id: 4,
-    title: "تركيب باب شقة",
+    title: "4- باب شقة",
     slug: "temporary-door",
-    image: "/shatab/images/finishingSteps/4.jpeg",
-    tasks: "تركيب باب حديد أو خشب مؤقت لحماية الشقة أثناء التشطيب.",
-    averageTime: "4 - 6 ساعات",
-    averageCost: "2500 - 5000 جنيه",
-    notes: "يفضل الباب الحديد للحماية القصوى أثناء فترة التشطيب.",
-    qualityCheck: "التأكد من تثبيت الباب جيدًا وأنه يغلق بإحكام.",
-    videoUrl: "https://www.youtube.com/watch?v=xxxx"
-  },
-  {
-    id: 5,
-    title: "تأسيس السباكة",
-    slug: "plumbing-setup",
-    image: "/shatab/images/finishingSteps/5.jpeg",
-    tasks: "مد مواسير المياه الباردة والساخنة والصرف في أماكنها حسب المخطط.",
-    averageTime: "2 - 4 أيام",
-    averageCost: "5000 - 9000 جنيه",
-    notes: "استخدام خامات جيدة لتجنب الأعطال المستقبلية.",
-    qualityCheck: "اختبار التوصيلات بالمياه قبل الإغلاق.",
+    image: "/images/finishingSteps/4.jpeg",
+    link: "/internal/temporary-door",
+    tasks: [
+      "تركيب باب مؤقت لحماية الوحدة أثناء التشطيب.",
+      "التأكد من إغلاق الباب بإحكام."
+    ],
+    averageTime: "بدون وقت محدد (حسب سرعة اتخاذ القرار)",
+    averageCost: "بدون تكلفة مباشرة",
+    notes: [
+      "يفضل الباب الحديد المؤقت للحماية."
+    ],
+    qualityCheck: [
+      "تجربة الفتح والغلق للتأكد من ثبات المفصلات."
+    ],
     videoUrls: [
       "https://youtu.be/NIg3GYmzDDw?si=8BDSp5U3g_y6cU3Y",
       "https://youtu.be/NIg3GYmzDDw?si=8BDSp5U3g_y6cU3Y",
       "https://youtu.be/NIg3GYmzDDw?si=8BDSp5U3g_y6cU3Y"
-    ] 
+    ]
+  },
+  {
+    id: 5,
+    title: "5- تأسيس السباكة",
+    slug: "plumbing-setup",
+    image: "/images/finishingSteps/5.jpeg",
+    link: "/internal/plumbing-setup",
+    tasks: [
+      "توزيع مواسير المياه والصرف في الحمامات والمطبخ.",
+      "تركيب الخلاطات الأساسية."
+    ],
+    averageTime: "بدون وقت محدد (حسب سرعة اتخاذ القرار)",
+    averageCost: "بدون تكلفة مباشرة",
+    notes: [
+      "اختيار مواسير عالية الجودة لتجنب التسريبات."
+    ],
+    qualityCheck: [
+      "اختبار ضغط المياه بعد التركيب."
+    ],
+    videoUrls: [
+      "https://youtu.be/NIg3GYmzDDw?si=8BDSp5U3g_y6cU3Y",
+      "https://youtu.be/NIg3GYmzDDw?si=8BDSp5U3g_y6cU3Y",
+      "https://youtu.be/NIg3GYmzDDw?si=8BDSp5U3g_y6cU3Y"
+    ]
   },
   {
     id: 6,
-    title: "اختبار ضغط السباكة",
+    title: "6- اختبار السباكة",
     slug: "plumbing-pressure-test",
-    image: "/shatab/images/finishingSteps/6.jpeg",
-    tasks: "إجراء اختبار ضغط للمواسير باستخدام الهواء أو الماء للتأكد من عدم وجود تسريبات.",
-    averageTime: "يوم واحد",
-    averageCost: "500 - 1000 جنيه",
-    notes: "الاختبار ضروري قبل المحارة لتجنب تكسير الحوائط لاحقًا.",
-    qualityCheck: "الضغط لا يقل عن 6 بار لمدة 24 ساعة بدون تسريب.",
-    videoUrl: "https://www.youtube.com/watch?v=xxxx"
+    image: "/images/finishingSteps/6.jpeg",
+    link: "/internal/plumbing-pressure-test",
+    tasks: [
+      "إجراء اختبار ضغط للمواسير.",
+      "التأكد من عدم وجود تسريب."
+    ],
+    averageTime: "بدون وقت محدد (حسب سرعة اتخاذ القرار)",
+    averageCost: "بدون تكلفة مباشرة",
+    notes: [
+      "يتم هذا الاختبار قبل المحارة."
+    ],
+    qualityCheck: [
+      "تشغيل المياه وقياس الضغط."
+    ],
+    videoUrls: [
+      "https://youtu.be/NIg3GYmzDDw?si=8BDSp5U3g_y6cU3Y",
+      "https://youtu.be/NIg3GYmzDDw?si=8BDSp5U3g_y6cU3Y",
+      "https://youtu.be/NIg3GYmzDDw?si=8BDSp5U3g_y6cU3Y"
+    ]
   },
   {
     id: 7,
-    title: "تأسيس الكهرباء",
+    title: "7- تأسيس الكهرباء",
     slug: "electrical-setup",
-    image: "/shatab/images/finishingSteps/7.jpeg",
-    tasks: "مد الأسلاك، تركيب علب المفاتيح والبرايز، وتوزيع المخارج.",
-    averageTime: "3 - 5 أيام",
-    averageCost: "4000 - 8000 جنيه",
-    notes: "تحديد أماكن المخارج بدقة لتجنب التكسير لاحقًا.",
-    qualityCheck: "اختبار جميع الدوائر باستخدام الأفوميتر.",
-    videoUrl: "https://www.youtube.com/watch?v=xxxx"
+    image: "/images/finishingSteps/7.jpeg",
+    link: "/internal/electrical-setup",
+    tasks: [
+      "توزيع مواسير الكهرباء داخل الحوائط.",
+      "تحديد أماكن المفاتيح والبرايز."
+    ],
+    averageTime: "بدون وقت محدد (حسب سرعة اتخاذ القرار)",
+    averageCost: "بدون تكلفة مباشرة",
+    notes: [
+      "يجب الالتزام بالخرائط الكهربائية."
+    ],
+    qualityCheck: [
+      "تمرير أسلاك تجريبية للتأكد من سلامة المواسير."
+    ],
+    videoUrls: [
+      "https://youtu.be/NIg3GYmzDDw?si=8BDSp5U3g_y6cU3Y",
+      "https://youtu.be/NIg3GYmzDDw?si=8BDSp5U3g_y6cU3Y",
+      "https://youtu.be/NIg3GYmzDDw?si=8BDSp5U3g_y6cU3Y"
+    ]
   },
   {
     id: 8,
-    title: "تأسيس فريون",
+    title: "8- تأسيس فريون (في حالة وجود تكييف)",
     slug: "freon-setup",
-    image: "/shatab/images/finishingSteps/8.jpeg",
-    tasks: "مد مواسير الفريون بين الوحدات الداخلية والخارجية للتكييفات.",
-    averageTime: "1 - 2 يوم",
-    averageCost: "1500 - 3000 جنيه للوحدة",
-    notes: "استخدام مواسير نحاس عالية الجودة مع عزل جيد.",
-    qualityCheck: "اختبار ضغط المواسير والتأكد من عدم وجود تسريب.",
-    videoUrl: "https://www.youtube.com/watch?v=xxxx"
+    image: "/images/finishingSteps/8.jpeg",
+    link: "/internal/freon-setup",
+    tasks: [
+      "تركيب مواسير الفريون للتكييف.",
+      "تحديد مكان وحدات التكييف."
+    ],
+    averageTime: "بدون وقت محدد (حسب سرعة اتخاذ القرار)",
+    averageCost: "بدون تكلفة مباشرة",
+    notes: [
+      "يتم قبل المحارة لتغطية المواسير."
+    ],
+    qualityCheck: [
+      "تجربة ضغط المواسير بغاز النيتروجين."
+    ],
+    videoUrls: [
+      "https://youtu.be/NIg3GYmzDDw?si=8BDSp5U3g_y6cU3Y",
+      "https://youtu.be/NIg3GYmzDDw?si=8BDSp5U3g_y6cU3Y",
+      "https://youtu.be/NIg3GYmzDDw?si=8BDSp5U3g_y6cU3Y"
+    ]
   },
   {
     id: 9,
-    title: "تأسيس عزل واختباره",
-    slug: "insulation-setup",
-    image: "/shatab/images/finishingSteps/9.jpeg",
-    tasks: "عزل الحمامات والمطابخ باستخدام مواد عازلة للمياه.",
-    averageTime: "1 - 2 يوم",
-    averageCost: "1500 - 3000 جنيه",
-    notes: "تغطية جميع الزوايا والركنيات بطبقة عزل جيدة.",
-    qualityCheck: "ملء الأرضية بالماء لمدة 48 ساعة للتأكد من فعالية العزل.",
-    videoUrl: "https://www.youtube.com/watch?v=xxxx"
+    title: "9- المحارة",
+    slug: "plastering",
+    image: "/images/finishingSteps/9.jpeg",
+    link: "/internal/plastering",
+    tasks: [
+      "تسوية الحوائط والأسقف بالمونة.",
+      "تغطية جميع المواسير بعد التأسيس."
+    ],
+    averageTime: "7 - 10 أيام",
+    averageCost: "20000 - 30000 جنيه",
+    notes: [
+      "المحارة الجيدة توفر استهلاك كبير في التشطيبات النهائية."
+    ],
+    qualityCheck: [
+      "التأكد من استقامة الحوائط بميزان الخيط والليزر."
+    ],
+    videoUrls: []
   },
   {
     id: 10,
-    title: "تركيب حلوق الخشب",
-    slug: "wooden-frames",
-    image: "/shatab/images/finishingSteps/10.jpeg",
-    tasks: "تركيب حلوق الأبواب والشبابيك الخشبية قبل المحارة.",
-    averageTime: "1 - 2 يوم",
-    averageCost: "1000 - 2000 جنيه للباب",
-    notes: "تثبيت الحلق بشكل عمودي تمامًا باستخدام الميزان.",
-    qualityCheck: "عدم وجود فراغات بين الحلق والحائط.",
-    videoUrl: "https://www.youtube.com/watch?v=xxxx"
+    title: "10- العزل",
+    slug: "insulation",
+    image: "/images/finishingSteps/10.jpeg",
+    link: "/internal/insulation",
+    tasks: [
+      "عزل الحمامات والمطابخ ضد تسرب المياه.",
+      "استخدام مواد عزل معتمدة."
+    ],
+    averageTime: "2 - 3 أيام",
+    averageCost: "4000 - 7000 جنيه",
+    notes: [
+      "العزل يمنع مشاكل الرطوبة والتسريب."
+    ],
+    qualityCheck: [
+      "اختبار العزل بالمياه لمدة 48 ساعة."
+    ],
+    videoUrls: []
+  },
+  {
+    id: 11,
+    title: "11- الأرضيات",
+    slug: "flooring",
+    image: "/images/finishingSteps/11.jpeg",
+    link: "/internal/flooring",
+    tasks: [
+      "تركيب السيراميك أو البورسيلين أو الباركيه.",
+      "تحديد ميول الصرف في الحمامات والمطابخ."
+    ],
+    averageTime: "10 - 15 يوم",
+    averageCost: "30000 - 60000 جنيه",
+    notes: [
+      "يفضل اختيار أرضيات سهلة التنظيف ومقاومة للمياه."
+    ],
+    qualityCheck: [
+      "التأكد من استقامة البلاط باستخدام ميزان المياه."
+    ],
+    videoUrls: []
+  },
+  {
+    id: 12,
+    title: "12- النجارة",
+    slug: "carpentry",
+    image: "/images/finishingSteps/12.jpeg",
+    link: "/internal/carpentry",
+    tasks: [
+      "تركيب الأبواب الداخلية.",
+      "تجهيز الشبابيك والأثاث الثابت."
+    ],
+    averageTime: "7 - 12 يوم",
+    averageCost: "20000 - 40000 جنيه",
+    notes: [
+      "اختيار أخشاب معالَجة ضد التسوس."
+    ],
+    qualityCheck: [
+      "تجربة فتح وغلق الأبواب والشبابيك."
+    ],
+    videoUrls: []
   },
   {
     id: 13,
-    title: "معالجة الحوائط - تركيب سلك للفواصل - المحارة",
-    slug: "plastering",
-    image: "/shatab/images/finishingSteps/13.jpeg",
-    tasks: "تسوية الحوائط والأسقف بطبقة من المونة الرملية والأسمنتية.",
+    title: "13- النقاشة (الدهانات الأساسية)",
+    slug: "painting-base",
+    image: "/images/finishingSteps/13.jpeg",
+    link: "/internal/painting-base",
+    tasks: [
+      "دهان الأساس (البطانة) لتجهيز الحوائط.",
+      "معالجة أي شروخ أو ثقوب."
+    ],
     averageTime: "5 - 7 أيام",
-    averageCost: "25 - 35 جنيه للمتر",
-    notes: "التأكد من أن الأسطح ناعمة ومستوية قبل التشطيب.",
-    qualityCheck: "استخدام القدة للتأكد من استواء السطح.",
-    videoUrl: "https://www.youtube.com/watch?v=xxxx"
+    averageCost: "10000 - 20000 جنيه",
+    notes: [
+      "دهان الأساس مهم لثبات اللون النهائي."
+    ],
+    qualityCheck: [
+      "فحص الحوائط بعد البطانة للتأكد من عدم وجود عيوب."
+    ],
+    videoUrls: []
   },
   {
     id: 14,
-    title: "الأرضيات",
-    slug: "tiles",
-    image: "/shatab/images/finishingSteps/14.jpeg",
-    tasks: "تركيب الأرضيات من سيراميك، بورسلين، أو خشب حسب الاختيار.",
-    averageTime: "4 - 6 أيام",
-    averageCost: "100 - 300 جنيه للمتر",
-    notes: "تحديد الميل في الحمامات والمطابخ لتصريف المياه.",
-    qualityCheck: "التأكد من استواء البلاط وثباته وعدم وجود فراغات تحته.",
-    videoUrl: "https://www.youtube.com/watch?v=xxxx"
+    title: "14- الأسقف",
+    slug: "ceilings",
+    image: "/images/finishingSteps/14.jpeg",
+    link: "/internal/ceilings",
+    tasks: [
+      "تنفيذ أسقف جبسية أو جبسون بورد.",
+      "تركيب الديكورات والإضاءات المعلقة."
+    ],
+    averageTime: "7 - 10 أيام",
+    averageCost: "15000 - 30000 جنيه",
+    notes: [
+      "الجبسون بورد يوفر مرونة عالية في التصميم."
+    ],
+    qualityCheck: [
+      "التأكد من ثبات الأسقف وعدم وجود فراغات."
+    ],
+    videoUrls: []
   },
   {
     id: 15,
-    title: "الجبس",
-    slug: "gypsum",
-    image: "/shatab/images/finishingSteps/15.jpeg",
-    tasks: "عمل كرانيش أو زخارف جبسية في الأسقف.",
-    averageTime: "2 - 4 أيام",
-    averageCost: "30 - 60 جنيه للمتر الطولي",
-    notes: "استخدام جبس عالي الجودة لتجنب التشقق.",
-    qualityCheck: "الأسطح ناعمة وخالية من الفواصل الظاهرة.",
-    videoUrl: "https://www.youtube.com/watch?v=xxxx"
+    title: "15- الكهرباء النهائية",
+    slug: "electrical-finishing",
+    image: "/images/finishingSteps/15.jpeg",
+    link: "/internal/electrical-finishing",
+    tasks: [
+      "تركيب الأسلاك النهائية، المفاتيح والبرايز.",
+      "توصيل لوحة التوزيع."
+    ],
+    averageTime: "5 - 7 أيام",
+    averageCost: "10000 - 20000 جنيه",
+    notes: [
+      "يجب شراء مفاتيح وبرايز من نوعية جيدة."
+    ],
+    qualityCheck: [
+      "اختبار جميع النقاط الكهربائية باستخدام أجهزة القياس."
+    ],
+    videoUrls: []
   },
   {
     id: 16,
-    title: ")اختياري(الجبسوم بورد",
-    slug: "gypsum-board",
-    image: "/shatab/images/finishingSteps/16.jpeg",
-    tasks: "تنفيذ أسقف معلقة أو ديكورات باستخدام الجبسوم بورد.",
-    averageTime: "3 - 5 أيام",
-    averageCost: "120 - 200 جنيه للمتر",
-    notes: "التأكد من تثبيت القواطيع المعدنية جيدًا.",
-    qualityCheck: "السطح مستوي ولا يوجد اهتزاز عند الضغط عليه.",
-    videoUrl: "https://www.youtube.com/watch?v=xxxx"
+    title: "16- السباكة النهائية",
+    slug: "plumbing-finishing",
+    image: "/images/finishingSteps/16.jpeg",
+    link: "/internal/plumbing-finishing",
+    tasks: [
+      "تركيب الأحواض، المراحيض، والخلاطات.",
+      "توصيل السخانات والغسالات."
+    ],
+    averageTime: "5 - 7 أيام",
+    averageCost: "8000 - 15000 جنيه",
+    notes: [
+      "يفضل اختيار قطع صحية موفرة للمياه."
+    ],
+    qualityCheck: [
+      "تشغيل جميع القطع للتأكد من عدم وجود تسريب."
+    ],
+    videoUrls: []
   },
   {
     id: 17,
-    title: "تركيب الألومتال",
-    slug: "aluminum-installation",
-    image: "/shatab/images/finishingSteps/17.jpeg",
-    tasks: "تركيب شبابيك وأبواب الألومتال.",
-    averageTime: "1 - 3 أيام",
-    averageCost: "1000 - 3000 جنيه للوحدة",
-    notes: "اختيار نوع زجاج مناسب للعزل الحراري والصوتي.",
-    qualityCheck: "حركة الفتح والإغلاق سلسة بدون صوت احتكاك.",
-    videoUrl: "https://www.youtube.com/watch?v=xxxx"
+    title: "17- الألوميتال",
+    slug: "aluminum",
+    image: "/images/finishingSteps/17.jpeg",
+    link: "/internal/aluminum",
+    tasks: [
+      "تركيب الشبابيك والأبواب الألوميتال.",
+      "اختيار الزجاج المناسب (عادي/دبل)."
+    ],
+    averageTime: "7 - 12 يوم",
+    averageCost: "15000 - 25000 جنيه",
+    notes: [
+      "الألوميتال الدبل يوفر عزل صوتي وحراري أفضل."
+    ],
+    qualityCheck: [
+      "التأكد من حركة السحب والفتح بسهولة."
+    ],
+    videoUrls: []
   },
   {
     id: 18,
-    title: "تأسيس النقاشة",
-    slug: "paint-base",
-    image: "/shatab/images/finishingSteps/18.jpeg",
-    tasks: "عمل معجون وصنفرة للأسطح لتجهيزها للدهان.",
-    averageTime: "3 - 5 أيام",
-    averageCost: "20 - 40 جنيه للمتر",
-    notes: "توزيع المعجون بشكل متساوٍ.",
-    qualityCheck: "السطح ناعم وخالي من الخدوش أو التعرجات.",
-    videoUrl: "https://www.youtube.com/watch?v=xxxx"
+    title: "18- الحدادة (الدرابزين والسلالم)",
+    slug: "metalwork",
+    image: "/images/finishingSteps/18.jpeg",
+    link: "/internal/metalwork",
+    tasks: [
+      "تصنيع وتركيب درابزين السلالم والشرفات.",
+      "تنفيذ أي أعمال حديد ديكورية."
+    ],
+    averageTime: "5 - 7 أيام",
+    averageCost: "10000 - 20000 جنيه",
+    notes: [
+      "يُفضل دهان الحديد بمادة عازلة ضد الصدأ."
+    ],
+    qualityCheck: [
+      "التأكد من تثبيت الدرابزين جيداً."
+    ],
+    videoUrls: []
   },
   {
     id: 19,
-    title: "تركيب الأبواب والشبابيك",
-    slug: "doors-and-windows",
-    image: "/shatab/images/finishingSteps/19.jpeg",
-    tasks: "تركيب الأبواب النهائية والشبابيك بعد التشطيب.",
-    averageTime: "1 - 2 يوم",
-    averageCost: "1500 - 4000 جنيه للباب",
-    notes: "التأكد من دهن الأبواب بطبقة حماية.",
-    qualityCheck: "الإغلاق سلس ولا يوجد فراغات.",
-    videoUrl: "https://www.youtube.com/watch?v=xxxx"
+    title: "19- التكييفات",
+    slug: "air-conditioning",
+    image: "/images/finishingSteps/19.jpeg",
+    link: "/internal/air-conditioning",
+    tasks: [
+      "تركيب الوحدات الداخلية والخارجية للتكييف.",
+      "توصيل المواسير والكابلات."
+    ],
+    averageTime: "3 - 5 أيام",
+    averageCost: "15000 - 40000 جنيه",
+    notes: [
+      "اختيار أماكن مناسبة لوحدات التكييف لتقليل الضوضاء."
+    ],
+    qualityCheck: [
+      "اختبار تشغيل جميع الوحدات."
+    ],
+    videoUrls: []
   },
   {
     id: 20,
-    title: "تشطيب الكهرباء",
-    slug: "electrical-finishing",
-    image: "/shatab/images/finishingSteps/20.jpeg",
-    tasks: "تركيب المفاتيح، البرايز، وحدات الإضاءة.",
-    averageTime: "1 - 2 يوم",
-    averageCost: "1500 - 3000 جنيه",
-    notes: "التأكد من جودة التوصيلات.",
-    qualityCheck: "اختبار جميع المخارج بعد التركيب.",
-    videoUrl: "https://www.youtube.com/watch?v=xxxx"
+    title: "20- النجف والإضاءة",
+    slug: "lighting",
+    image: "/images/finishingSteps/20.jpeg",
+    link: "/internal/lighting",
+    tasks: [
+      "تركيب النجف ووحدات الإضاءة.",
+      "توزيع الإضاءة بشكل متوازن."
+    ],
+    averageTime: "2 - 4 أيام",
+    averageCost: "5000 - 15000 جنيه",
+    notes: [
+      "الإضاءة الجيدة تبرز جمال التشطيب."
+    ],
+    qualityCheck: [
+      "تشغيل جميع وحدات الإضاءة للتأكد من سلامتها."
+    ],
+    videoUrls: []
   },
   {
     id: 21,
-    title: "تشطيب السباكة",
-    slug: "plumbing-finishing",
-    image: "/shatab/images/finishingSteps/21.jpeg",
-    tasks: "تركيب الخلاطات، الأحواض، القواعد، السخانات.",
-    averageTime: "1 - 2 يوم",
-    averageCost: "2000 - 5000 جنيه",
-    notes: "تجربة جميع المخارج للتأكد من عدم وجود تسريب.",
-    qualityCheck: "تشغيل المياه الساخنة والباردة وفحص التصريف.",
-    videoUrl: "https://www.youtube.com/watch?v=xxxx"
+    title: "21- النقاشة (الدهانات النهائية)",
+    slug: "painting-final",
+    image: "/images/finishingSteps/21.jpeg",
+    link: "/internal/painting-final",
+    tasks: [
+      "تنفيذ الطبقات النهائية من الدهانات.",
+      "إضافة المؤثرات الجمالية حسب التصميم."
+    ],
+    averageTime: "7 - 12 يوم",
+    averageCost: "15000 - 30000 جنيه",
+    notes: [
+      "اختيار ألوان متناسقة مع الأثاث والإضاءة."
+    ],
+    qualityCheck: [
+      "فحص الحوائط بعد الجفاف للتأكد من عدم وجود بقع أو تفاوت."
+    ],
+    videoUrls: []
   },
   {
     id: 22,
-    title: "تشطيب النقاشة",
-    slug: "paint-finishing",
-    image: "/shatab/images/finishingSteps/22.jpeg",
-    tasks: "دهان الحوائط والأبواب والشبابيك.",
-    averageTime: "3 - 5 أيام",
-    averageCost: "30 - 60 جنيه للمتر",
-    notes: "تنفيذ الدهان على طبقات متساوية.",
-    qualityCheck: "اللون موحد ولا توجد بقع أو فرق في التشبع.",
-    videoUrl: "https://www.youtube.com/watch?v=xxxx"
+    title: "22- تركيب المطبخ",
+    slug: "kitchen",
+    image: "/images/finishingSteps/22.jpeg",
+    link: "/internal/kitchen",
+    tasks: [
+      "تركيب وحدات المطبخ العلوية والسفلية.",
+      "توصيل الأجهزة الكهربائية."
+    ],
+    averageTime: "5 - 7 أيام",
+    averageCost: "30000 - 70000 جنيه",
+    notes: [
+      "اختيار خامات مقاومة للرطوبة والحرارة."
+    ],
+    qualityCheck: [
+      "التأكد من ثبات الوحدات وسهولة فتح وغلق الأدراج."
+    ],
+    videoUrls: []
   },
   {
     id: 23,
-    title: "تركيب الديكورات والنجف",
-    slug: "decorations",
-    image: "/shatab/images/finishingSteps/23.jpeg",
-    tasks: "تعليق النجف، الستائر، ووضع اللمسات النهائية.",
-    averageTime: "1 - 2 يوم",
-    averageCost: "حسب نوع الخامات",
-    notes: "التأكد من تثبيت جميع القطع جيدًا.",
-    qualityCheck: "التثبيت محكم ولا يوجد ميل أو اهتزاز.",
-    videoUrl: "https://www.youtube.com/watch?v=xxxx"
+    title: "23- تركيب الحمامات",
+    slug: "bathrooms",
+    image: "/images/finishingSteps/23.jpeg",
+    link: "/internal/bathrooms",
+    tasks: [
+      "تركيب الكابينة أو البانيو.",
+      "تركيب المرايات والإكسسوارات."
+    ],
+    averageTime: "3 - 5 أيام",
+    averageCost: "10000 - 20000 جنيه",
+    notes: [
+      "استخدام خامات مقاومة للصدأ."
+    ],
+    qualityCheck: [
+      "فحص جميع التوصيلات وتشغيل الدش والحنفيات."
+    ],
+    videoUrls: []
   },
   {
     id: 24,
-    title: "تركيب المطبخ",
-    slug: "kitchen-installation",
-    image: "/shatab/images/finishingSteps/24.jpeg",
-    tasks: "تركيب وحدات المطبخ وخطوط المياه والصرف الخاصة به.",
-    averageTime: "1 - 2 يوم",
-    averageCost: "حسب التصميم والخامات",
-    notes: "التأكد من استواء جميع الوحدات.",
-    qualityCheck: "الأبواب تنغلق بإحكام ولا يوجد فراغات.",
-    videoUrl: "https://www.youtube.com/watch?v=xxxx"
+    title: "24- الأرضيات النهائية (الباركيه/السجاد)",
+    slug: "final-flooring",
+    image: "/images/finishingSteps/24.jpeg",
+    link: "/internal/final-flooring",
+    tasks: [
+      "تركيب الباركيه أو السجاد أو الأرضيات الخشبية.",
+      "التأكد من تناسق الألوان مع الأثاث."
+    ],
+    averageTime: "3 - 5 أيام",
+    averageCost: "10000 - 25000 جنيه",
+    notes: [
+      "الباركيه الطبيعي يحتاج صيانة دورية."
+    ],
+    qualityCheck: [
+      "فحص استقامة الأرضية وعدم وجود فراغات."
+    ],
+    videoUrls: []
   },
   {
     id: 25,
-    title: "فرش العفش",
-    slug: "furniture-arrangement",
-    image: "/shatab/images/finishingSteps/25.jpeg",
-    tasks: "ترتيب الأثاث في أماكنه النهائية.",
-    averageTime: "1 - 2 يوم",
-    averageCost: "بدون تكلفة (غير شامل سعر الأثاث)",
-    notes: "تجنب خدش الأرضيات أثناء النقل.",
-    qualityCheck: "الأثاث مستوي وثابت في مكانه.",
-    videoUrl: "https://www.youtube.com/watch?v=xxxx"
+    title: "25- التشطيبات الخارجية",
+    slug: "exterior",
+    image: "/images/finishingSteps/25.jpeg",
+    link: "/internal/exterior",
+    tasks: [
+      "دهان الواجهات.",
+      "تركيب الحجر أو الرخام حسب التصميم."
+    ],
+    averageTime: "10 - 20 يوم",
+    averageCost: "50000 - 120000 جنيه",
+    notes: [
+      "تشطيب الواجهة يعكس جودة المبنى."
+    ],
+    qualityCheck: [
+      "فحص ثبات المواد الخارجية ضد العوامل الجوية."
+    ],
+    videoUrls: []
+  },
+  {
+    id: 26,
+    title: "26- التنظيف النهائي والاستلام",
+    slug: "final-cleaning",
+    image: "/images/finishingSteps/26.jpeg",
+    link: "/internal/final-cleaning",
+    tasks: [
+      "تنظيف شامل للشقة.",
+      "التأكد من جميع الملاحظات السابقة."
+    ],
+    averageTime: "2 - 3 أيام",
+    averageCost: "3000 - 7000 جنيه",
+    notes: [
+      "مرحلة مهمة قبل الاستلام النهائي."
+    ],
+    qualityCheck: [
+      "فحص الشقة بالكامل مع المقاول."
+    ],
+    videoUrls: []
   }
 ];
 
-export default finishingStepsDetails;
+export default guideData;

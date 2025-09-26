@@ -25,6 +25,11 @@
   --en: 'Poppins', sans-serif;
 }
 
+::selection {
+  background-color: var(--primaryColor);
+  color: var(--whiteColor);
+}
+
 /* Reset + basic styles */
 * {
   margin: 0;
@@ -32,43 +37,33 @@
   box-sizing: border-box;
 }
 
-html,
-body {
+html {
+  font-family: var(--ar);
+  direction: rtl;
+  width: 100%;
   height: 100%;
-  font-family: 'Changa', 'Poppins', sans-serif;
-  background: #fff;
-  color: #000;
-  direction: rtl;
-}
-
-
-::selection {
-  background-color: var(--primaryColor);
-  color: var(--whiteColor);
+  overflow-x: hidden;
+  font-size: 10px
 }
 
 body {
-  font-family: var(--ar); /* Arabic font */
+  font-family: var(--ar);
   direction: rtl;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
   background-color: var(--whiteColor);
   color: var(--textColor);
   margin: 0 auto;
+  font-size: 10px
 }
 
-/* Titles in English */
-h1, h2, h3 {
-  font-family: var(--en);
-}
 
 /* Main container */
 .mainContainer {
-  width: 100vw;
-  height: auto;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  position: relative;  
 }
 
 /* Mobile nav */

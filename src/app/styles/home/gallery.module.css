@@ -10,10 +10,12 @@
 .title {
   font-size: var(--fs30);
   color: var(--primaryColor);
+  font-family: var(--ar);
 }
 
 .description {
   font-size: var(--fs20);
+  font-family: var(--ar);
   padding: 0.5rem 0 5rem 0;
 }
 

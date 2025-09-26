@@ -1,0 +1,135 @@
+.container {
+  padding: 3rem 3rem 0;
+  background-color: var(--witheColor);
+  width: calc(100% - 4rem);
+  background-color: var(--backgroundColor);
+  margin: 3rem auto 11rem;
+  border-radius: var(--br5);
+}
+
+.title {
+  font-size: var(--fs25);
+  margin: 0 -1.5rem 3rem;
+  text-align: center;
+  color: var(--primaryColor);
+  font-weight: 600;
+}
+
+.typeCard {
+  background-color: var(--witheColor);
+  border-radius: var(--br5);
+  padding: 3rem 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.typeTitle {
+  font-size: var(--fs20);
+  font-weight: 500;
+  margin: 0 -1rem 1.5rem;
+  color: var(--primaryColor);
+  display: flex;
+  align-items: start;
+  flex-direction: row;
+  gap: 0.5rem;
+}
+
+.typeSpan {
+  font-size: var(--fs20);
+  color: var(--primaryColor);
+  font-weight: 500;
+}
+
+.imageWrapper {
+  margin: 1.5rem 0;
+  border-radius: 12px;
+  overflow: hidden;
+  cursor: pointer;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image {
+  width: auto;
+  height: 100%;
+  cursor: pointer;
+  border-radius: var(--br5);
+}
+
+.featuresTitle {
+  font-size: var(--fs20);
+  margin: 1.5rem 0 0 0.5rem;
+  font-weight: 500;
+  color: var(--textColor);
+}
+
+.featuresList {
+  list-style-type: disc;
+  color: var(--textColor);
+  font-size: var(--fs15);
+  font-weight: 500;
+  padding-right: 2.5rem;
+}
+
+.suitableFor {
+  color: var(--primaryColor);
+  margin-top: 1rem;
+  font-size: var(--fs15);
+  font-weight: 500;
+}
+
+.moreImagesLink {
+  display: block;
+  margin: 1.5rem auto 0;
+  padding: 0.5rem 1rem;
+  background: var(--primaryColor);
+  color: var(--backgroundColor);
+  border-radius: var(--br5);
+  text-decoration: none;
+  font-size: var(--fs15);
+  font-weight: 500;
+  border: 1px solid var(--primaryColor);
+  cursor: pointer;
+  text-align: center;
+}
+
+.moreImagesLink:hover {
+  border: 1px solid var(--textColor);
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.modalContent {
+  border-radius: var(--br5);
+  max-width: 90%;
+  max-height: 90%;
+  overflow: hidden;
+  border-radius: var(--br5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modalContent img {
+  border-radius: var(--br5);
+  width: auto;
+  height: auto;
+  max-width: 95%;
+  max-height: 95%;
+  object-fit: contain;
+}

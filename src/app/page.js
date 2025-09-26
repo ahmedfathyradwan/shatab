@@ -3,6 +3,7 @@ import AboutUs from './components/AboutUs';
 import ContactUs from './components/ContactUs';
 import FinishChoiceCard from './components/FinishChoiceCard';
 import Gallery from './components/Gallery';
+import Image from "next/image";
 
 
 
@@ -11,7 +12,13 @@ export default function Home() {
     <div className={styles.homeContainer}>
       <div className={styles.heroSection}>
         <div className={styles.imgContainer}>
-          <img src="/shatab/images/homeMob.jpg" className={styles.homeImg} />
+          <Image
+            src="/images/homeMob.jpg"
+            alt="Home"
+            width={390}
+            height={390}
+            className={styles.homeImg}
+          />
         </div>
         <div className={styles.borderCont}>
           <div className={styles.textContainer}>

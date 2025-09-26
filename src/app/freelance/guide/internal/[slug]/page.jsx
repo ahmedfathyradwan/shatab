@@ -12,7 +12,11 @@ export default function Page({ params }) {
   const step = guideData.find((item) => item.slug === slug);
 
   if (!step) {
-    return <div style={{ padding: '20px', textAlign: 'center' }}>المرحلة غير موجودة</div>;
+    return (
+      <div style={{ padding: '20px', textAlign: 'center' }}>
+        المرحلة غير موجودة
+      </div>
+    );
   }
 
   return <ClientPage step={step} />;

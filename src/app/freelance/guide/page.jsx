@@ -9,17 +9,17 @@ export default function FinishTypeChoiceCard() {
   const cards = [
     {
       title: 'التشطيب الداخلي',
-      image: '/shatab/images/guide/internal.jpg',
+      image: '/images/guide/internal.jpg',
       link: '/freelance/guide/internal',
     },
     {
       title: 'تشطيب الواجهات',
-      image: '/shatab/images/guide/external.jpg',
+      image: '/images/guide/external.jpg',
       link: '/external',
     },
     {
       title: 'المساحات المفتوحة',
-      image: '/shatab/images/guide/open-spaces.jpg',
+      image: '/images/guide/open-spaces.jpg',
       link: '/openSpaces',
     },
   ];

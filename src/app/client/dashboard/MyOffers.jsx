@@ -29,7 +29,7 @@ const MyOffers = () => {
                 {/* صورة واسم مقدم العرض */}
                 <div className={styles.avatarRow}>
                   <img
-                    src={offer.providerImage || "/shatab/images/avatar.png"}
+                    src={offer.providerImage || "/images/avatar.png"}
                     alt="مقدم العرض"
                     className={styles.avatar}
                   />

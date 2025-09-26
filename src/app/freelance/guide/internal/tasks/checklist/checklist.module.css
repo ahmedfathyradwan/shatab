@@ -1,0 +1,75 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 3rem;
+  width: calc(100% - 4rem);
+  gap: 3rem;
+  margin: 3rem 2rem 12rem;
+  background-color: var(--backgroundColor);
+  border-radius: var(--br5);
+}
+
+.title {
+  font-size: var(--fs25);
+}
+
+.parContainer {
+  display: flex;
+  gap: 1.5rem;
+  flex-direction: column;
+}
+
+.par {
+  font-size: var(--fs15);
+  font-weight: 500;
+}
+
+.par2 {
+  font-size: var(--fs15);
+  font-weight: 600;
+  text-align: center;
+  margin: 1.5rem 0 -1.5rem;
+}
+
+.btnGroup {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.downloadBtn {
+  padding: 0.5rem 1.5rem;
+  border-radius: var(--br5);
+  background-color: var(--primaryColor);
+  color: var(--whiteColor);
+  font-size: var(--fs15);
+  font-family: var(--ar);
+  font-weight: 500;
+  border: 1px solid var(--primaryColor);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.downloadBtn:hover {
+  border: 1px solid var(--textColor);
+}
+
+.previewBtn {
+  padding: 0.5rem 1.5rem;
+  border-radius: var(--br5);
+  background-color: var(--textColor);
+  color: var(--whiteColor);
+  font-size: var(--fs15);
+  font-family: var(--ar);
+  font-weight: 500;
+  border: 1px solid var(--textColor);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.previewBtn:hover {
+  border: 1px solid var(--primaryColor);
+}

@@ -10,12 +10,12 @@ export default function FinishChoiceCard() {
   const cards = [
     {
       title: 'التشطيب مع شركة',
-      image: '/shatab/images/withcompany.jpg',
+      image: '/images/withcompany.jpg',
       link: '/withcompany',
     },
     {
       title: 'التشطيب الحر',
-      image: '/shatab/images/freelance.jpg',
+      image: '/images/freelance.jpg',
       link: '/freelance',
     },
   ];

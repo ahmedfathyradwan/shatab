@@ -6,7 +6,7 @@ export default function AboutUs() {
     <section className={styles.aboutUsSection}>
       <h2 className={styles.title}>معلومات عنا</h2>
       <img
-        src="/shatab/images/logo.png"
+        src="/images/logo.png"
         alt="شطب - SHATAB.eg"
         className={styles.logo}
       />

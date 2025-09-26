@@ -10,47 +10,47 @@ const Freelance = () => {
   const cards = [
     {
       title: 'حساب التكلفة',
-      image: '/shatab/images/freelance/1.jpg',
+      image: '/images/freelance/1.jpg',
       link: '/freelance/cost',
     },
     {
       title: 'دليل التشطيب',
-      image: '/shatab/images/freelance/2.jpg',
+      image: '/images/freelance/2.jpg',
       link: '/freelance/guide',
     },
     {
       title: 'طلب تشطيب',
-      image: '/shatab/images/freelance/3.jpg',
+      image: '/images/freelance/3.jpg',
       link: '/freelance/post',
     },
     {
       title: 'مشرفيين ومنفذين',
-      image: '/shatab/images/freelance/7.jpg',
+      image: '/images/freelance/7.jpg',
       link: '/freelance/suppliers',
     },
     {
       title: 'مصممين ورسامين',
-      image: '/shatab/images/freelance/7.jpg',
+      image: '/images/freelance/7.jpg',
       link: '/freelance/suppliers',
     },
     {
       title: 'مقاولون',
-      image: '/shatab/images/freelance/4.jpg',
+      image: '/images/freelance/4.jpg',
       link: '/freelance/contractors',
     },
     {
       title: 'شركات صيانة',
-      image: '/shatab/images/freelance/5.jpg',
+      image: '/images/freelance/5.jpg',
       link: '/freelance/maintenance',
     },
     {
       title: 'فنيين',
-      image: '/shatab/images/freelance/6.jpg',
+      image: '/images/freelance/6.jpg',
       link: '/freelance/technicians',
     },
     {
       title: 'المعارض',
-      image: '/shatab/images/freelance/7.jpg',
+      image: '/images/freelance/7.jpg',
       link: '/freelance/suppliers',
     },
   ];

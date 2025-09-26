@@ -14,7 +14,7 @@ const Register = () => {
   return (
     <div className={styles.container}>
       <div className={styles.imgContainer}>
-                <img src="/shatab/images/signMob.jpg" className={styles.signImg} />
+                <img src="/images/signMob.jpg" className={styles.signImg} />
       </div>
       <div className={styles.borderCont}>
         <div className={styles.textContainer}>

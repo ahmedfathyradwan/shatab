@@ -4,7 +4,16 @@ const guideData = [
     title: "التصور النهائي للتشطيب وتحديد المتطليات",
     slug: "details-definition",
     image: "/images/finishingSteps/1.jpeg",
+    importance: [
+  "توضيح شكل التشطيب المطلوب بدقة، مما يقلل الأخطاء والتعديلات أثناء التنفيذ.",
+  "ضمان توزيع الميزانية بشكل صحيح وتجنب المصاريف غير المتوقعة وتوفير الوقت والمال.",
+  "توفر وسيلة للتفاهم الواضح بين المالك والمهندسين والمقاولين قبل بدء أي أعمال."
+],
     tasks: [
+            {
+        text: "تحديد متطلبات التشطيب",
+        link: { href: "/freelance/guide/internal/tasks/checklist", label: " قائمة المتطلبات" }
+      },
       {
         text: "اختيار نوع التشطيب",
         link: { href: "/freelance/guide/internal/tasks/finishing-type", label: " أشهر أنواع التشطيبات" }
@@ -14,71 +23,45 @@ const guideData = [
         link: { href: "/freelance/guide/internal/tasks/colors", label: " كيفية اختيار الألوان" }
       },
       {
-        text: "تحديد متطلبات التشطيب",
-        link: { href: "/freelance/guide/internal/tasks/checklist", label: " قائمة المتطلبات" }
+        text: "إنشاء الرسومات",
+        link: { href: "/freelance/guide/internal/tasks/visualization", label: "إنشاء الرسومات" }
       }
     ],
-    averageTime: "بدون وقت محدد (حسب سرعة اتخاذ القرار)",
-    averageCost: "بدون تكلفة مباشرة",
-    notes : [
-      "التصور الجيد يوفر عليك الكثير من الوقت والمال خلال التنفيذ.",
-      "التصور الجيد يوفر عليك الكثير من الوقت والمال خلال التنفيذ.",
-      "التصور الجيد يوفر عليك الكثير من الوقت والمال خلال التنفيذ.",
-    ],
-    qualityCheck: [
-      "التأكد أن جميع البنود موثقة وموقعة من جميع الأطراف قبل بدء التنفيذ."
-    ],
-    videoUrls: [
-      "https://youtu.be/NIg3GYmzDDw?si=8BDSp5U3g_y6cU3Y",
-      "https://youtu.be/NIg3GYmzDDw?si=8BDSp5U3g_y6cU3Y",
-      "https://youtu.be/NIg3GYmzDDw?si=8BDSp5U3g_y6cU3Y"
-    ]
   },
-  {
-    id: 2,
-    title: "البحث عن أخطاء بالبناء",
-    slug: "construction-mistakes",
-    image: "/images/finishingSteps/2.jpeg",
-    tasks: [
-      "فحص الجدران، الأعمدة، الأسقف، والزوايا لاكتشاف أي ميل أو شروخ أو عدم تطابق في المقاسات."
-    ],
-    averageTime: "1 - 2 يوم",
-    averageCost: "1000 - 2000 جنيه",
-    notes: [
-      "يجب معالجة الأخطاء قبل بدء أي أعمال تشطيب لتجنب المشاكل لاحقًا."
-    ],
-    qualityCheck: [
-      "استخدام ميزان المياه والليزر للتأكد من استقامة الحوائط والأسقف."
-    ],
-    videoUrls: [
-      "https://youtu.be/NIg3GYmzDDw?si=8BDSp5U3g_y6cU3Y",
-      "https://youtu.be/NIg3GYmzDDw?si=8BDSp5U3g_y6cU3Y",
-      "https://youtu.be/NIg3GYmzDDw?si=8BDSp5U3g_y6cU3Y"
-    ]
-  },
-  {
-    id: 3,
-    title: "التعديلات المعمارية (اختياري)",
-    slug: "demolition-and-construction",
-    image: "/images/finishingSteps/3.jpeg",
-    tasks: [
-      "إزالة أو بناء حوائط جديدة، تعديل الفتحات للأبواب والنوافذ."
-    ],
-    averageTime: "3 - 5 أيام",
-    averageCost: "3000 - 6000 جنيه",
-    notes: [
-      "يجب الحصول على موافقة هندسية قبل تنفيذ أي تعديلات إنشائية."
-    ],
-    qualityCheck: [
-      "التأكد من أن جميع الحوائط الجديدة متعامدة ومتساوية السمك."
-    ],
-    videoUrls: [
-      "https://youtu.be/NIg3GYmzDDw?si=8BDSp5U3g_y6cU3Y",
-      "https://youtu.be/NIg3GYmzDDw?si=8BDSp5U3g_y6cU3Y",
-      "https://youtu.be/NIg3GYmzDDw?si=8BDSp5U3g_y6cU3Y"
-    ]
-  },
-  {
+{
+  id: 2,
+  title: "البحث عن أخطاء بالبناء والتعديلات المعمارية",
+  slug: "demolition-and-construction",
+  image: "/images/finishingSteps/3.jpeg",
+  requiredSpecialist: [
+    "مهندس مدني (Civil Engineer) لفحص الأعمدة والأسقف والجدران.",
+    "مهندس معماري (Architect) لمراجعة التعديلات المعمارية ومطابقتها للمخططات."
+  ],
+  tasks: [
+    "فحص الجدران للتأكد من عدم وجود شروخ أو ميل.",
+    "مراجعة الأعمدة والتأكد من استقامتها وسلامتها.",
+    "التأكد من تساوي الأسقف باستخدام ميزان المياه أو الليزر.",
+    "مراجعة الزوايا والمقاسات ومطابقتها مع المخططات.",
+    "إزالة أو بناء حوائط جديدة حسب الحاجة.",
+    "تعديل الفتحات للأبواب والنوافذ طبقًا للتصميم المطلوب."
+  ],
+  averageTime: "4 - 7 أيام",
+  averageCost: "3000 - 6000 جنيه",
+  notes: [
+    "يجب معالجة الأخطاء قبل بدء أي أعمال تشطيب لتجنب المشاكل لاحقًا.",
+    "الحصول على موافقة هندسية قبل تنفيذ أي تعديلات إنشائية."
+  ],
+  qualityCheck: [
+    "استخدام ميزان المياه والليزر للتأكد من استقامة الحوائط والأسقف.",
+    "التأكد من أن جميع الحوائط الجديدة متعامدة ومتساوية السمك."
+  ],
+  videoUrls: [
+    "https://youtu.be/NIg3GYmzDDw?si=8BDSp5U3g_y6cU3Y",
+    "https://youtu.be/NIg3GYmzDDw?si=8BDSp5U3g_y6cU3Y",
+    "https://youtu.be/NIg3GYmzDDw?si=8BDSp5U3g_y6cU3Y"
+  ]
+},
+{
     id: 4,
     title: "4- باب شقة",
     slug: "temporary-door",

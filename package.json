@@ -12,7 +12,10 @@
   },
   "dependencies": {
     "@svgr/webpack": "^8.1.0",
+    "colorthief": "^2.6.0",
+    "html-to-image": "^1.11.13",
     "next": "15.3.3",
+    "node-vibrant": "^4.0.3",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "react-select": "^5.10.2"

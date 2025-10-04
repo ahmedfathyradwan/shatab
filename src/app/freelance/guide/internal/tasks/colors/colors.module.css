@@ -1,275 +1,58 @@
 .container {
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
-  padding: 2.5rem;
-  margin: 2rem auto 8rem;
-  max-width: 850px;
-  background-color: var(--backgroundColor);
-  border-radius: var(--br5);
-  box-shadow: 0 4px 15px var(--shadowLight);
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 40px 20px;
 }
 
 .title {
-  font-size: var(--fs25);
-  font-weight: 700;
-  color: var(--textColor);
-  margin-bottom: 0.5rem;
-}
-
-.subtitle {
-  font-size: var(--fs20);
-  font-weight: 600;
-  color: var(--textColor);
-  margin: 1.2rem 0 0.5rem;
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-align: center;
+  color: #333;
 }
 
 .par {
-  font-size: var(--fs15);
-  font-weight: 400;
-  color: var(--textColor);
-  line-height: 1.7;
-}
-
-/* ====== COLORS GRID ====== */
-.colorsGrid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1.2rem;
-  max-height: 420px;
-  overflow-y: auto;
-  padding-right: 6px;
-}
-
-.colorItem {
-  text-align: center;
-  cursor: pointer;
-  border: 1px solid var(--borderColor);
-  border-radius: 10px;
-  padding: 12px;
-  transition: transform 0.25s ease, border 0.25s ease;
-  background-color: #fff;
-  position: relative;
-}
-
-.colorItem:hover {
-  transform: translateY(-4px);
-  border-color: var(--primaryColor);
-}
-
-.colorItem.active {
-  border: 2px solid var(--primaryColor);
-  box-shadow: 0 0 6px var(--shadowMedium);
-}
-
-.colorSquare {
-  width: 100%;
-  height: 65px;
-  border-radius: 8px;
-}
-
-.colorName {
-  margin-top: 10px;
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--textColor);
-}
-
-.colorCode {
-  font-size: 12px;
+  font-size: 16px;
   color: #666;
+  text-align: center;
+  margin-bottom: 30px;
 }
 
-.colorPicker {
-  width: 110px;
-  height: 55px;
-  border: 1px solid var(--borderLight);
-  border-radius: 8px;
-  cursor: pointer;
-  background: transparent;
-  margin-top: 0.5rem;
+.methodsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
 }
 
-.shadesRow {
-  display: flex;
-  gap: 8px;
-  margin-top: 0.8rem;
-  flex-wrap: wrap;
-}
-
-.shadeBox {
-  flex: 1;
-  min-width: 60px;
-  height: 40px;
-  border-radius: 8px;
-  display: flex;
-  align-items: flex-end;
-  justify-content: center;
-  padding-bottom: 2px;
-  color: #000;
-  font-size: 12px;
-  font-family: monospace;
-}
-
-/* ====== FINAL PALETTE ====== */
-.finalPaletteWrapper {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-  margin-top: 1rem;
-}
-
-/* 🔹 الصف العلوي (3 ألوان رئيسية 60/30/10) */
-.finalPaletteBarTop {
-  display: flex;
-  width: 100%;
-  height: 60px;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 2px 8px var(--shadowMedium);
-}
-
-.neutralPart {
-  flex: 6; /* 60% */
-}
-
-.secondaryPart {
-  flex: 3; /* 30% */
-}
-
-.highlightPart {
-  flex: 1; /* 10% */
-}
-
-/* 🔹 الصف السفلي (درجات كل لون) — موزع 60% / 30% / 10% */
-.finalPaletteBarBottom {
-  display: flex;
-  width: 100%;
-  height: 50px;
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 2px 8px var(--shadowLight);
-}
-
-/* اجعل كل مجموعة تأخذ الحصة المناسبة من العرض */
-.neutralGroup {
-  display: flex;
-  flex: 6;      /* 60% */
-  min-width: 0; /* يمنع تقطيع العناصر عند overflow داخل flex */
-}
-
-.secondaryGroup {
-  display: flex;
-  flex: 3;      /* 30% */
-  min-width: 0;
-}
-
-.highlightGroup {
-  display: flex;
-  flex: 1;      /* 10% */
-  min-width: 0;
-}
-
-/* داخل كل مجموعة: 3 تدرجات متساوية بدون فراغات */
-.shadeBoxFinal {
-  flex: 1;
-  height: 100%;
-  border-radius: 0; /* علشان الحواف الداخلية تكون مصفوفة بدون فجوات مرئية */
-  margin: 0;
-  padding: 0;
-}
-
-
-/* ====== LABELS ====== */
-.paletteLabels {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 1rem;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
-
-.labelItem {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--textColor);
-}
-
-.labelColor {
-  width: 18px;
-  height: 18px;
-  border-radius: 4px;
-  display: inline-block;
-  border: 1px solid var(--borderLight);
-}
-
-/* ====== GROUP BAR ====== */
-.groupBar {
-  margin-top: 1rem;
-}
-
-.barColors {
-  display: flex;
-  gap: 6px;
-  height: 40px;
-  margin-bottom: 6px;
-}
-
-.barColor {
-  flex: 1;
-  border-radius: 6px;
-}
-
-.barCodes {
-  display: flex;
-  justify-content: space-between;
-  font-size: 12px;
-  font-family: monospace;
-  color: #444;
-}
-
-/* ❌ لو اللون مش مفضل */
-.notRecommended {
-  position: relative;
-}
-
-.notRecommendedMark {
-  position: absolute;
-  top: 8px;
-  right: 8px;
-  background: rgba(255, 0, 0, 0.8);
-  color: #fff;
-  font-size: 12px;
-  font-weight: bold;
-  width: 18px;
-  height: 18px;
-  border-radius: 50%;
+.methodCard {
   display: flex;
   align-items: center;
   justify-content: center;
-  opacity: 0.7;
+  background: #f8f8f8;
+  padding: 30px 20px;
+  border-radius: 16px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border: 1px solid #e0e0e0;
+  text-align: center;
 }
 
-/* ====== BUTTON ====== */
-.button {
-  padding: 0.6rem 1.8rem;
-  border-radius: var(--br5);
-  background-color: var(--primaryColor);
-  color: var(--whiteColor);
-  font-size: var(--fs15);
-  font-family: var(--ar);
+.methodCard:hover {
+  background: #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transform: translateY(-3px);
+}
+
+.methodTitle {
+  font-size: 18px;
   font-weight: 600;
-  border: 1px solid var(--primaryColor);
-  cursor: pointer;
-  transition: all 0.25s ease;
-  align-self: flex-start;
+  color: #222;
+  line-height: 1.4;
 }
-
-.button:hover {
-  border: 1px solid var(--textColor);
-  background-color: var(--textColor);
-  color: var(--whiteColor);
+.methodDesc {
+  font-size: 14px;
+  color: #555;
+  margin-top: 10px;
+  line-height: 1.5;
 }

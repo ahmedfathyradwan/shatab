@@ -42,7 +42,7 @@
 
 .section {
   display: flex;
-  flex-direction: column; /* ✅ بدل row عشان الليستة تبقى تحت العنوان */
+  flex-direction: column;
   gap: 0.8rem;
 }
 

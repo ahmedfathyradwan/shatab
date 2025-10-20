@@ -23,28 +23,28 @@ const Freelance = () => {
       image: '/images/freelance/3.jpg',
       link: '/freelance/post',
     },
+    // {
+    //   title: 'مشرفيين ومنفذين',
+    //   image: '/images/freelance/7.jpg',
+    //   link: '/freelance/suppliers',
+    // },
+    // {
+    //   title: 'مصممين ورسامين',
+    //   image: '/images/freelance/7.jpg',
+    //   link: '/freelance/suppliers',
+    // },
+    // {
+    //   title: 'مقاولون',
+    //   image: '/images/freelance/4.jpg',
+    //   link: '/freelance/contractors',
+    // },
+    // {
+    //   title: 'شركات صيانة',
+    //   image: '/images/freelance/5.jpg',
+    //   link: '/freelance/maintenance',
+    // },
     {
-      title: 'مشرفيين ومنفذين',
-      image: '/images/freelance/7.jpg',
-      link: '/freelance/suppliers',
-    },
-    {
-      title: 'مصممين ورسامين',
-      image: '/images/freelance/7.jpg',
-      link: '/freelance/suppliers',
-    },
-    {
-      title: 'مقاولون',
-      image: '/images/freelance/4.jpg',
-      link: '/freelance/contractors',
-    },
-    {
-      title: 'شركات صيانة',
-      image: '/images/freelance/5.jpg',
-      link: '/freelance/maintenance',
-    },
-    {
-      title: 'فنيين',
+      title: 'منفذو الخدمات المستقلون',
       image: '/images/freelance/6.jpg',
       link: '/freelance/technicians',
     },

@@ -8,18 +8,18 @@ const withcompany = () => {
   const router = useRouter();
   
   const cards = [
-    {
-      title: 'دليل التشطيب',
-      image: '/images/freelance/2.jpg',
-      link: '/freelance/guide',
-    },
+    // {
+    //   title: 'دليل التشطيب',
+    //   image: '/images/freelance/2.jpg',
+    //   link: '/freelance/guide',
+    // },
     {
       title: 'نشر طلب تشطيب',
       image: '/images/freelance/3.jpg',
       link: '/freelance/post',
     },
     {
-      title: 'شركات التشطيب',
+      title: 'مكاتب وشركات',
       image: '/images/withcompany/1.jpg',
       link: '/withcompany/company',
     }

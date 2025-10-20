@@ -1,0 +1,201 @@
+.wrap {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 0 16px;
+  font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  color: #111;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+.lead {
+  margin-top: 6px;
+  color: #555;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #e6e6e6;
+  border-radius: 10px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 6px 18px rgba(17, 17, 17, 0.04);
+}
+
+.logoWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px;
+  background: #fafafa;
+}
+
+.logo {
+  width: 120px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.body {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.name {
+  margin: 0;
+  font-size: 16px;
+}
+
+.specialty {
+  margin: 0;
+  color: #666;
+  font-size: 14px;
+}
+
+.meta {
+  font-size: 13px;
+  color: #444;
+  margin-top: 6px;
+}
+
+.row {
+  margin-top: 6px;
+}
+
+.actions {
+  margin-top: 10px;
+}
+
+.button {
+  display: inline-block;
+  padding: 8px 12px;
+  border-radius: 8px;
+  background: #0b74ff;
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+  transition: background 0.2s ease, transform 0.15s ease;
+}
+
+.button:hover {
+  background: #005ce6;
+  transform: scale(1.05);
+}
+
+/* 🟦 زر الاتصال */
+.callBtn {
+  background: #0b74ff;
+}
+
+.callBtn:hover {
+  background: #005ce6;
+}
+
+/* 🟩 زر الواتساب */
+.whatsappBtn {
+  background: #25d366;
+}
+
+.whatsappBtn:hover {
+  background: #1ebc57;
+}
+
+.btnGroup {
+  display: flex;
+  gap: 8px;
+  margin-top: 6px;
+  flex-wrap: wrap;
+}
+
+.footer {
+  text-align: center;
+  margin-top: 22px;
+  color: #777;
+  font-size: 13px;
+}
+.price {
+  font-size: 14px;
+  color: #222;
+  margin: 4px 0 10px;
+}
+
+.gallery {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+}
+
+.gallery img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #eee;
+  transition: transform 0.2s ease;
+}
+
+.gallery img:hover {
+  transform: scale(1.05);
+  border-color: #ccc;
+}
+.filterBox {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 20px 0;
+  gap: 8px;
+}
+
+.filterLabel {
+  font-weight: bold;
+  color: #333;
+  font-size: 1rem;
+}
+
+.select {
+  padding: 10px 14px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  background-color: #fff;
+  font-size: 1rem;
+  color: #333;
+  transition: all 0.2s ease;
+  width: 100%;
+  max-width: 300px;
+  cursor: pointer;
+}
+
+.select:hover {
+  border-color: #888;
+}
+
+.select:focus {
+  outline: none;
+  border-color: #0070f3;
+  box-shadow: 0 0 4px rgba(0, 112, 243, 0.4);
+}
+
+.noResults {
+  text-align: center;
+  font-size: 1.1rem;
+  color: #666;
+  margin-top: 40px;
+}

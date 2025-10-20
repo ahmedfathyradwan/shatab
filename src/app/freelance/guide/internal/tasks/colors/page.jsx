@@ -5,17 +5,17 @@ import Link from 'next/link'
 
 export default function ColorsPage() {
   const methods = [
-    { 
+        { 
       id: 0,
-      title: "بالتات شقق جاهزة",
-      path: "/freelance/guide/internal/tasks/colors/ready-palettes",
-      desc: "شاهد بالتات ألوان جاهزة لشقق مكتملة، كل اللي عليك تختار البالتة اللي تعجبك بدون أي مجهود."
-    },
-    { 
-      id: 1,
       title: "حسب نوع التشطيب (finish-type)", 
       path: "/freelance/guide/internal/tasks/colors/finish-type", 
       desc: "توليد بالتات ألوان متناسقة حسب الطراز: مودرن، كلاسيك، بوهو، أو سكندنافي." 
+    },
+    { 
+      id: 1,
+      title: "بالتات شقق جاهزة",
+      path: "/freelance/guide/internal/tasks/colors/ready-palettes",
+      desc: "شاهد بالتات ألوان جاهزة لشقق مكتملة، كل اللي عليك تختار البالتة اللي تعجبك بدون أي مجهود."
     },
     { 
       id: 2,
@@ -25,7 +25,7 @@ export default function ColorsPage() {
     },
     { 
       id: 3, 
-      title: "التغذية البصرية (صور يقلدها)",
+      title: "التغذية البصرية",
       path: "/freelance/guide/internal/tasks/colors/visual", 
       desc: "تصفح صور غرف حقيقية واختر بالتة الألوان اللي عجبتك لتطبيقها في شقتك." 
     },

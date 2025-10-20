@@ -1,0 +1,134 @@
+/* 🌆 الأساسيات */
+.facadeContainer {
+  padding: 40px;
+  background-color: #fafafa;
+  font-family: "Cairo", sans-serif;
+  color: #222;
+}
+
+.facadeTitle {
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 10px;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+.facadeDescription {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 40px;
+  color: #555;
+  line-height: 1.7;
+}
+
+/* 🧱 شبكة البطاقات */
+.facadeGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 25px;
+  justify-items: center;
+}
+
+/* 🎴 بطاقة الواجهة */
+.facadeCard {
+  background-color: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  width: 100%;
+  max-width: 380px;
+}
+
+.facadeCard:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+}
+
+.facadeImage {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+
+.facadeCard h2 {
+  font-size: 1.4rem;
+  margin: 15px;
+  color: #1d1d1d;
+  text-align: center;
+}
+
+/* 📋 المميزات */
+.facadeCard ul {
+  list-style: disc;
+  padding: 0 30px;
+  color: #444;
+  font-size: 1.5rem;
+  line-height: 1.6;
+  font-weight: 500;
+}
+
+/* 🔗 الروابط */
+.facadeLinks {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 20px 0;
+}
+
+.facadeLinks a {
+  background-color: #f0f0f0;
+  padding: 6px 12px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #0077b6;
+  font-weight: 500;
+  transition: background-color 0.2s ease;
+}
+
+.facadeLinks a:hover {
+  background-color: #e6f3ff;
+}
+
+/* 🔘 الزر */
+.facadeBtn {
+  display: block;
+  width: 80%;
+  margin: 0 auto 20px;
+  background-color: #0077b6;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.facadeBtn:hover {
+  background-color: #005f86;
+}
+/* ✅ المودال لتكبير الصورة */
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  cursor: zoom-out;
+}
+
+.modalImage {
+  max-width: 90vw;
+  max-height: 90vh;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  transition: transform 0.3s ease;
+}

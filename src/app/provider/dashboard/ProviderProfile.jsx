@@ -2,8 +2,8 @@
 
 import { useState, useEffect } from 'react';
 import styles from './dashboard.module.css';
-import governorates from '../../data/governorates.json';
-import jobTitles from '../../data/freelancer.json';
+import governorates from '../../data/governorates.js';
+import jobTitles from '../../data/freelancerTypes.js';
 import MySelect from '../../components/MySelect.jsx';
 
 export default function ProviderProfile({ provider, setProvider }) {

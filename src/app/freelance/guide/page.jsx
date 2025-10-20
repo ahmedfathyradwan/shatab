@@ -15,12 +15,12 @@ export default function FinishTypeChoiceCard() {
     {
       title: 'تشطيب الواجهات',
       image: '/images/guide/external.jpg',
-      link: '/external',
+      link: '/freelance/guide/external',
     },
     {
       title: 'المساحات المفتوحة',
       image: '/images/guide/open-spaces.jpg',
-      link: '/openSpaces',
+      link: '/freelance/guide/openSpaces',
     },
   ];
 

@@ -32,6 +32,12 @@
   border-radius: var(--br5);
   display: block;
 }
+.description {
+  font-size: 1.5rem;
+  margin-top: 8px;
+  line-height: 1.7;
+  max-width: 700px;
+}
 
 .textCont {
   display: flex;
@@ -123,4 +129,20 @@
 
 .link:hover {
   border: 1px solid var(--textColor);
+}
+.serviceBtn {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  margin-top: 0.8rem;
+  transition: 0.3s ease;
+}
+
+.serviceBtn:hover {
+  background-color: #0056b3;
+  transform: scale(1.03);
 }

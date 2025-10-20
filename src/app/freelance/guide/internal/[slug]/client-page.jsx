@@ -53,11 +53,14 @@ export default function ClientPage({ step }) {
     <div className={styles.container}>
       <h1 className={styles.title}>{step.title}</h1>
 
+      <p className={styles.description}>{step.description}</p>
+      
       {step.image && (
         <div className={styles.imageCont}>
           <img src={step.image} alt={step.title} className={styles.image} />
         </div>
       )}
+      
       
 {/* أهمية المرحلة */}
 {Array.isArray(step.importance) && step.importance.length > 0 && (
@@ -83,18 +86,6 @@ export default function ClientPage({ step }) {
 )}
 
       <div className={styles.textCont}>
-        {/* التخصص المطلوب */}
-        {Array.isArray(step.requiredSpecialist) && step.requiredSpecialist.length > 0 && (
-          <div className={styles.section}>
-            <h3 className={styles.subTitle}>المسئول عن التنفيذ :</h3>
-            <ul className={styles.tasksList}>
-              {step.requiredSpecialist.map((spec, index) => (
-                <li key={index} className={styles.text}>{spec}</li>
-              ))}
-            </ul>
-          </div>
-        )}
-
         {/* المطلوب تنفيذه */}
         {Array.isArray(step.tasks) && step.tasks.length > 0 && (
           <div className={styles.section}>
@@ -179,6 +170,25 @@ export default function ClientPage({ step }) {
             </ul>
           </div>
         )}
+
+                {/* التخصص المطلوب */}
+        {Array.isArray(step.requiredSpecialist) && step.requiredSpecialist.length > 0 && (
+          <div className={styles.section}>
+            <h3 className={styles.subTitle}>المسئول عن التنفيذ :</h3>
+            <ul className={styles.tasksList}>
+              {step.requiredSpecialist.map((spec, index) => (
+                <li key={index} className={styles.text}>{spec}</li>
+              ))}
+            </ul>
+          </div>
+        )}
+        
+              <button
+                className={styles.serviceBtn}
+                onClick={() => window.location.href = "/freelance/technicians"}
+              >
+                اختيار المنفذ المناسب
+              </button>
 
         {/* الفيديوهات */}
         {Array.isArray(step.videoUrls) && step.videoUrls.length > 0 && (

@@ -3,8 +3,8 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import styles from '../../form.module.css';
-import freelancer from '../../../data/freelancer.json';
-import governoratesData from '../../../data/governorates.json';
+import freelancer from '../../../data/freelancerTypes.js';
+import governoratesData from '../../../data/governorates.js';
 import MySelect from '../../../components/MySelect.jsx';
 
 export default function TechnicianRegisterPage() {

@@ -3,8 +3,8 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import styles from '../../form.module.css';
-import companyType from '../../../data/companyType.json';
-import governoratesData from '../../../data/governorates.json';
+import companyType from '../../../data/companyTypes';
+import governoratesData from '../../../data/governorates.js';
 import MySelect from '../../../components/MySelect.jsx';
 
 export default function MaintenanceCompanyRegisterPage() {

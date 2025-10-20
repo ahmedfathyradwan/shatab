@@ -3,8 +3,8 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import styles from '../../form.module.css';
-import companyType from '../../../data/companyType.json';
-import governoratesData from '../../../data/governorates.json';
+import stores from '../../../data/stores.js';
+import governoratesData from '../../../data/governorates.js';
 import MySelect from '../../../components/MySelect.jsx';
 
 export default function MaterialsRegisterPage() {
@@ -17,7 +17,7 @@ export default function MaterialsRegisterPage() {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
-  const materialTypeOptions = companyType.map((item) => ({ label: item, value: item }));
+  const materialTypeOptions = stores.map((item) => ({ label: item, value: item }));
   const governorateOptions = governoratesData.map((item) => ({ label: item, value: item }));
 
   useEffect(() => {

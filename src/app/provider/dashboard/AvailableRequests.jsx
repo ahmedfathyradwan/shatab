@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import clientRequests from "../../mockData/clientRequests.js";
 import styles from "./availableRequests.module.css";
-import serviceToProviderMap from "../../data/serviceToProviderMap.json";
+import serviceToProviderMap from "../../data/serviceToProviderMap.js/index.js";
 import MySelect from "../../components/MySelect.jsx";
 
 const AvailableRequests = () => {

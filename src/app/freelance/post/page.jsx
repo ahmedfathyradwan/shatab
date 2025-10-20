@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import styles from "../../styles/freelance/tPost.module.css";
 import dynamic from "next/dynamic";
 import Link from "next/link";
-import serviceToProviderMap from "../../data/serviceToProviderMap.json";
+import serviceToProviderMap from "../../data/serviceToProviderMap.js";
 
 const MySelectClient = dynamic(() => import("@/app/components/ClientMySelectWrapper"), {
   ssr: false,

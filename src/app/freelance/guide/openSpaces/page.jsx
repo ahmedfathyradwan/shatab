@@ -81,7 +81,7 @@ export default function Page() {
         ))}
       </div>
 
-      {/* ✅ المودال لتكبير الصور */}
+      {/*  المودال لتكبير الصور */}
       {selectedImage && (
         <div
           className={styles.modalOverlay}

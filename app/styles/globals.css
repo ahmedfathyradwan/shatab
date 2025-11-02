@@ -1,0 +1,119 @@
+:root {
+  /* Colors */
+  --primaryColor: #AB874B;
+  --secondaryColor: #C5A372;
+  --textColor: #11171C;
+  --backgroundColor: #FCF9F5;
+  --whiteColor: #FFFFFF;
+
+  --errorColor: #B82020;        
+  --errorColorLight: #E26565;  
+  --successColor: #3BAA62;     
+  --successColorLight: #7FCB97;
+  --infoColor: #007AFF;     
+  --infoColorLight: #7AB7FF;   
+
+
+  /* Border radius */
+  --border-radius: 8px;
+  --br5: 5rem;
+
+  /* Font sizes */
+  --fs45: 4.5rem;
+  --fs40: 4rem;
+  --fs35: 3.5rem;
+  --fs30: 3rem;
+  --fs25: 2.5rem;
+  --fs20: 2rem;
+  --fs15: 1.5rem;
+  --fs10: 1rem;
+
+  /* Font aliases */
+  --ar: 'Changa', sans-serif;
+  --en: 'Poppins', sans-serif;
+}
+
+::selection {
+  background-color: var(--primaryColor);
+  color: var(--whiteColor);
+}
+
+/* Reset + basic styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--ar);
+  direction: rtl;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  font-size: 10px
+}
+
+body {
+  font-family: var(--ar);
+  direction: rtl;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  background-color: var(--whiteColor);
+  color: var(--textColor);
+  margin: 0 auto;
+  font-size: 10px
+}
+
+
+/* Main container */
+.mainContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Mobile nav */
+.mobNav {
+  width: 100%;
+  position: fixed;
+  top: 90%;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+}
+
+/* not-found & error & loading */
+.cont {
+  background-color: var(--backgroundColor);
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.tit {
+  font-size: var(--fs25);
+  color: var(--textColor);
+  font-weight: 700;
+}
+
+.btn {
+  padding: 0.5rem 1.5rem;
+  background-color: var(--primaryColor);
+  text-decoration: none;
+  color: var(--backgroundColor);
+  font-size: var(--fs15);
+  border-radius: var(--br5);
+  border: 1px solid var(--primaryColor);
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  border: 1px solid var(--textColor);
+  background-color: var(--secondaryColor);
+}

@@ -1,0 +1,10 @@
+{
+  "/maintenance/page": "app/maintenance/page.js",
+  "/maintenance/maintenanceRequest/page": "app/maintenance/maintenanceRequest/page.js",
+  "/finishChoice/withcompany/company/page": "app/finishChoice/withcompany/company/page.js",
+  "/maintenance/maintenanceCompanies/page": "app/maintenance/maintenanceCompanies/page.js",
+  "/finishChoice/freelance/technicians/page": "app/finishChoice/freelance/technicians/page.js",
+  "/maintenance/maintenanceTechnicians/page": "app/maintenance/maintenanceTechnicians/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/page": "app/page.js"
+}

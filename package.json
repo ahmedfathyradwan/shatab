@@ -2,29 +2,39 @@
   "name": "shatab",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "export": "next build",
-    "deploy": "netlify deploy --prod --dir=out"
+    "deploy": "netlify deploy --prod --dir=out",
+    "admin": "node server/admin.js"
   },
   "dependencies": {
+    "@adminjs/express": "^6.1.1",
+    "@adminjs/prisma": "^5.0.4",
+    "@prisma/client": "^6.18.0",
     "@svgr/webpack": "^8.1.0",
+    "adminjs": "^7.8.17",
+    "bcryptjs": "^3.0.2",
     "colorthief": "^2.6.0",
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
     "html-to-image": "^1.11.13",
-    "next": "15.3.3",
+    "next": "^16.0.1",
     "node-vibrant": "^4.0.3",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
     "react-select": "^5.10.2"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@netlify/plugin-nextjs": "^5.12.0",
     "eslint": "^9",
-    "eslint-config-next": "15.3.3"
+    "eslint-config-next": "15.3.3",
+    "prisma": "^6.17.1"
   },
   "engines": {
     "node": ">=18.18.0",

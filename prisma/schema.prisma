@@ -1,0 +1,51 @@
+// Prisma schema file
+// Docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+// ===========================
+// 🧩 Enum لنوع مقدمي الخدمات
+// ===========================
+enum ProviderType {
+  exhibition
+  company
+  freelancer
+}
+
+// ===========================
+// 🧩 موديل العميل (Client)
+// ===========================
+model Client {
+  id         Int      @id @default(autoincrement())
+  fullName   String
+  phone      String   @unique
+  password   String
+  otp        String?
+  isVerified Boolean  @default(false)
+  createdAt  DateTime @default(now())
+}
+
+// ===========================
+// 🧩 موديل مقدمي الخدمات (ServiceProvider)
+// ===========================
+model ServiceProvider {
+  id             Int          @id @default(autoincrement())
+  fullName       String
+  phone          String       @unique
+  password       String
+  address        String
+  providerType   ProviderType
+  exhibitionType String?      // للمعارض
+  specialization String?      // للشركات والمكاتب
+  jobTitle       String?      // للمستقلين
+  avgPrice       Float?       // للمستقلين
+  isVerified     Boolean      @default(false)
+  createdAt      DateTime     @default(now())
+}

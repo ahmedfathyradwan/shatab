@@ -1,0 +1,162 @@
+.container {
+  width: 100%;
+  min-height: 100vh;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--ar);
+}
+
+.header {
+  background-color: var(--backgroundColor);
+  display: flex;
+  align-items: center;
+  width: calc(100% - 4rem);
+  border-radius: var(--br5);
+  padding: 3rem;
+  margin: 2rem 0 0;
+  flex-direction: column;
+}
+
+.topHeader {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+}
+
+.avatarWrapper {
+  width: 70px;
+  height: 70px;
+  cursor: pointer;
+  border: 1px solid var(--primaryColor);
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-color: var(--backgroundColor);
+  transition: 0.3s;
+}
+
+.userName {
+  font-size: var(--fs25);
+  font-weight: 600;
+  margin: 0 2rem 0 0;
+}
+
+.editToggleRow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.editButton {
+  background-color: var(--primaryColor);
+  border-radius: var(--br5);
+  color: var(--backgroundColor);
+  font-size: var(--fs15);
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  transition: 0.3s;
+}
+.editButton:hover {
+  opacity: 0.8;
+}
+.logoutBtn,
+.deleteBtn {
+  background-color: var(--primaryColor);
+  border-radius: var(--br5);
+  color: var(--backgroundColor);
+  font-size: var(--fs15);
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem 1rem;
+  transition: 0.3s;
+  font-family: var(--ar);
+}
+
+.logoutBtn:hover,
+.deleteBtn:hover {
+  opacity: 0.8;
+}
+
+/* تخصيص لون مميز لحذف الحساب */
+.deleteBtn {
+  background-color: #e74c3c; /* أحمر واضح */
+}
+
+.deleteBtn:hover {
+  background-color: #c0392b;
+}
+
+/* ✅ أزرار التبديل */
+.buttonsContainer {
+  display: flex;
+  gap: 1rem;
+  margin: 2rem 0;
+  flex-direction: row;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
+
+.switchButton {
+  padding: 0.6rem 1.5rem;
+  font-size: var(--fs15);
+  background-color: var(--backgroundColor);
+  color: var(--primaryColor);
+  border: 1px solid var(--primaryColor);
+  border-radius: var(--br5);
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 600;
+}
+.switchButton:hover {
+  border: 1px solid var(--textColor);
+}
+
+.activeButton {
+  background-color: var(--primaryColor);
+  color: var(--backgroundColor);
+  border: 1px solid var(--primaryColor);
+}
+
+.content {
+  background-color: var(--backgroundColor);
+  border-radius: var(--br5);
+  padding: 3rem;
+  width: calc(100% - 4rem);
+  margin-bottom: 2rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+/* ✅ عرض الصورة المكبرة */
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fullImage {
+  max-width: 90%;
+  height: auto;
+  border-radius: var(--br5);
+  box-shadow: 0 0 20px black;
+}

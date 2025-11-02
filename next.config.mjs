@@ -1,9 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  output: 'export',
   trailingSlash: true,
   images: {
-    unoptimized: true
+    unoptimized: true,
   },
   typescript: {
     ignoreBuildErrors: true,
@@ -14,14 +13,18 @@ const nextConfig = {
   basePath: '',
   assetPrefix: '/',
 
-  webpack(config) {
-    config.module.rules.push({
-      test: /\.svg$/i,
-      issuer: /\.[jt]sx?$/,
-      use: ['@svgr/webpack'],
-    });
-    return config;
-  },
+  turbopack: {},
+
+  ...(process.env.NEXT_RUNTIME === 'nodejs' && {
+    webpack(config) {
+      config.module.rules.push({
+        test: /\.svg$/i,
+        issuer: /\.[jt]sx?$/,
+        use: ['@svgr/webpack'],
+      });
+      return config;
+    },
+  }),
 };
 
 export default nextConfig;

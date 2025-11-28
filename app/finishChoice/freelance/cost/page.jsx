@@ -86,14 +86,26 @@ const Cost = () => {
 
         <div className={styles.inputGroup}>
           <label className={styles.label}>المساحة بالمتر المربع</label>
-          <input
-            type="number"
-            className={styles.input}
-            value={area ?? ""}
-            onChange={(e) => setArea(e.target.value)}
-            placeholder="أدخل المساحة"
-            min="0"
-          />
+<input
+  type="text"
+  className={styles.input}
+  value={area ?? ""}
+  onChange={(e) => {
+    let value = e.target.value;
+
+    // تحويل الأرقام العربية إلى إنجليزية
+    value = value.replace(/[٠-٩]/g, (d) => "٠١٢٣٤٥٦٧٨٩".indexOf(d));
+
+    // منع إدخال أي شيء غير أرقام
+    value = value.replace(/[^0-9]/g, "");
+
+    // تحديد 6 أرقام فقط
+    value = value.slice(0, 6);
+
+    setArea(value);
+  }}
+  placeholder="أدخل المساحة"
+/>
         </div>
 
         <div className={styles.inputGroup}>

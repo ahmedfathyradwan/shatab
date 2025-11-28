@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation";
 import HomeIcon from "./icons/HomeIcon";
 import UserIcon from "./icons/UserIcon";
 import MenuIcon from "./icons/MenuIcon";
@@ -11,13 +11,40 @@ import styles from "../styles/navbar.module.css";
 
 export default function Navbar() {
   const pathname = usePathname();
+  const router = useRouter();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
+  const [profileLink, setProfileLink] = useState("/auth/login");
 
   useEffect(() => {
     setMounted(true);
+
+    // 🔹 تحديد رابط ملف المستخدم حسب نوع الحساب
+    try {
+      const userDataRaw = localStorage.getItem("userData");
+      if (userDataRaw) {
+        const userData = JSON.parse(userDataRaw);
+        if (userData && userData.id && userData.userType) {
+          const link =
+            userData.userType === "client"
+              ? `/profile/client/${userData.id}`
+              : `/profile/provider/${userData.id}`;
+          setProfileLink(link);
+          console.log("Navbar mounted, profileLink set to:", link);
+        } else {
+          setProfileLink("/home");
+        }
+      } else {
+        setProfileLink("/auth/login");
+      }
+    } catch (err) {
+      console.error("Error loading user data:", err);
+      setProfileLink("/auth/login");
+    }
   }, []);
 
+  const isProfileActive =
+    pathname.startsWith("/profile/client") || pathname.startsWith("/profile/provider");
   const isActive = (path) => pathname === path;
 
   if (!mounted) return null;
@@ -25,44 +52,38 @@ export default function Navbar() {
   return (
     <>
       <nav className={styles.navbar}>
-        {/* 🔹 زر القائمة */}
+        {/* زر القائمة */}
         <button
           type="button"
           onClick={() => setIsMenuOpen(true)}
           className={`${styles.button} ${isMenuOpen ? styles.activeTab : ""}`}
           suppressHydrationWarning
         >
-          <MenuIcon
-            className={`${styles.icon} ${isMenuOpen ? styles.activeIcon : ""}`}
-          />
+          <MenuIcon className={`${styles.icon} ${isMenuOpen ? styles.activeIcon : ""}`} />
         </button>
 
-        {/* 🔹 زر الصفحة الرئيسية */}
+        {/* زر الصفحة الرئيسية */}
         <Link
-          href="/"
-          className={`${styles.button} ${isActive("/") ? styles.activeTab : ""}`}
+          href="/home"
+          className={`${styles.button} ${isActive("/home") ? styles.activeTab : ""}`}
         >
-          <HomeIcon
-            className={`${styles.icon} ${isActive("/") ? styles.activeIcon : ""}`}
-          />
+          <HomeIcon className={`${styles.icon} ${isActive("/home") ? styles.activeIcon : ""}`} />
         </Link>
 
-        {/* 🔹 زر صفحة مقدم الخدمة */}
-        <Link
-          href="/profile/provider"
-          className={`${styles.button} ${
-            isActive("/profile/provider") ? styles.activeTab : ""
-          }`}
+        {/* زر صفحة المستخدم */}
+        <button
+          type="button"
+          onClick={() => {
+            console.log("Clicked profile button, navigating to:", profileLink);
+            router.push(profileLink);
+          }}
+          className={`${styles.button} ${isProfileActive ? styles.activeTab : ""}`}
         >
-          <UserIcon
-            className={`${styles.icon} ${
-              isActive("/profile/provider") ? styles.activeIcon : ""
-            }`}
-          />
-        </Link>
+          <UserIcon className={`${styles.icon} ${isProfileActive ? styles.activeIcon : ""}`} />
+        </button>
       </nav>
 
-      {/* 🔹 القائمة الجانبية */}
+      {/* القائمة الجانبية */}
       {isMenuOpen && <SideMenu onClose={() => setIsMenuOpen(false)} />}
     </>
   );

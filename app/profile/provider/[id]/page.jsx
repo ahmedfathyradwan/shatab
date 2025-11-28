@@ -1,22 +1,20 @@
-"use client";
+'use client';
 
-import { useState, useRef } from "react";
-import styles from "./provider.module.css";
-import ProfileTab from "./ProfileTab";
-import OrdersTab from "./OrdersTab";
-import MyPost from "./MyPost";
-import freelancerData from "../../../mockData/freelancerData";
+import { useState, useRef } from 'react';
+import styles from './provider.module.css';
+import MyRequests from './OrdersTab';
+import MyOffers from './MyPost';
+import ConfirmModal from '../../../components/ConfirmModal';
 
-export default function ProviderPage() {
-  const [activeTab, setActiveTab] = useState("profile");
+export default function ProviderDashboard() {
+  const [activeTab, setActiveTab] = useState('requests');
   const [isPreviewOpen, setIsPreviewOpen] = useState(false);
-  const [imageUrl, setImageUrl] = useState("/images/avatar.png");
+  const [imageUrl, setImageUrl] = useState('/images/avatar.png');
   const [confirmLogout, setConfirmLogout] = useState(false);
   const [confirmDelete, setConfirmDelete] = useState(false);
   const fileInputRef = useRef(null);
 
-  const freelancer = freelancerData[0];
-  const name = freelancer.name;
+  const name = 'أحمد فؤاد';
 
   const handleImageChange = (e) => {
     const file = e.target.files[0];
@@ -29,31 +27,24 @@ export default function ProviderPage() {
     }
   };
 
+  const logoutHandler = async () => {
+    try {
+      const res = await fetch("/api/logout", { method: "POST" });
+      if (res.ok) {
+        localStorage.removeItem('userData');
+        window.location.href = "/auth/login";
+      } else {
+        alert("حدث خطأ أثناء تسجيل الخروج ❌");
+      }
+    } catch (error) {
+      console.error("Logout error:", error);
+      alert("تعذر الاتصال بالسيرفر 😞");
+    }
+  };
+
   return (
     <>
       <div className={styles.container}>
-        
-        {/* 🔹 الأزرار */}
-        <div className={styles.buttonsContainer}>
-          <button
-            className={`${styles.switchButton} ${
-              activeTab === "profile" ? styles.activeButton : ""
-            }`}
-            onClick={() => setActiveTab("profile")}
-          >
-            الملف الشخصي
-          </button>
-          <button
-            className={`${styles.switchButton} ${
-              activeTab === "orders" ? styles.activeButton : ""
-            }`}
-            onClick={() => setActiveTab("orders")}
-          >
-            الطلبات المتاحة
-          </button>
-        </div>
-
-        {/* 🔹 الهيدر */}
         <div className={styles.header}>
           <div className={styles.topHeader}>
             <div className={styles.avatarWrapper}>
@@ -64,7 +55,7 @@ export default function ProviderPage() {
                 onClick={() => setIsPreviewOpen(true)}
               />
             </div>
-            <h2 className={styles.userName}>{name}</h2>
+            <h2 className={styles.userName}>أ. {name}</h2>
           </div>
 
           <div className={styles.editToggleRow}>
@@ -74,19 +65,22 @@ export default function ProviderPage() {
             >
               تغيير الصورة
             </button>
+
             <input
               type="file"
               accept="image/*"
               ref={fileInputRef}
-              style={{ display: "none" }}
+              style={{ display: 'none' }}
               onChange={handleImageChange}
             />
+
             <button
               className={styles.logoutBtn}
               onClick={() => setConfirmLogout(true)}
             >
               تسجيل خروج
             </button>
+
             <button
               className={styles.deleteBtn}
               onClick={() => setConfirmDelete(true)}
@@ -96,75 +90,64 @@ export default function ProviderPage() {
           </div>
         </div>
 
-        {/* 🔹 المحتوى */}
+        <div className={styles.buttonsContainer}>
+          <button
+            className={`${styles.switchButton} ${
+              activeTab === 'requests' ? styles.activeButton : ''
+            }`}
+            onClick={() => setActiveTab('requests')}
+          >
+            طلباتي
+          </button>
+          <button
+            className={`${styles.switchButton} ${
+              activeTab === 'offers' ? styles.activeButton : ''
+            }`}
+            onClick={() => setActiveTab('offers')}
+          >
+            العروض المقدمة
+          </button>
+        </div>
+
         <div className={styles.content}>
-           {activeTab === "profile" && (
-    <>
-      <ProfileTab data={freelancer} />
-      <MyPost data={freelancer} />
-    </>
-  )}
-          {activeTab === "orders" && <OrdersTab />}
+          {activeTab === 'requests' && <MyRequests />}
+          {activeTab === 'offers' && <MyOffers />}
         </div>
       </div>
 
-      {/* 📸 عرض الصورة */}
+      {/* Preview modal */}
       {isPreviewOpen && (
         <div className={styles.modal} onClick={() => setIsPreviewOpen(false)}>
-          <img src={imageUrl} className={styles.fullImage} alt="صورة المستخدم" />
+          <img
+            src={imageUrl}
+            className={styles.fullImage}
+            alt="صورة المستخدم مكبرة"
+          />
         </div>
       )}
 
-      {/* 🔸 تأكيد تسجيل الخروج */}
+      {/* Confirm Logout Modal */}
       {confirmLogout && (
-        <div className={styles.confirmOverlay}>
-          <div className={styles.confirmModal}>
-            <p>هل أنت متأكد أنك تريد تسجيل الخروج؟</p>
-            <div className={styles.confirmActions}>
-              <button
-                className={styles.confirmDelete}
-                onClick={() => {
-                  console.log("تم تسجيل الخروج");
-                  setConfirmLogout(false);
-                }}
-              >
-                تأكيد
-              </button>
-              <button
-                className={styles.cancelDelete}
-                onClick={() => setConfirmLogout(false)}
-              >
-                إلغاء
-              </button>
-            </div>
-          </div>
-        </div>
+        <ConfirmModal
+          message="هل أنت متأكد أنك تريد تسجيل الخروج؟"
+          onConfirm={() => {
+            setConfirmLogout(false);
+            logoutHandler();
+          }}
+          onCancel={() => setConfirmLogout(false)}
+        />
       )}
 
-      {/* 🔸 تأكيد حذف الحساب */}
+      {/* Confirm Delete Modal */}
       {confirmDelete && (
-        <div className={styles.confirmOverlay}>
-          <div className={styles.confirmModal}>
-            <p>هل أنت متأكد أنك تريد حذف الحساب؟</p>
-            <div className={styles.confirmActions}>
-              <button
-                className={styles.confirmDelete}
-                onClick={() => {
-                  console.log("تم حذف الحساب");
-                  setConfirmDelete(false);
-                }}
-              >
-                حذف
-              </button>
-              <button
-                className={styles.cancelDelete}
-                onClick={() => setConfirmDelete(false)}
-              >
-                إلغاء
-              </button>
-            </div>
-          </div>
-        </div>
+        <ConfirmModal
+          message="هل أنت متأكد أنك تريد حذف الحساب؟"
+          onConfirm={() => {
+            console.log('تم حذف الحساب');
+            setConfirmDelete(false);
+          }}
+          onCancel={() => setConfirmDelete(false)}
+        />
       )}
     </>
   );

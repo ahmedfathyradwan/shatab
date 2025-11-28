@@ -23,6 +23,7 @@
     "dotenv": "^17.2.3",
     "express": "^5.1.0",
     "html-to-image": "^1.11.13",
+    "jsonwebtoken": "^9.0.2",
     "next": "^16.0.1",
     "node-vibrant": "^4.0.3",
     "react": "^19.2.0",

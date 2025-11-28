@@ -48,7 +48,7 @@
 }
 
 .userName {
-  font-size: var(--fs25);
+  font-size: var(--fs-h4);
   font-weight: 600;
   margin: 0 2rem 0 0;
 }
@@ -57,7 +57,7 @@
   background-color: var(--primaryColor);
   border-radius: var(--br5);
   color: var(--backgroundColor);
-  font-size: var(--fs15);
+  font-size: var(--fs-5);
   border: none;
   cursor: pointer;
   text-decoration: none;
@@ -77,7 +77,7 @@
 
 .switchButton {
   padding: 0.5rem 1rem;
-  font-size: var(--fs15);
+  font-size: var(--fs-5);
   background-color: var(--backgroundColor);
   color: var(--primaryColor);
   border: 1px solid var(--primaryColor);
@@ -122,7 +122,7 @@
   padding: 0.5rem 1rem;
   border: 1px solid var(--primaryColor);
   border-radius: var(--br5);
-  font-size: var(--fs15);
+  font-size: var(--fs-5);
   cursor: pointer;
   background-color: var(--primaryColor);
   color: var(--backgroundColor);
@@ -174,7 +174,7 @@
   width: 90%;
   text-align: center;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  font-size: var(--fs15);
+  font-size: var(--fs-5);
   font-weight: 500;
   font-family: var(--ar);
 }
@@ -192,7 +192,7 @@
   border: none;
   padding: 0.5rem 1.5rem;
   border-radius: var(--br5);
-  font-size: var(--fs15);
+  font-size: var(--fs-5);
   font-weight: 500;
   font-family: var(--ar);
   cursor: pointer;
@@ -204,7 +204,7 @@
   border: none;
   padding: 0.5rem 1.5rem;
   border-radius: var(--br5);
-  font-size: var(--fs15);
+  font-size: var(--fs-5);
   font-weight: 500;
   font-family: var(--ar);
   cursor: pointer;

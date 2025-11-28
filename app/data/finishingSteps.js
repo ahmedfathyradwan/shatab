@@ -97,72 +97,79 @@ const guideData = [
     "image": "/images/finishingSteps/16.jpeg",
     "link": "/internal/aluminum-installation"
   },
-    {
-    "id": 15,
-    "title": "15- الرخام والجرانيت",
+  {
+  "id": 15,
+  "title": "15- الحديد",
+  "slug": "metal-works",
+  "image": "/images/finishingSteps/metal.jpeg",
+  "link": "/internal/metal-works"
+},
+  {
+    "id": 16,
+    "title": "16- الرخام والجرانيت",
     "slug": "marble-granite-works",
-    "image": "/images/finishingSteps/2.jpeg",
+    "image": "/images/finishingSteps/granite.jpeg",
     "link": "/internal/marble-granite-works"
   },
   {
-    "id": 16,
-    "title": "16- تأسيس النقاشة",
+    "id": 17,
+    "title": "17- تأسيس النقاشة",
     "slug": "paint-base",
     "image": "/images/finishingSteps/17.jpeg",
     "link": "/internal/paint-base"
   },
   {
-    "id": 17,
-    "title": "17- تشطيب السباكة",
+    "id": 18,
+    "title": "18- تشطيب السباكة",
     "slug": "plumbing-finishing",
     "image": "/images/finishingSteps/22.jpeg",
     "link": "/internal/plumbing-finishing"
   },
     {
-    "id": 18,
-    "title": "18- تشطيب الكهرباء",
+    "id": 19,
+    "title": "19- تشطيب الكهرباء",
     "slug": "electrical-finishing",
     "image": "/images/finishingSteps/21.jpeg",
     "link": "/internal/electrical-finishing"
   },
   {
-    "id": 19,
-    "title": "19- تشطيب النقاشة",
+    "id": 20,
+    "title": "20- تشطيب النقاشة",
     "slug": "paint-finishing",
     "image": "/images/finishingSteps/23.jpeg",
     "link": "/internal/paint-finishing"
   },
   {
-    "id": 20,
-    "title": "20- الأرضيات الخشبية",
+    "id": 21,
+    "title": "21- الأرضيات الخشبية",
     "slug": "wooden-floors",
     "image": "/images/finishingSteps/20.jpeg",
     "link": "/internal/wooden-floors"
   },
     {
-    "id": 21,
-    "title": "21- الأبواب الجاهزة",
+    "id": 22,
+    "title": "22- الأبواب الجاهزة",
     "slug": "pre-hung-doors",
     "image": "/images/finishingSteps/19.jpeg",
     "link": "/internal/pre-hung-doors"
   },
     {
-    "id": 22,
-    "title": "22- تركيب المطبخ",
+    "id": 23,
+    "title": "23- تركيب المطبخ",
     "slug": "kitchen-installation",
     "image": "/images/finishingSteps/25.jpeg",
     "link": "/internal/kitchen-installation"
   },
   {
-    "id": 23,
-    "title": "23- ديكورات ونجف",
+    "id": 24,
+    "title": "24- ديكورات ونجف",
     "slug": "decorations",
     "image": "/images/finishingSteps/24.jpeg",
     "link": "/internal/decorations"
   },
   {
-    "id": 24,
-    "title": "24- فرش العفش",
+    "id": 25,
+    "title": "25- فرش العفش",
     "slug": "furniture-arrangement",
     "image": "/images/finishingSteps/26.jpeg",
     "link": "/internal/furniture-arrangement"

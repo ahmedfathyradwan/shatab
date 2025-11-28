@@ -11,7 +11,7 @@
 }
 
 .profileTitle {
-  font-size: var(--fs20);
+  font-size: var(--fs-h5);
   font-weight: 600;
   margin-bottom: 1rem;
   color: var(--textColor);
@@ -40,7 +40,7 @@
 }
 
 .worksTitle {
-  font-size: var(--fs20);
+  font-size: var(--fs-h5);
   font-weight: 600;
   margin-bottom: 1rem;
   color: var(--textColor);
@@ -62,7 +62,7 @@
   padding: 10px 22px;
   border-radius: 3rem;
   cursor: pointer;
-  font-size: var(--fs10);
+  font-size: var(--fs-small);
   font-family: var(--ar);
   font-weight: 600;
   transition: 0.3s;

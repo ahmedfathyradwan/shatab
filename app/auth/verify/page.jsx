@@ -2,27 +2,23 @@
 
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
-import styles from '../../auth/form.module.css';
+import styles from './verify.module.css';
 
 export default function VerifyPage() {
   const router = useRouter();
   const [code, setCode] = useState('');
-  const [sentCode, setSentCode] = useState('');
   const [phoneNumber, setPhoneNumber] = useState('');
   const [purpose, setPurpose] = useState('register'); // الحالة الافتراضية
   const [message, setMessage] = useState('');
   const [seconds, setSeconds] = useState(30);
   const [canResend, setCanResend] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     const data = JSON.parse(localStorage.getItem('registerData'));
     if (data?.phone) {
       setPhoneNumber(data.phone);
       setPurpose(data.purpose || 'register');
-
-      const generatedCode = Math.floor(100000 + Math.random() * 900000).toString();
-      setSentCode(generatedCode);
-      console.log('كود التحقق هو:', generatedCode);
     } else {
       router.push('/auth/register/client');
     }
@@ -37,31 +33,64 @@ export default function VerifyPage() {
     }
   }, [seconds]);
 
-  const handleResend = () => {
-    const newCode = Math.floor(100000 + Math.random() * 900000).toString();
-    setSentCode(newCode);
-    setSeconds(30);
-    setCanResend(false);
-    setMessage('✅ تم إرسال كود جديد');
-    console.log('📨 كود جديد:', newCode);
+  const handleResend = async () => {
+    try {
+      setMessage('');
+      setSeconds(30);
+      setCanResend(false);
+
+      const res = await fetch('/api/resend-otp', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ phone: phoneNumber }),
+      });
+      const data = await res.json();
+
+      if (res.ok) {
+        setMessage('✅ تم إرسال كود جديد');
+        console.log('📨 كود جديد:', data.otp);
+      } else {
+        setMessage(data.error || 'حدث خطأ أثناء إعادة الإرسال');
+      }
+    } catch (err) {
+      console.error(err);
+      setMessage('حدث خطأ أثناء إعادة الإرسال');
+    }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (code === sentCode) {
-      setMessage('✅ تم تأكيد رقم الهاتف بنجاح');
+    setLoading(true);
+    setMessage('');
 
-      localStorage.removeItem('registerData');
+    try {
+      const res = await fetch('/api/verify', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ phone: phoneNumber, otp: code }),
+      });
 
-      setTimeout(() => {
-        if (purpose === 'reset') {
-          router.push('/auth/resetpassword');
-        } else {
-          router.push('/auth/login');
-        }
-      }, 1500);
-    } else {
-      setMessage('❌ الكود غير صحيح، حاول مرة أخرى');
+      const data = await res.json();
+
+      if (res.ok) {
+        setMessage('✅ تم تأكيد الحساب بنجاح');
+        localStorage.removeItem('registerData');
+
+        setTimeout(() => {
+          if (purpose === 'reset') {
+            router.push('/auth/resetpassword');
+          } else {
+            router.push('/auth/login');
+          }
+        }, 1500);
+      } else {
+        setMessage(data.error || '❌ الكود غير صحيح');
+      }
+    } catch (err) {
+      console.error(err);
+      setMessage('❌ حدث خطأ في السيرفر');
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -88,8 +117,8 @@ export default function VerifyPage() {
             />
           </div>
 
-          <button type="submit" className={styles.buttonVerify}>
-            تأكيد الكود
+          <button type="submit" className={styles.buttonVerify} disabled={loading}>
+            {loading ? 'جاري التحقق...' : 'تأكيد الكود'}
           </button>
         </form>
 

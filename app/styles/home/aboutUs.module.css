@@ -8,7 +8,7 @@
 }
 
 .title {
-  font-size: var(--fs30);
+  font-size: var(--fs-h3);
   font-weight: 600;
   margin-bottom: 3rem;
   color: var(--primaryColor);
@@ -22,19 +22,19 @@
 }
 
 .shatab {
-  font-size: var(--fs25);
+  font-size: var(--fs-h4);
   font-family: var(--en);
   font-weight: 600;
   color: var(--primaryColor);
   margin: 0 0 0.5rem;
 }
 .shatabSpan {
-  font-size: var(--fs20);
+  font-size: var(--fs-h5);
   font-weight: 400;
   font-family: var(--en);
 }
 .description {
-  font-size: var(--fs15);
+  font-size: var(--fs-5);
   font-weight: 400;
   font-family: var(--ar);
 }

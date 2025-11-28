@@ -8,13 +8,13 @@
 }
 
 .title {
-  font-size: var(--fs30);
+  font-size: var(--fs-h3);
   color: var(--primaryColor);
   font-family: var(--ar);
 }
 
 .description {
-  font-size: var(--fs20);
+  font-size: var(--fs-h5);
   font-family: var(--ar);
   padding: 0.5rem 0 5rem 0;
 }
@@ -29,7 +29,7 @@
 
 .tabButton {
   padding: 0.5rem 1.2rem 0.6rem;
-  font-size: var(fs20);
+  font-size: var(--fs-h5);
   font-weight: 600;
   font-family: 'Changa';
   background-color: var(--whiteColor);
@@ -86,7 +86,7 @@
   border-radius: 5rem;
   text-decoration: none;
   transition: 0.3s ease;
-  font-size: var(--fs10);
+  font-size: var(--fs-small);
   font-weight: 500;
   border: 1px solid var(--backgroundColor);
 }
@@ -141,7 +141,7 @@
 }
 
 .notice {
-  font-size: var(--fs20);
+  font-size: var(--fs-h5);
 }
 
 .linkButtons {
@@ -154,7 +154,7 @@
 
 .linkButton {
   display: inline-block;
-  font-size: var(--fs15);
+  font-size: var(--fs-5);
   background-color: var(--primaryColor);
   color: var(--backgroundColor);
   padding: 0.6rem 1.8rem;

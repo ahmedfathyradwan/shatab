@@ -9,12 +9,12 @@ export default function FinishOrMaintenanceCard() {
 
   const cards = [
     {
-      title: 'التشطيب',
+      title: 'قسم التشطيب',
       image: '/images/finishing.jpg',
       link: '/finishChoice',
     },
     {
-      title: 'الصيانة',
+      title: 'قسم الصيانة',
       image: '/images/Plumbing.jpg',
       link: '/maintenance',
     },

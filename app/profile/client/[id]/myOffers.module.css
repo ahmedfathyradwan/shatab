@@ -3,7 +3,7 @@
 }
 
 .title {
-  font-size: var(--fs25);
+  font-size: var(--fs-h4);
   text-align: center;
   font-weight: 600;
   margin-bottom: 3rem;
@@ -47,21 +47,21 @@
 
 .name {
   font-weight: 500;
-  font-size: var(--fs25);
+  font-size: var(--fs-h4);
   color: var(--primaryColor);
 }
 
 .label {
   color: var(--primaryColor);
   font-weight: 600;
-  font-size: var(--fs20);
+  font-size: var(--fs-h5);
   display: inline;
   margin-left: 0.5rem;
 }
 
 .value {
   font-weight: 500;
-  font-size: var(--fs20);
+  font-size: var(--fs-h5);
   display: inline;
 }
 
@@ -78,7 +78,7 @@
   color: var(--backgroundColor);
   padding: 0.5rem 1rem;
   border-radius: var(--br5);
-  font-size: var(--fs15);
+  font-size: var(--fs-5);
   border: 1px solid var(--primaryColor);
   font-weight: 500;
 }
@@ -89,6 +89,6 @@
 
 .noResults {
   text-align: center;
-  font-size: var(--fs25);
+  font-size: var(--fs-h4);
   padding: 2rem 1rem;
 }

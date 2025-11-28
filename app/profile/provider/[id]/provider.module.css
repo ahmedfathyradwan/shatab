@@ -47,7 +47,7 @@
 }
 
 .userName {
-  font-size: var(--fs25);
+  font-size: var(--fs-h4);
   font-weight: 600;
   margin: 0 2rem 0 0;
 }
@@ -64,7 +64,7 @@
   background-color: var(--primaryColor);
   border-radius: var(--br5);
   color: var(--backgroundColor);
-  font-size: var(--fs15);
+  font-size: var(--fs-5);
   border: none;
   cursor: pointer;
   padding: 0.5rem 1rem;
@@ -78,7 +78,7 @@
   background-color: var(--primaryColor);
   border-radius: var(--br5);
   color: var(--backgroundColor);
-  font-size: var(--fs15);
+  font-size: var(--fs-5);
   border: none;
   cursor: pointer;
   padding: 0.5rem 1rem;
@@ -113,7 +113,7 @@
 
 .switchButton {
   padding: 0.6rem 1.5rem;
-  font-size: var(--fs15);
+  font-size: var(--fs-5);
   background-color: var(--backgroundColor);
   color: var(--primaryColor);
   border: 1px solid var(--primaryColor);

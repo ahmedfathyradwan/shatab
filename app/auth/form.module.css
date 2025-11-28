@@ -21,7 +21,7 @@
 }
 
 .title {
-  font-size: var(--fs25);
+  font-size: var(--fs-h2);
   margin-bottom: 2rem;
   color: var(--primaryColor);
   text-align: center;
@@ -41,7 +41,7 @@
 }
 
 .label {
-  font-size: var(--fs15);
+  font-size: var(--fs-h4);
   font-weight: 500;
   margin-bottom: 0.5rem;
 }
@@ -53,7 +53,7 @@
   padding: 1rem 2rem;
   border: 1px solid var(--primaryColor);
   border-radius: var(--br5);
-  font-size: var(--fs15);
+  font-size: var(--fs-h4);
   background-color: var(--whiteColor);
   font-family: var(--ar);
   color: var(--textColor);
@@ -68,7 +68,7 @@
   border: none;
   border-radius: 5rem;
   border: 1px solid var(--primaryColor);
-  font-size: var(--fs20);
+  font-size: var(--fs-h3);
   font-weight: 600;
   cursor: pointer;
   transition: 0.3s;
@@ -84,13 +84,13 @@
 
 .errorText {
   color: red;
-  font-size: var(--fs15);
+  font-size: var(--fs-h5);
   margin-top: 0.5rem;
 }
 
 /* Verify */
 .labelVerify {
-  font-size: var(--fs15);
+  font-size: var(--fs-h5);
   font-weight: 500;
   margin-bottom: 0.5rem;
   text-align: center;
@@ -102,7 +102,7 @@
   border: none;
   border-radius: 5rem;
   border: 1px solid var(--primaryColor);
-  font-size: var(--fs20);
+  font-size: var(--fs-h5);
   font-weight: 600;
   cursor: pointer;
   transition: 0.3s;
@@ -121,7 +121,7 @@
   border: none;
   border-radius: 5rem;
   border: 1px solid var(--textColor);
-  font-size: var(--fs10);
+  font-size: var(--fs-body);
   font-weight: 600;
   cursor: pointer;
   transition: 0.3s;
@@ -133,4 +133,35 @@
 
 .smallButtonVerify:hover {
   border: 1px solid var(--primaryColor);
+}
+
+
+@media (min-width: 375px) {
+.formContainer {
+  width: 80%;
+}
+}
+
+@media (min-width: 430px) {
+.formContainer {
+  width: 70%;
+}
+}
+
+@media (min-width: 768px) {
+.formContainer {
+  width: 60%;
+}
+}
+
+@media (min-width: 1024px) {
+.formContainer {
+  width: 50%;
+}
+}
+
+@media (min-width: 1280px) {
+.formContainer {
+  width: 40%;
+}
 }

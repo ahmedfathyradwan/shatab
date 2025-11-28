@@ -29,6 +29,7 @@ const Maintenance = () => {
     <>
       <div className={styles.container}>
         <h2 className={styles.title}>الصيانة المنزلية</h2>
+        <p className={styles.par}>أعمال الصيانة المنزلية وصيانة الأجهزة المنزلية</p>
         <div className={styles.cardsGrid}>
           {cards.map((card, index) => (
             <div key={index} className={styles.card}>

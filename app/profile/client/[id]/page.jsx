@@ -4,6 +4,7 @@ import { useState, useRef } from 'react';
 import styles from './clientProfile.module.css';
 import MyRequests from './MyRequests';
 import MyOffers from './MyOffers';
+import ConfirmModal from '../../../components/ConfirmModal';
 
 export default function ClientDashboard() {
   const [activeTab, setActiveTab] = useState('requests');
@@ -23,6 +24,20 @@ export default function ClientDashboard() {
         setImageUrl(reader.result);
       };
       reader.readAsDataURL(file);
+    }
+  };
+
+  const logoutHandler = async () => {
+    try {
+      const res = await fetch("/api/logout", { method: "POST" });
+      if (res.ok) {
+        window.location.href = "/auth/login";
+      } else {
+        alert("حدث خطأ أثناء تسجيل الخروج ❌");
+      }
+    } catch (error) {
+      console.error("Logout error:", error);
+      alert("تعذر الاتصال بالسيرفر 😞");
     }
   };
 
@@ -55,10 +70,16 @@ export default function ClientDashboard() {
               style={{ display: 'none' }}
               onChange={handleImageChange}
             />
-            <button className={styles.logoutBtn} onClick={() => setConfirmLogout(true)}>
+            <button
+              className={styles.logoutBtn}
+              onClick={() => setConfirmLogout(true)}
+            >
               تسجيل خروج
             </button>
-            <button className={styles.deleteBtn} onClick={() => setConfirmDelete(true)}>
+            <button
+              className={styles.deleteBtn}
+              onClick={() => setConfirmDelete(true)}
+            >
               حذف حسابي
             </button>
           </div>
@@ -96,56 +117,28 @@ export default function ClientDashboard() {
         </div>
       )}
 
-      {/* تأكيد تسجيل الخروج */}
+      {/* Confirm Logout Modal */}
       {confirmLogout && (
-        <div className={styles.confirmOverlay}>
-          <div className={styles.confirmModal}>
-            <p>هل أنت متأكد أنك تريد تسجيل الخروج؟</p>
-            <div className={styles.confirmActions}>
-              <button
-                className={styles.confirmDelete}
-                onClick={() => {
-                  console.log('تم تسجيل الخروج');
-                  setConfirmLogout(false);
-                }}
-              >
-                تأكيد
-              </button>
-              <button
-                className={styles.cancelDelete}
-                onClick={() => setConfirmLogout(false)}
-              >
-                إلغاء
-              </button>
-            </div>
-          </div>
-        </div>
+        <ConfirmModal
+          message="هل أنت متأكد أنك تريد تسجيل الخروج؟"
+          onConfirm={() => {
+            setConfirmLogout(false);
+            logoutHandler();
+          }}
+          onCancel={() => setConfirmLogout(false)}
+        />
       )}
 
-      {/* تأكيد حذف الحساب */}
+      {/* Confirm Delete Modal */}
       {confirmDelete && (
-        <div className={styles.confirmOverlay}>
-          <div className={styles.confirmModal}>
-            <p>هل أنت متأكد أنك تريد حذف الحساب؟</p>
-            <div className={styles.confirmActions}>
-              <button
-                className={styles.confirmDelete}
-                onClick={() => {
-                  console.log('تم حذف الحساب');
-                  setConfirmDelete(false);
-                }}
-              >
-                حذف
-              </button>
-              <button
-                className={styles.cancelDelete}
-                onClick={() => setConfirmDelete(false)}
-              >
-                إلغاء
-              </button>
-            </div>
-          </div>
-        </div>
+        <ConfirmModal
+          message="هل أنت متأكد أنك تريد حذف الحساب؟"
+          onConfirm={() => {
+            console.log('تم حذف الحساب');
+            setConfirmDelete(false);
+          }}
+          onCancel={() => setConfirmDelete(false)}
+        />
       )}
     </>
   );

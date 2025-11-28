@@ -37,24 +37,24 @@
 }
 .h1a {
   font-family: var(--en);
-  font-size: var(--fs35);
+  font-size: var(--fs-h2);
   direction: ltr;
   font-weight: 700;
 }
 .h1Span {
   font-family: var(--en);
-  font-size: var(--fs25);
+  font-size: var(--fs-h4);
   direction: ltr; 
   font-weight: 400;
 }
 .h3b {
   color: var(--primaryColor);
   font-weight: 500;
-  font-size: var(--fs20);
+  font-size: var(--fs-h5);
   font-family: var(--ar);
 }
 .h1b {
-  font-size: var(--fs40);
+  font-size: var(--fs-h1);
   font-weight: 700;
   margin-top: -0.5rem;
   font-family: var(--ar);
@@ -62,15 +62,27 @@
 .h3c {
   color: var(--primaryColor);
   font-weight: 600;
-  font-size: var(--fs20);
+  font-size: var(--fs-h5);
   line-height: 1;
   margin-bottom: 1rem;
   font-family: var(--ar);
 }
 .h4 {
-  font-size: var(--fs15);
+  font-size: var(--fs-5);
   font-weight: 500;
 }
+.servicesSection {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.sectionTitle {
+  color: var(--primaryColor);
+  font-weight: 600;
+  font-size: var(--fs-h3);
+}
+
 .FinishOrMaintenanceCard {
   width: 100%;
 }

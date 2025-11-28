@@ -1,277 +1,283 @@
-'use client'
+"use client";
 
-import styles from './extract.module.css'
-import { useState, useRef } from 'react';
-import * as htmlToImage from 'html-to-image';
-import colors from '../../../../../../../data/ikeaColors';
-import neutralColors from '../../../../../../../data/neutralColors';
+import { useState } from "react";
+import styles from "./extract.module.css";
+import mix from "../../../../../../../data/ikeaColors"; // ← عدّل المسار لو مختلف
+import PreviewColor from "./PreviewColor";
 
-export default function ColorsPage() {
+// 🧠 تحويل HEX ↔ HSL
+function hexToHsl(hex) {
+  hex = hex.replace("#", "");
+  const r = parseInt(hex.substring(0, 2), 16) / 255;
+  const g = parseInt(hex.substring(2, 4), 16) / 255;
+  const b = parseInt(hex.substring(4, 6), 16) / 255;
 
-  const paletteRef = useRef(null);
+  const max = Math.max(r, g, b),
+    min = Math.min(r, g, b);
+  let h, s, l = (max + min) / 2;
 
-  function handleDownload() {
-    if (paletteRef.current === null) return;
-
-    htmlToImage.toPng(paletteRef.current, { pixelRatio: 2 })
-      .then((dataUrl) => {
-        const link = document.createElement('a');
-        link.download = 'color-palette.jpg';
-        link.href = dataUrl;
-        link.click();
-      })
-      .catch((err) => {
-        console.error('Error generating image', err);
-      });
-  }
-
-  function hexToHsl(hex) {
-    let r = parseInt(hex.slice(1,3),16) / 255;
-    let g = parseInt(hex.slice(3,5),16) / 255;
-    let b = parseInt(hex.slice(5,7),16) / 255;
-
-    let max = Math.max(r,g,b), min = Math.min(r,g,b);
-    let h, s, l = (max + min) / 2;
-
-    if(max === min){
-      h = s = 0; // achromatic
-    } else {
-      let d = max - min;
-      s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
-      switch(max){
-        case r: h = (g - b) / d + (g < b ? 6 : 0); break;
-        case g: h = (b - r) / d + 2; break;
-        case b: h = (r - g) / d + 4; break;
-      }
-      h /= 6;
+  if (max === min) h = s = 0;
+  else {
+    const d = max - min;
+    s = l > 0.5 ? d / (2 - max - min) : d / (max + min);
+    switch (max) {
+      case r:
+        h = (g - b) / d + (g < b ? 6 : 0);
+        break;
+      case g:
+        h = (b - r) / d + 2;
+        break;
+      case b:
+        h = (r - g) / d + 4;
+        break;
     }
-    return [h * 360, s * 100, l * 100];
+    h *= 60;
+  }
+  return { h, s: s * 100, l: l * 100 };
+}
+
+function hslToHex(h, s, l) {
+  s /= 100;
+  l /= 100;
+  const c = (1 - Math.abs(2 * l - 1)) * s;
+  const x = c * (1 - Math.abs(((h / 60) % 2) - 1));
+  const m = l - c / 2;
+  let r, g, b;
+
+  if (h < 60) [r, g, b] = [c, x, 0];
+  else if (h < 120) [r, g, b] = [x, c, 0];
+  else if (h < 180) [r, g, b] = [0, c, x];
+  else if (h < 240) [r, g, b] = [0, x, c];
+  else if (h < 300) [r, g, b] = [x, 0, c];
+  else [r, g, b] = [c, 0, x];
+
+  return (
+    "#" +
+    [r, g, b]
+      .map((v) =>
+        Math.round((v + m) * 255)
+          .toString(16)
+          .padStart(2, "0")
+      )
+      .join("")
+      .toUpperCase()
+  );
+}
+
+// 🎨 توليد ألوان ذكية بناءً على نوع اللون
+function generateScheme(hex) {
+  const { h, s, l } = hexToHsl(hex);
+
+  // 🩶 الحالة 1: الرمادي أو الألوان المحايدة جدًا
+  if (s < 10) {
+    const base = "#E9E0D4"; // بيج فانيلا لاتيه افتراضي
+    const accent = "#C2A78B"; // لون بيج نحاسي ثابت للتمايز
+    return { base, accent };
   }
 
-  function hslToHex(h, s, l) {
-    h /= 360; s /= 100; l /= 100;
-    let r, g, b;
-
-    if(s === 0){
-      r = g = b = l; // achromatic
-    } else {
-      const hue2rgb = (p, q, t) => {
-        if(t < 0) t += 1;
-        if(t > 1) t -= 1;
-        if(t < 1/6) return p + (q - p) * 6 * t;
-        if(t < 1/2) return q;
-        if(t < 2/3) return p + (q - p) * (2/3 - t) * 6;
-        return p;
-      }
-      let q = l < 0.5 ? l * (1 + s) : l + s - l * s;
-      let p = 2 * l - q;
-      r = hue2rgb(p, q, h + 1/3);
-      g = hue2rgb(p, q, h);
-      b = hue2rgb(p, q, h - 1/3);
-    }
-
-    return "#" + [r,g,b].map(x =>
-      Math.round(x * 255).toString(16).padStart(2,'0')
-    ).join("").toUpperCase();
+  // 🔥 الحالة 2: الألوان الدافئة (أحمر، بيج، برتقالي)
+  if ((h >= 0 && h <= 90) || (h >= 330 && h <= 360)) {
+    const base = hslToHex(h, s * 0.7, Math.min(l + 18, 92));
+    const accent = hslToHex((h + 30) % 360, s * 0.9, Math.max(l - 8, 25));
+    return { base, accent };
   }
 
-  // 🎨 النسخة الجديدة: نلعب في Lightness + Saturation
-  function generateShades(hex) {
-    const [h, s, l] = hexToHsl(hex);
+  // ❄️ الحالة 3: الألوان الباردة (أزرق، رمادي مزرق، أخضر مزرق)
+  const base = hslToHex(h, s * 0.6, Math.min(l + 22, 94));
+  const accent = hslToHex((h - 20 + 360) % 360, s * 0.8, Math.max(l - 5, 22));
+  return { base, accent };
+}
 
-    const shades = [
-      hslToHex(h, Math.min(100, s + 8), Math.min(100, l + 20)), // فاتح وناعم
-      hslToHex(h, s, l),                                        // الأساسي
-      hslToHex(h, Math.max(0, s - 8), Math.max(0, l - 20))      // غامق فخم
-    ];
-    return shades;
+// 🎨 توليد تدرجات بسيطة (واحدة أفتح + الأساسي + واحدة أغمق)
+function generateShades(hex) {
+  const { h, s, l } = hexToHsl(hex);
+
+  let light, dark;
+
+  // لو اللون فاتح جدًا → درجتين أغمق
+  if (l > 80) {
+    light = hslToHex(h, s, Math.max(l - 10, 0));
+    dark = hslToHex(h, s, Math.max(l - 25, 0));
+    return [light, hex, dark];
   }
 
-  // ✅ توليد 5 ألوان Accent
-  function generateAccentColors(hex) {
-    const [h, s, l] = hexToHsl(hex);
-    return [
-      hslToHex((h + 180) % 360, s, l),   // Complementary
-      hslToHex((h + 150) % 360, s, l),   // Split Complementary 1
-      hslToHex((h + 210) % 360, s, l),   // Split Complementary 2
-      hslToHex((h + 20) % 360, s, l),    // Analogous
-      hslToHex((h + 120) % 360, s, l)    // Triadic
-    ];
+  // لو اللون غامق جدًا → درجتين أفتح
+  if (l < 25) {
+    light = hslToHex(h, s, Math.min(l + 25, 100));
+    dark = hslToHex(h, s, Math.min(l + 10, 100));
+    return [light, hex, dark];
   }
 
-  function getLuminance(hex) {
-    let r = parseInt(hex.slice(1,3),16)/255;
-    let g = parseInt(hex.slice(3,5),16)/255;
-    let b = parseInt(hex.slice(5,7),16)/255;
-    [r,g,b] = [r,g,b].map(c => c <= 0.03928 ? c/12.92 : Math.pow((c+0.055)/1.055,2.4));
-    return 0.2126*r + 0.7152*g + 0.0722*b;
-  }
+  // الألوان المتوسطة (الطبيعية)
+  light = hslToHex(h, s, Math.min(l + 15, 100));
+  dark = hslToHex(h, s, Math.max(l - 15, 0));
 
-  function contrastRatio(hex1, hex2) {
-    const L1 = getLuminance(hex1);
-    const L2 = getLuminance(hex2);
-    return (Math.max(L1,L2)+0.05)/(Math.min(L1,L2)+0.05);
-  }
+  return [light, hex, dark];
+}
 
-  function isNeutralCompatible(sec, neu) {
-    const ratio = contrastRatio(sec, neu);
-    return ratio > 2 && ratio < 12;
-  }
+export default function Page() {
+  // ✅ اللون الافتراضي
+  const defaultColor = {
+    id: "toast-1033",
+    name: "Toast 1033 - توست",
+    hex: "#C2A78B",
+    description: "لون محايد دافئ بدرجة بيج محمص.",
+    usage: "يستخدم كلون ثانوي في الكنب أو الأثاث لتحقيق دفء بصري.",
+  };
 
-  const [secondary, setSecondary] = useState("#B68A5A");
-  const [neutral, setNeutral] = useState("#EFE5DA");
+  // ✅ تعيين اللون الافتراضي كالمحدد عند البداية
+  const [selected, setSelected] = useState(defaultColor);
+  const [scheme, setScheme] = useState(generateScheme(defaultColor.hex));
 
-  const accentColors = generateAccentColors(secondary);
+  const handleSelect = (color) => {
+    setSelected(color);
+    setScheme(generateScheme(color.hex));
+  };
 
-  const secondaryShades = generateShades(secondary);
-  const accentShades = accentColors.map(c => generateShades(c));
-  const neutralShades = generateShades(neutral);
-
-  function GroupBar({ label, shades }) {
-    return (
-      <div className={styles.groupBar}>
-        <h4 className={styles.par}>{label}</h4>
-        <div className={styles.barColors}>
-          {shades.map((c,i) => (
-            <div key={i} className={styles.barColor} style={{ backgroundColor: c }}></div>
-          ))}
-        </div>
-        <div className={styles.barCodes}>
-          {shades.map((c,i) => (
-            <p key={i} className={styles.colorCode}>{c}</p>
-          ))}
-        </div>
-      </div>
-    )
-  }
+  // 🧩 توليد الدرجات اللونية الثلاثية
+  const baseShades = generateShades(scheme.base);
+  const secondaryShades = generateShades(selected.hex);
+  const accentShades = generateShades(scheme.accent);
 
   return (
     <div className={styles.container}>
-      <h2 className={styles.title}>اختيار ألوان متناسقة وتوزيعها</h2>
-      <p className={styles.par}>ألوان الشقة تؤثر على المزاج والراحة النفسية والشعور بالإتساع أو الضيق.</p>
-      <p className={styles.par}>نستخدم قواعد الألوان المتقابلة + المتناسقة لتوليد لون التمييز واقتراح درجات إضافية.</p>
+      <h1 className={styles.title}>🎨 اختر اللون الثانوي (لون الكنب)</h1>
+      <p className={styles.par}>
+        بمجرد اختيار اللون الثانوي، سنقوم بتوليد لون الحائط الأساسي (أفتح منه)
+        ولون التمييز المتناسق من نفس دائرة اللون.
+      </p>
 
-      {/* 🎨 اللون الثانوي */}
-      <h2 className={styles.subTitle}>أولا : تحديد اللون الثانوي 30%</h2>
-      <p className={styles.par}>اللون الثانوي هو لون الكراسي والكنب والستائر والسجاد.</p>
+      {/* شبكة الألوان */}
       <div className={styles.colorsGrid}>
-        {colors.map(color => {
-          const isActive = secondary === color.hex;
-          return (
+        {mix.map((c) => (
+          <div
+            key={c.id}
+            className={`${styles.colorItem} ${
+              selected?.id === c.id ? styles.active : ""
+            }`}
+            onClick={() => handleSelect(c)}
+          >
             <div
-              key={color.id}
-              onClick={() => setSecondary(color.hex)}
-              className={`${styles.colorItem} ${isActive ? styles.active : ""}`}
-            >
-              <div className={styles.colorSquare} style={{ backgroundColor: color.hex }}></div>
-              <p className={styles.colorName}>{color.name}</p>
-              <p className={styles.colorCode}>{color.hex}</p>
-            </div>
-          )
-        })}
+              className={styles.colorSquare}
+              style={{ backgroundColor: c.hex }}
+            ></div>
+            <div className={styles.colorName}>{c.name}</div>
+            <div className={styles.colorCode}>{c.hex}</div>
+          </div>
+        ))}
       </div>
 
-      <h3 className={styles.par}>أو اختر اللون يدويًا :</h3>
-      <input
-        type="color"
-        value={secondary}
-        onChange={(e)=>setSecondary(e.target.value)}
-        className={styles.colorPicker}
-      />
+      {/* النتيجة */}
+      {scheme && (
+        <div className={styles.finalPaletteWrapper}>
+          <h2 className={styles.subTitle}>نتيجة التناسق اللوني</h2>
 
-      <GroupBar label="اللون الثانوي بدرجاته" shades={secondaryShades} />
-
-      <h2 className={styles.subTitle}>ثانيا : ألوان التمييز (Accent)</h2>
-      <p className={styles.par}>ألوان العناصر الصغيرة مثل اللوحات والإكسسوارات، يتم اقتراحها تلقائيا وفقا للون الثانوي.</p>
-      
-      {accentShades.map((shades, idx) => (
-        <GroupBar key={idx} label={`Accent ${idx+1}`} shades={shades} />
-      ))}
-
-      {/* 🎨 اللون المحايد */}
-      <h2 className={styles.subTitle}>ثالثا : تحديد اللون المحايد 60%</h2>
-      <div className={styles.colorsGrid}>
-        {neutralColors.map(color => {
-          const isActive = neutral === color.hex;
-          const compatible = isNeutralCompatible(secondary, color.hex);
-          return (
-            <div
-              key={color.id}
-              onClick={() => setNeutral(color.hex)}
-              className={`
-                ${styles.colorItem}
-                ${isActive ? styles.active : ""}
-                ${!compatible ? styles.notRecommended : ""}
-              `}
-            >
-              <div className={styles.colorSquare} style={{ backgroundColor: color.hex }}></div>
-              {!compatible && <div className={styles.notRecommendedMark}>×</div>}
-              <p className={styles.colorName}>{color.name}</p>
-              <p className={styles.colorCode}>{color.hex}</p>
-            </div>
-          )
-        })}
-      </div>
-
-      <h3 className={styles.subtitle}>أو اختر اللون المحايد يدويًا:</h3>
-      <input
-        type="color"
-        value={neutral}
-        onChange={(e)=>setNeutral(e.target.value)}
-        className={styles.colorPicker}
-      />
-
-      <GroupBar label="اللون المحايد" shades={neutralShades} />
-
-      <h2 className={styles.subTitle}>بالتة الألوان النهائية</h2>
-      <div id="captureWrapper" style={{ padding: "20px", background: "#fff" }}>
-        <div className={styles.finalPaletteWrapper} ref={paletteRef}>
-          {/* 🔹 الصف الأول — 3 ألوان رئيسية (60/30/10) */}
+          {/* البار العلوي */}
           <div className={styles.finalPaletteBarTop}>
-            <div className={styles.neutralPart} style={{ backgroundColor: neutral }}></div>
-            <div className={styles.secondaryPart} style={{ backgroundColor: secondary }}></div>
-            <div className={styles.highlightPart} style={{ backgroundColor: accentColors[0] }}></div>
+            <div
+              className={styles.neutralPart}
+              style={{ backgroundColor: scheme.base }}
+              title="اللون الأساسي (الحائط)"
+            ></div>
+            <div
+              className={styles.secondaryPart}
+              style={{ backgroundColor: selected.hex }}
+              title="اللون الثانوي (الكنب)"
+            ></div>
+            <div
+              className={styles.highlightPart}
+              style={{ backgroundColor: scheme.accent }}
+              title="لون التمييز (التفاصيل)"
+            ></div>
           </div>
 
-          {/* 🔹 الصف الثاني — درجات كل لون */}
+          {/* البار السفلي (درجات بسيطة مع الأكواد) */}
           <div className={styles.finalPaletteBarBottom}>
             <div className={styles.neutralGroup}>
-              {neutralShades.map((c,i)=>
-                <div key={`n-${i}`} className={styles.shadeBoxFinal} style={{ backgroundColor: c }}></div>
-              )}
+              {baseShades.map((c, i) => (
+                <div key={`b${i}`} className={styles.shadeBoxWrapper}>
+                  <div
+                    className={styles.shadeBoxFinal}
+                    style={{ backgroundColor: c }}
+                  ></div>
+                  <div className={styles.colorCodeLabel}>{c}</div>
+                </div>
+              ))}
             </div>
+
             <div className={styles.secondaryGroup}>
-              {secondaryShades.map((c,i)=>
-                <div key={`s-${i}`} className={styles.shadeBoxFinal} style={{ backgroundColor: c }}></div>
-              )}
+              {secondaryShades.map((c, i) => (
+                <div key={`s${i}`} className={styles.shadeBoxWrapper}>
+                  <div
+                    className={styles.shadeBoxFinal}
+                    style={{ backgroundColor: c }}
+                  ></div>
+                  <div className={styles.colorCodeLabel}>{c}</div>
+                </div>
+              ))}
             </div>
+
             <div className={styles.highlightGroup}>
-              {accentShades[0].map((c,i)=>
-                <div key={`h-${i}`} className={styles.shadeBoxFinal} style={{ backgroundColor: c }}></div>
-              )}
+              {accentShades.map((c, i) => (
+                <div key={`h${i}`} className={styles.shadeBoxWrapper}>
+                  <div
+                    className={styles.shadeBoxFinal}
+                    style={{ backgroundColor: c }}
+                  ></div>
+                  <div className={styles.colorCodeLabel}>{c}</div>
+                </div>
+              ))}
             </div>
           </div>
 
+          {/* تفاصيل اللون */}
+          <div className={styles.groupBar}>
+            <h3 className={styles.subTitle}>{selected.name}</h3>
+            {selected.description && (
+              <p className={styles.par}>{selected.description}</p>
+            )}
+            {selected.usage && (
+              <p className={styles.par}>
+                <strong>الاستخدام:</strong> {selected.usage}
+              </p>
+            )}
+          </div>
+
+          {/* اللابلز */}
           <div className={styles.paletteLabels}>
             <div className={styles.labelItem}>
-              <span className={styles.labelColor} style={{ backgroundColor: neutral }}></span>
-              <p>اللون المحايد (60%)</p>
+              <span
+                className={styles.labelColor}
+                style={{ backgroundColor: scheme.base }}
+              ></span>
+              أساسي (لون الحائط)
             </div>
             <div className={styles.labelItem}>
-              <span className={styles.labelColor} style={{ backgroundColor: secondary }}></span>
-              <p>اللون الثانوي (30%)</p>
+              <span
+                className={styles.labelColor}
+                style={{ backgroundColor: selected.hex }}
+              ></span>
+              ثانوي (لون الكنب)
             </div>
             <div className={styles.labelItem}>
-              <span className={styles.labelColor} style={{ backgroundColor: accentColors[0] }}></span>
-              <p>لون التمييز (10%)</p>
+              <span
+                className={styles.labelColor}
+                style={{ backgroundColor: scheme.accent }}
+              ></span>
+              تمييز (لون التفاصيل)
             </div>
           </div>
         </div>
-      </div>
+      )}
 
-      <button onClick={handleDownload} className={styles.downloadBtn}>
-        تحميل البالتة كصورة
-      </button>
+      {/* 👇 المعاينة */}
+      <div className={styles.pre}>
+        <PreviewColor
+          neutralShades={baseShades}
+          secondaryShades={secondaryShades}
+          highlightShades={accentShades}
+        />
+      </div>
     </div>
-  )
+  );
 }

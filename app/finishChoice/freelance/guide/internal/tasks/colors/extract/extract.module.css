@@ -3,7 +3,7 @@
   flex-direction: column;
   padding: 3rem 2rem;
   margin: 3rem 2rem 8rem;
-  width: calc(100%-4rem);
+  width: calc(100% - 4rem);
   background-color: var(--backgroundColor);
   border-radius: var(--br5);
 }
@@ -17,19 +17,18 @@
 }
 
 .par {
-  font-size: var(--fs15);
+  font-size: var(--fs-5);
   font-weight: 500;
   color: var(--textColor);
 }
 
 .subTitle {
   margin: 3rem 0 0.5rem;
-  font-size: var(--fs20);
+  font-size: var(--fs-h5);
   font-weight: 600;
   color: var(--textColor);
   text-align: center;
 }
-
 
 .colorsGrid {
   background-color: var(--whiteColor);
@@ -142,44 +141,57 @@
   flex: 1; /* 10% */
 }
 
-/* 🔹 الصف السفلي (درجات كل لون) — موزع 60% / 30% / 10% */
+/* 🔹 الصف السفلي (درجات كل لون) — بنفس نسب البار العلوي */
 .finalPaletteBarBottom {
   display: flex;
   width: 100%;
-  height: 50px;
+  height: 70px;
   border-radius: 10px;
   overflow: hidden;
   box-shadow: 0 2px 8px var(--shadowLight);
 }
 
-/* اجعل كل مجموعة تأخذ الحصة المناسبة من العرض */
 .neutralGroup {
   display: flex;
-  flex: 6;      /* 60% */
-  min-width: 0; /* يمنع تقطيع العناصر عند overflow داخل flex */
+  flex: 6; /* 60% */
+  min-width: 0;
 }
 
 .secondaryGroup {
   display: flex;
-  flex: 3;      /* 30% */
+  flex: 3; /* 30% */
   min-width: 0;
 }
 
 .highlightGroup {
   display: flex;
-  flex: 1;      /* 10% */
+  flex: 1; /* 10% */
   min-width: 0;
 }
 
 /* داخل كل مجموعة: 3 تدرجات متساوية بدون فراغات */
+.shadeBoxWrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
 .shadeBoxFinal {
   flex: 1;
   height: 100%;
-  border-radius: 0; /* علشان الحواف الداخلية تكون مصفوفة بدون فجوات مرئية */
+  border-radius: 0;
   margin: 0;
   padding: 0;
 }
 
+.colorCodeLabel {
+  font-size: 11px;
+  font-family: monospace;
+  color: #222;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.5);
+  line-height: 1.2;
+}
 
 /* ====== LABELS ====== */
 .paletteLabels {
@@ -205,17 +217,6 @@
   border-radius: 4px;
   display: inline-block;
   border: 1px solid var(--borderLight);
-}
-
-.downloadBtn {
-  font-size: var(--fs15);
-  font-weight: 500;
-  font-family: var(--ar);
-  background-color: var(--primaryColor);
-  padding: 0.5rem 1rem;
-  border-radius: var(--br5);
-  outline: none;
-  border: 1px solid var(--primaryColor);
 }
 
 /* ====== GROUP BAR ====== */
@@ -271,7 +272,7 @@
   border-radius: var(--br5);
   background-color: var(--primaryColor);
   color: var(--whiteColor);
-  font-size: var(--fs15);
+  font-size: var(--fs-5);
   font-family: var(--ar);
   font-weight: 600;
   border: 1px solid var(--primaryColor);

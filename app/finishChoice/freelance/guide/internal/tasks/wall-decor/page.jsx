@@ -7,7 +7,7 @@ export default function WallDecorPage() {
     <section className={styles.decorSection}>
       <h1 className={styles.title}>أنواع ديكور الحوائط</h1>
       <p className={styles.intro}>
-        ديكور الحائط هو العنصر الأساسي اللي بيحدد طابع الشقة وشكلها العام.  
+        ديكور الحائط هو العنصر الأساسي اللي بيحدد طابع الشقة وشكلها العام.
         هنا هتلاقي أشهر الأنواع، مميزاتها، وأين يُفضل استخدامها.
       </p>
 
@@ -16,32 +16,37 @@ export default function WallDecorPage() {
           <div key={item.id} className={styles.decorItem}>
             <h2 className={styles.decorTitle}>{item.title}</h2>
             <p className={styles.decorDesc}>{item.description}</p>
-            
 
-{/* قائمة الأمثلة */}
-{item.examples && (
-  <div className={styles.examplesSection}>
-    <strong>أمثلة:</strong>
-    <ul className={styles.decorExamples}>
-      {item.examples.map((ex, index) => (
-        <li key={index}>{ex}</li>
-      ))}
-    </ul>
-  </div>
-)}
+            {/* وقت التنفيذ المناسب */}
+            {item.timing && (
+              <p className={styles.timing}>
+                🕓 <strong>وقت التنفيذ المناسب:</strong> {item.timing}
+              </p>
+            )}
 
+            {/* قائمة الأمثلة */}
+            {item.examples && (
+              <div className={styles.examplesSection}>
+                <strong>أمثلة:</strong>
+                <ul className={styles.decorExamples}>
+                  {item.examples.map((ex, index) => (
+                    <li key={index}>{ex}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
 
             {/* مكان الاستخدام */}
-{item.suitableFor && item.suitableFor.length > 0 && (
-  <div className={styles.suitableSection}>
-    <strong>مناسب لـ:</strong>
-    <ul className={styles.suitableList}>
-      {item.suitableFor.map((place, index) => (
-        <li key={index}>{place}</li>
-      ))}
-    </ul>
-  </div>
-)}
+            {item.suitableFor && item.suitableFor.length > 0 && (
+              <div className={styles.suitableSection}>
+                <strong>مناسب لـ:</strong>
+                <ul className={styles.suitableList}>
+                  {item.suitableFor.map((place, index) => (
+                    <li key={index}>{place}</li>
+                  ))}
+                </ul>
+              </div>
+            )}
 
             {/* معرض الصور */}
             {item.images && item.images.length > 0 && (

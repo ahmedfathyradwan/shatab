@@ -10,7 +10,13 @@ const wallDecorData = [
       "دهانات ملمسية (رملي، إسمنتي، ميتاليك، سبوتية)",
     ],
     suitableFor: ["غرف المعيشة", "غرف النوم", "الممرات"],
-    images: ["/images/logo.png", "/images/logo.png", "/images/logo.png"],
+    timing: "يتم تنفيذها بعد المحارة والمعجون وأعمال الأساس الخاصة بالنقاشة.",
+    images: [
+      "/images/WallDecor/paint1.jpg",
+      "/images/WallDecor/paint2.jpg",
+      "/images/WallDecor/paint3.jpg",
+      "/images/WallDecor/paint4.jpg",
+    ],
     moreLink:
       "https://www.pinterest.com/search/pins/?q=interior%20wall%20paint%20designs",
   },
@@ -25,10 +31,12 @@ const wallDecorData = [
       "ورق حائط ثلاثي الأبعاد لإحساس بالعمق",
     ],
     suitableFor: ["غرف المعيشة", "غرف النوم", "غرف الأطفال"],
+    timing: "يُركب بعد الانتهاء تمامًا من الدهانات الأساسية وجفافها.",
     images: [
-      "/images/wall/wallpaper1.jpg",
-      "/images/wall/wallpaper2.jpg",
-      "/images/wall/wallpaper3.jpg",
+      "/images/WallDecor/wallpaper1.jpg",
+      "/images/WallDecor/wallpaper2.jpg",
+      "/images/WallDecor/wallpaper3.jpg",
+      "/images/WallDecor/wallpaper4.jpg",
     ],
     moreLink:
       "https://www.pinterest.com/search/pins/?q=modern%20wallpaper%20designs",
@@ -44,10 +52,12 @@ const wallDecorData = [
       "دمج الخشب مع الإضاءة الجانبية أو الدهان",
     ],
     suitableFor: ["غرف المعيشة", "المكاتب المنزلية", "غرف النوم الرئيسية"],
+    timing: "بعد التشطيبات الأساسية (محارة، دهان الأساس) وقبل تركيب الإضاءة النهائية.",
     images: [
-      "/images/wall/wood1.jpg",
-      "/images/wall/wood2.jpg",
-      "/images/wall/wood3.jpg",
+      "/images/WallDecor/wood1.jpg",
+      "/images/WallDecor/wood2.jpg",
+      "/images/WallDecor/wood3.jpg",
+      "/images/WallDecor/wood4.jpg",
     ],
     moreLink:
       "https://www.pinterest.com/search/pins/?q=wood%20wall%20interior%20design",
@@ -63,10 +73,12 @@ const wallDecorData = [
       "دمج الحجر مع الدهان أو الإضاءة المخفية",
     ],
     suitableFor: ["المداخل", "غرف المعيشة", "حوائط التلفاز"],
+    timing: "بعد المحارة وقبل الدهانات النهائية، ويفضّل قبل تركيب الأرضيات النهائية لتجنب الاتساخ.",
     images: [
-      "/images/wall/stone1.jpg",
-      "/images/wall/stone2.jpg",
-      "/images/wall/stone3.jpg",
+      "/images/WallDecor/stone1.jpg",
+      "/images/WallDecor/stone2.jpg",
+      "/images/WallDecor/stone3.jpg",
+      "/images/WallDecor/stone4.jpg",
     ],
     moreLink:
       "https://www.pinterest.com/search/pins/?q=stone%20wall%20interior",
@@ -82,10 +94,12 @@ const wallDecorData = [
       "تقسيم الحائط لمربعات أو مستطيلات أنيقة",
     ],
     suitableFor: ["غرف الاستقبال", "المكاتب", "غرف النوم الرئيسية"],
+    timing: "بعد المعجون والدهان التمهيدي وقبل الدهانات النهائية.",
     images: [
-      "/images/wall/panel1.jpg",
-      "/images/wall/panel2.jpg",
-      "/images/wall/panel3.jpg",
+      "/images/WallDecor/panel1.jpg",
+      "/images/WallDecor/panel2.jpg",
+      "/images/WallDecor/panel3.jpg",
+      "/images/WallDecor/panel4.jpg",
     ],
     moreLink:
       "https://www.pinterest.com/search/pins/?q=wall%20panel%20molding%20design",
@@ -101,10 +115,12 @@ const wallDecorData = [
       "جبس بورد مع شرائط LED لإضاءة ناعمة",
     ],
     suitableFor: ["غرف المعيشة", "الممرات", "المكاتب المنزلية"],
+    timing: "قبل أعمال النقاشة النهائية والدهانات، وبعد الانتهاء من تأسيس الكهرباء.",
     images: [
-      "/images/wall/gypsum1.jpg",
-      "/images/wall/gypsum2.jpg",
-      "/images/wall/gypsum3.jpg",
+      "/images/WallDecor/gypsum1.jpg",
+      "/images/WallDecor/gypsum2.jpg",
+      "/images/WallDecor/gypsum3.jpg",
+      "/images/WallDecor/gypsum4.jpg",
     ],
     moreLink:
       "https://www.pinterest.com/search/pins/?q=gypsum%20board%20wall%20design",
@@ -120,33 +136,65 @@ const wallDecorData = [
       "زجاج مزخرف أو ملون للحوائط",
     ],
     suitableFor: ["غرف المعيشة", "الممرات", "المداخل الضيقة"],
+    timing: "بعد الانتهاء من الدهانات والأرضيات لتفادي الخدوش أو الكسر.",
     images: [
-      "/images/wall/mirror1.jpg",
-      "/images/wall/mirror2.jpg",
-      "/images/wall/mirror3.jpg",
+      "/images/WallDecor/mirror1.jpg",
+      "/images/WallDecor/mirror2.jpg",
+      "/images/WallDecor/mirror3.jpg",
+      "/images/WallDecor/mirror4.jpg",
     ],
     moreLink:
       "https://www.pinterest.com/search/pins/?q=mirror%20wall%20interior%20design",
   },
+{
+  id: 8,
+  title: "ألواح PVC (PVC Panels)",
+  description:
+    "ألواح PVC تُعتبر من أحدث وأفضل حلول ديكور الحوائط الحديثة، لأنها تجمع بين المظهر العصري وسهولة التركيب والتنظيف. تتميز بخفة وزنها ومقاومتها العالية للرطوبة، مما يجعلها مثالية للمطابخ والحمامات.",
+  examples: [
+    "ألواح PVC بتصميم يشبه الخشب الطبيعي",
+    "ألواح لامعة بلون موحد لإطلالة عصرية",
+    "ألواح PVC ثلاثية الأبعاد (3D Panels) لإضافة عمق وجمال للحائط",
+  ],
+  suitableFor: ["المطابخ", "الحمامات", "الشرفات", "المكاتب الحديثة"],
+  timing: "تُركب بعد الانتهاء من جميع التشطيبات النهائية والدهانات.",
+  images: [
+    "/images/WallDecor/pvc1.jpg",
+    "/images/WallDecor/pvc2.jpg",
+    "/images/WallDecor/pvc3.jpg",
+    "/images/WallDecor/pvc4.jpg",
+  ],
+  moreLink:
+    "https://www.pinterest.com/search/pins/?q=pvc%20wall%20panel%20design",
+},
   {
-    id: 8,
-    title: "المواد المبتكرة والعصرية",
-    description:
-      "خيارات جديدة وعملية مثل PVC Panels أو الجدران الخضراء لإضافة لمسة عصرية وسهلة الصيانة.",
-    examples: [
-      "ألواح PVC مقاومة للماء وسهلة التركيب",
-      "لوحات فنية كبيرة (Canvas Art)",
-      "حائط نباتي طبيعي أو صناعي (Green Wall)",
-    ],
-    suitableFor: ["المطابخ", "الحمامات", "الشرفات", "المكاتب"],
-    images: [
-      "/images/wall/modern1.jpg",
-      "/images/wall/modern2.jpg",
-      "/images/wall/modern3.jpg",
-    ],
-    moreLink:
-      "https://www.pinterest.com/search/pins/?q=pvc%20wall%20panel%20design",
-  },
+  id: 9,
+  title: "اللوحات الفنية والتابلوهات (Wall Art & Frames)",
+  description:
+    "تُعد اللوحات الفنية والتابلوهات من أهم عناصر التزيين النهائية، وتساعد على إبراز طابع المكان وإضافة لمسة فنية وشخصية على الديكور.",
+  examples: [
+    "تابلوهات مودرن بألوان جريئة أو تصميمات هندسية",
+    "لوحات فنية كلاسيكية بزخارف وإطارات ذهبية",
+    "مجموعة تابلوهات صغيرة (Gallery Wall) بشكل منسق",
+    "تابلوهات مطبوعة بألوان متناسقة مع الأثاث",
+  ],
+  suitableFor: [
+    "غرف المعيشة",
+    "غرف النوم",
+    "الممرات",
+    "المداخل",
+  ],
+  timing: "بعد الانتهاء من الدهانات النهائية وفرش الشقة.",
+  images: [
+    "/images/WallDecor/art1.jpg",
+    "/images/WallDecor/art2.jpg",
+    "/images/WallDecor/art3.jpg",
+    "/images/WallDecor/art4.jpg",
+  ],
+  moreLink:
+    "https://www.pinterest.com/search/pins/?q=modern%20wall%20art%20frames",
+},
+
 ];
 
 export default wallDecorData;

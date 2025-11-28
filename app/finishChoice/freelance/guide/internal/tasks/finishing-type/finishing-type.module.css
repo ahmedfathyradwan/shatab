@@ -8,7 +8,7 @@
 }
 
 .title {
-  font-size: var(--fs25);
+  font-size: var(--fs-h4);
   margin: 0 -1.5rem 3rem;
   text-align: center;
   color: var(--primaryColor);
@@ -23,7 +23,7 @@
 }
 
 .typeTitle {
-  font-size: var(--fs20);
+  font-size: var(--fs-h5);
   font-weight: 500;
   margin: 0 -1rem 1.5rem;
   color: var(--primaryColor);
@@ -34,7 +34,7 @@
 }
 
 .typeSpan {
-  font-size: var(--fs20);
+  font-size: var(--fs-h5);
   color: var(--primaryColor);
   font-weight: 500;
 }
@@ -60,7 +60,7 @@
 }
 
 .featuresTitle {
-  font-size: var(--fs20);
+  font-size: var(--fs-h5);
   margin: 1.5rem 0 0 0.5rem;
   font-weight: 500;
   color: var(--textColor);
@@ -69,7 +69,7 @@
 .featuresList {
   list-style-type: disc;
   color: var(--textColor);
-  font-size: var(--fs15);
+  font-size: var(--fs-5);
   font-weight: 500;
   padding-right: 2.5rem;
 }
@@ -77,7 +77,7 @@
 .suitableFor {
   color: var(--primaryColor);
   margin-top: 1rem;
-  font-size: var(--fs15);
+  font-size: var(--fs-5);
   font-weight: 500;
 }
 
@@ -89,7 +89,7 @@
   color: var(--backgroundColor);
   border-radius: var(--br5);
   text-decoration: none;
-  font-size: var(--fs15);
+  font-size: var(--fs-5);
   font-weight: 500;
   border: 1px solid var(--primaryColor);
   cursor: pointer;

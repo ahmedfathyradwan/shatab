@@ -123,7 +123,7 @@
 }
 
 .warning {
-  font-size: var(--fs15);
+  font-size: var(--fs-5);
   color: #b00;
   line-height: 1.6;
   font-weight: 600;

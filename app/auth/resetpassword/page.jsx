@@ -64,21 +64,8 @@ export default function ResetPasswordPage() {
                 value={newPassword}
                 onChange={(e) => setNewPassword(e.target.value)}
                 required
+                maxLength={6}
               />
-              <span
-                onClick={() => setShowPassword(!showPassword)}
-                style={{
-                  position: 'absolute',
-                  top: '40%',
-                  left: '2rem',
-                  transform: 'translateY(-50%)',
-                  cursor: 'pointer',
-                  fontSize: '1.2rem',
-                  color: 'var(--textColor)',
-                }}
-              >
-                {showPassword ? '👁️' : '👁️'}
-              </span>
             </div>
           </div>
 

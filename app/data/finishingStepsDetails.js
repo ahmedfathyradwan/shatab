@@ -12,27 +12,32 @@ importance: [
   "تتيح وضع جدول زمني ومالي واقعي للمشروع بناءً على التصور النهائي."
 ],
     tasks: [
-            {
-        text: "تحديد متطلبات التشطيب",
-        link: { href: "/finishChoice/freelance/guide/internal/tasks/checklist", label: " قائمة المتطلبات" }
-      },
-      {
-        text: "اختيار نوع التشطيب",
-        link: { href: "/finishChoice/freelance/guide/internal/tasks/finishing-type", label: " أشهر أنواع التشطيبات" }
-      },
-            {
-        text: "اختيار ديكورات الحوائط",
-        link: { href: "/finishChoice/freelance/guide/internal/tasks/wall-decor", label: "اختيار ديكورات الحوائط" }
-      },
-      {
-        text: "اختيار الألوان",
-        link: { href: "/finishChoice/freelance/guide/internal/tasks/colors", label: " كيفية اختيار الألوان" }
-      },
-      {
-        text: "إنشاء الرسومات",
-        link: { href: "/finishChoice/freelance/guide/internal/tasks/visualization", label: "إنشاء الرسومات" }
-      }
-    ],
+  {
+    text: "تحديد متطلبات التشطيب",
+    link: { href: "/finishChoice/freelance/guide/internal/tasks/checklist", label: "قائمة المتطلبات" },
+    image: "/images/checklist.jpg"
+  },
+  {
+    text: "اختيار نوع التشطيب",
+    link: { href: "/finishChoice/freelance/guide/internal/tasks/finishing-type", label: "أشهر أنواع التشطيبات" },
+    image: "/images/finishing-type/minimalist.jpeg"
+  },
+  {
+    text: "اختيار ديكورات الحوائط",
+    link: { href: "/finishChoice/freelance/guide/internal/tasks/wall-decor", label: "اختيار ديكورات الحوائط" },
+    image: "/images/WallDecor/stone1.jpg"
+  },
+  {
+    text: "اختيار الألوان",
+    link: { href: "/finishChoice/freelance/guide/internal/tasks/colors", label: "كيفية اختيار الألوان" },
+    image: "/images/freelance.jpg"
+  },
+  {
+    text: "إنشاء الرسومات",
+    link: { href: "/finishChoice/freelance/guide/internal/tasks/visualization", label: "إنشاء الرسومات" },
+    image: "/images/visualization.jpg"
+  }
+]
   },
 {
   id: 2,
@@ -411,7 +416,33 @@ description: "في هذه المرحلة يتم تمديد أسلاك الكهر
 },
 {
   "id": 15,
-  "title": "15- أعمال الرخام والجرانيت",
+  "title": "15- أعمال الحديد",
+  "slug": "metal-works",
+  "image": "/images/finishingSteps/metal.jpeg",
+  "link": "/internal/metal-works",
+  "description": "تشمل هذه المرحلة تصنيع وتركيب العناصر الحديدية مثل الأبواب والشبابيك والبلكونات والسلالم الداخلية أو الخارجية، وتُنفذ بدقة لضمان الأمان والجودة والمظهر الجمالي النهائي.",
+  "requiredSpecialist": [
+    "فني حدادة."
+  ],
+  "tasks": [
+    "تصنيع الأبواب والشبابيك الحديدية حسب المخططات.",
+    "تركيب درابزين السلالم والبلكونات مع مراعاة الثبات والاستقامة.",
+    "تنظيف الحديد وتجهيزه للدهان (صنفرة، دهان أساس مقاوم للصدأ)."
+  ],
+  "averageTime": "5 - 10 أيام حسب عدد العناصر وتصميمها.",
+  "notes": [
+    "يُفضل تنفيذ الأعمال الحديدية قبل بدء مرحلة الدهانات النهائية لتفادي الاتساخ أو الخدوش.",
+    "يجب التأكد من حماية العناصر الحديدية من الرطوبة والصدأ باستخدام دهان الأساس المناسب."
+  ],
+  "qualityCheck": [
+    "التأكد من استقامة وتوازن التركيبات الحديدية.",
+    "فحص جودة اللحامات وثبات المسامير والتثبيتات.",
+    "التحقق من تغطية الدهان بالكامل وعدم وجود صدأ ظاهر."
+  ]
+},
+{
+  "id": 16,
+  "title": "16- أعمال الرخام والجرانيت",
   "slug": "marble-granite-works",
   "image": "/images/finishingSteps/marble.jpeg",
   "link": "/internal/marble-granite-works",
@@ -434,8 +465,8 @@ description: "في هذه المرحلة يتم تمديد أسلاك الكهر
   ]
 },
 {
-  id: 16,
-  title: "16- تأسيس النقاشة",
+  id: 17,
+  title: "17- تأسيس النقاشة",
   slug: "paint-base",
   image: "/images/finishingSteps/17.jpeg",
   link: "/internal/paint-base",
@@ -464,8 +495,8 @@ description: "في هذه المرحلة يتم تمديد أسلاك الكهر
   ]
 },
 {
-  id: 17,
-  title: "17- تشطيب السباكة",
+  id: 18,
+  title: "18- تشطيب السباكة",
   slug: "plumbing-finishing",
   image: "/images/finishingSteps/22.jpeg",
   link: "/internal/plumbing-finishing",
@@ -488,8 +519,8 @@ description: "في هذه المرحلة يتم تمديد أسلاك الكهر
   ]
 },
 {
-  id: 18,
-  title: "18- تشطيب الكهرباء",
+  id: 19,
+  title: "19- تشطيب الكهرباء",
   slug: "electrical-finishing",
   image: "/images/finishingSteps/21.jpeg",
   link: "/internal/electrical-finishing",
@@ -516,8 +547,8 @@ description: "في هذه المرحلة يتم تمديد أسلاك الكهر
   ]
 },
 {
-  id: 19,
-  title: "19- تشطيب النقاشة",
+  id: 20,
+  title: "20- تشطيب النقاشة",
   slug: "paint-finishing",
   image: "/images/finishingSteps/23.jpeg",
   link: "/internal/paint-finishing",
@@ -544,8 +575,8 @@ description: "في هذه المرحلة يتم تمديد أسلاك الكهر
   ]
 },
 {
-  "id": 20,
-  "title": "20- الأرضيات الخشبية",
+  "id": 21,
+  "title": "21- الأرضيات الخشبية",
   "slug": "wooden-floors",
   "image": "/images/finishingSteps/20.jpeg",
   "link": "/internal/wooden-floors",
@@ -560,8 +591,8 @@ description: "في هذه المرحلة يتم تمديد أسلاك الكهر
   ]
 },
 {
-  id: 21,
-  title: "21- تركيب الأبواب الجاهزة",
+  id: 22,
+  title: "22- تركيب الأبواب الجاهزة",
   slug: "pre-hung-doors",
   image: "/images/finishingSteps/19.jpeg",
   link: "/internal/pre-hung-doors",
@@ -584,8 +615,8 @@ description: "في هذه المرحلة يتم تمديد أسلاك الكهر
   ]
 },
 {
-  "id": 22,
-  "title": "22- تركيب المطبخ",
+  "id": 23,
+  "title": "23- تركيب المطبخ",
   "slug": "kitchen-installation",
   "image": "/images/finishingSteps/25.jpeg",
   "link": "/internal/kitchen-installation",
@@ -602,8 +633,8 @@ description: "في هذه المرحلة يتم تمديد أسلاك الكهر
   ]
 },
 {
-  "id": 23,
-  "title": "23- ديكورات ونجف",
+  "id": 24,
+  "title": "24- ديكورات ونجف",
   "slug": "decorations",
   "image": "/images/finishingSteps/24.jpeg",
   "link": "/internal/decorations",
@@ -628,8 +659,8 @@ description: "في هذه المرحلة يتم تمديد أسلاك الكهر
   ]
 },
 {
-  "id": 24,
-  "title": "24- فرش العفش",
+  "id": 25,
+  "title": "25- فرش العفش",
   "slug": "furniture-arrangement",
   "image": "/images/finishingSteps/26.jpeg",
   "link": "/internal/furniture-arrangement",

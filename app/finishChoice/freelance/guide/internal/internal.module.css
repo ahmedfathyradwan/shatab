@@ -13,7 +13,7 @@
   }
   
   .title {
-    font-size: var(--fs25);
+    font-size: var(--fs-h4);
     color: var(--primaryColor);
     text-align: center;
     width: 100%;
@@ -51,7 +51,7 @@
   }
   
   .cardTitle {
-    font-size: var(--fs10);
+    font-size: var(--fs-small);
     font-weight: 600;
   }
   
@@ -73,7 +73,7 @@
   }
   
   .checkMark {
-    font-size: var(--fs10);
+    font-size: var(--fs-small);
     color: var(--whiteColor);
     font-weight: 500;
   }

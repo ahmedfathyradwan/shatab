@@ -12,13 +12,13 @@
 }
 
 .title {
-  font-size: var(--fs25);
+  font-size: var(--fs-h4);
   text-align: center;
   margin-bottom: 1rem;
 }
 
 .description {
-  font-size: var(--fs15);
+  font-size: var(--fs-5);
   text-align: center;
   margin: 0 0 1rem;
 }
@@ -29,7 +29,7 @@
 }
 
 .label {
-  font-size: var(--fs15);
+  font-size: var(--fs-5);
   font-weight: 500;
   margin: 0 1rem 0.5rem;
   padding: 0 1rem;
@@ -42,7 +42,7 @@
   padding: 1rem 2.5rem;
   border: 1px solid var(--primaryColor);
   border-radius: 5rem;
-  font-size: var(--fs15);
+  font-size: var(--fs-5);
   background-color: #fff;
   font-family: changa;
   color: var(--textColor);
@@ -70,7 +70,7 @@
   padding: 1rem 2.5rem;
   border: 1px solid var(--primaryColor);
   border-radius: var(--br5);
-  font-size: var(--fs15);
+  font-size: var(--fs-5);
   background-color: var(--whiteColor);
   font-family: changa;
   color: var(--textColor);
@@ -86,7 +86,7 @@
 }
 
 .note {
-  font-size: var(--fs15);
+  font-size: var(--fs-5);
   text-align: center;
   color: var(--textGray);
   margin: 1rem 0;
@@ -98,7 +98,7 @@
 }
 
 .termsLink {
-  font-size: var(--fs15);
+  font-size: var(--fs-5);
   color: var(--primaryColor);
   text-decoration: underline;
 }
@@ -108,7 +108,7 @@
   color: var(--backgroundColor);
   padding: 1rem 2rem;
   border-radius: var(--br5);
-  font-size: var(--fs20);
+  font-size: var(--fs-h5);
   font-family: changa;
   font-weight: 500;
   border: none;
@@ -123,7 +123,7 @@
 
 .result {
   margin-top: 2rem;
-  font-size: var(--fs15);
+  font-size: var(--fs-5);
   padding: 1rem;
   border: 1px solid var(--primaryColor);
   border-radius: var(--br5);
@@ -137,18 +137,18 @@
 
 /* صفحة الشروط والأحكام */
 .termsTitel{
-  font-size: var(--fs25);
+  font-size: var(--fs-h4);
   text-align: center;
   margin: 2rem 0 1.5rem;
   color: var(--primaryColor);
 }
 .termsContent {
-  font-size: var(--fs15);
+  font-size: var(--fs-5);
   color: var(--textColor);
   margin: 1rem 0;
 }
 .termsPar {
-  font-size: var(--fs15);
+  font-size: var(--fs-5);
   color: var(--textColor);
   margin: 3rem 0 0;
 }

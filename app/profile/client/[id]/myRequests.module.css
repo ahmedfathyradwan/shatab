@@ -2,7 +2,7 @@
   width: 100%;
 }
 .title {
-  font-size: var(--fs25);
+  font-size: var(--fs-h4);
   text-align: center;
   font-weight: 600;
   margin-bottom: 3rem;
@@ -16,7 +16,7 @@
   margin-bottom: 3rem;
 }
 .label {
-  font-size: var(--fs20);
+  font-size: var(--fs-h5);
   color: var(--primaryColor);
   margin: 0 0 0.3rem 0.5rem;
   display: inline;
@@ -26,7 +26,7 @@
   display: inline;
   margin-bottom: 1rem;
   font-weight: 500;
-  font-size: var(--fs20);
+  font-size: var(--fs-h5);
 }
 
 .image {
@@ -41,7 +41,7 @@
   display: block;
   margin: 1.5rem auto 0;
   padding: 0.5rem 1.5rem;
-  font-size: var(--fs15);
+  font-size: var(--fs-5);
   background-color: var(--primaryColor);
   color: var(--whiteColor);
   border: none;

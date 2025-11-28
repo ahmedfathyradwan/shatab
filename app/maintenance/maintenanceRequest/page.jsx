@@ -122,7 +122,7 @@ const MaintenanceRequestPage = () => {
         </Link>
 
         {error && (
-          <p style={{ color: "red", textAlign: "center", fontSize: "var(--fs15)" }}>
+          <p style={{ color: "red", textAlign: "center", fontSize: "var(--fs-5)" }}>
             {error}
           </p>
         )}

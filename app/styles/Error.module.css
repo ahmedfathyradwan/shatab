@@ -1,0 +1,42 @@
+/* ===== Error Page Container ===== */
+.cont {
+  background-color: var(--backgroundColor);
+  width: 100vw;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 3rem;
+}
+
+/* ===== Error Title ===== */
+.tit {
+  font-size: var(--fs-h4);
+  color: var(--textColor);
+  font-weight: 700;
+}
+
+/* ===== Retry Button ===== */
+.btn {
+  padding: 0.5rem 1.5rem;
+
+  background-color: var(--primaryColor);
+  color: var(--backgroundColor);
+
+  font-size: var(--fs-5);
+  text-decoration: none;
+
+  border: 1px solid var(--primaryColor);
+  border-radius: var(--br5);
+
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: var(--secondaryColor);
+  border-color: var(--textColor);
+}

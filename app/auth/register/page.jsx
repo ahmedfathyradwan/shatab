@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import Image from "next/image";
 import styles from "../register/register.module.css";
 import { useRouter } from "next/navigation";
 
@@ -14,7 +14,13 @@ const Register = () => {
   return (
     <div className={styles.container}>
       <div className={styles.imgContainer}>
-                <img src="/images/signMob.jpg" className={styles.signImg} />
+                  <Image
+          src="/images/logo.png"
+          alt="Logo"
+          width={176}
+          height={200}
+          className={styles.signImg}
+        />
       </div>
       <div className={styles.borderCont}>
         <div className={styles.textContainer}>

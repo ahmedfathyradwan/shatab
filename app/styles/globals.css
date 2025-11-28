@@ -1,9 +1,11 @@
+@import './responsive.css';
+
 :root {
   /* Colors */
   --primaryColor: #AB874B;
   --secondaryColor: #C5A372;
   --textColor: #11171C;
-  --backgroundColor: #FCF9F5;
+  --backgroundColor: #F5EFE8;
   --whiteColor: #FFFFFF;
 
   --errorColor: #B82020;        
@@ -13,20 +15,17 @@
   --infoColor: #007AFF;     
   --infoColorLight: #7AB7FF;   
 
-
   /* Border radius */
   --border-radius: 8px;
   --br5: 5rem;
 
   /* Font sizes */
-  --fs45: 4.5rem;
-  --fs40: 4rem;
-  --fs35: 3.5rem;
-  --fs30: 3rem;
-  --fs25: 2.5rem;
-  --fs20: 2rem;
-  --fs15: 1.5rem;
-  --fs10: 1rem;
+  --fs-h1: clamp(2.6rem, 4vw, 3.6rem);
+  --fs-h2: clamp(2rem, 3vw, 3rem);
+  --fs-h3: clamp(1.6rem, 2vw, 2.4rem);
+  --fs-h4: clamp(1.4rem, 1.5vw, 2rem);
+  --fs-body: clamp(1.4rem, 1.2vw, 1.8rem);
+  --fs-small: clamp(1.2rem, 1vw, 1.4rem);
 
   /* Font aliases */
   --ar: 'Changa', sans-serif;
@@ -82,38 +81,4 @@ body {
   z-index: 10;
   display: flex;
   justify-content: center;
-}
-
-/* not-found & error & loading */
-.cont {
-  background-color: var(--backgroundColor);
-  width: 100vw;
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: 3rem;
-}
-
-.tit {
-  font-size: var(--fs25);
-  color: var(--textColor);
-  font-weight: 700;
-}
-
-.btn {
-  padding: 0.5rem 1.5rem;
-  background-color: var(--primaryColor);
-  text-decoration: none;
-  color: var(--backgroundColor);
-  font-size: var(--fs15);
-  border-radius: var(--br5);
-  border: 1px solid var(--primaryColor);
-  transition: 0.3s ease;
-}
-
-.btn:hover {
-  border: 1px solid var(--textColor);
-  background-color: var(--secondaryColor);
 }

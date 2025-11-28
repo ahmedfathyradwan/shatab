@@ -1,18 +1,25 @@
 'use client';
 
-import React, { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import styles from '../../form.module.css';
 
 const ClientRegister = () => {
   const router = useRouter();
+  const [mounted, setMounted] = useState(false);
   const [name, setName] = useState('');
   const [phone, setPhone] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e) => {
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setError('');
 
     if (password.length < 6) {
       setError('كلمة المرور يجب أن تكون 6 أحرف أو أكثر');
@@ -24,25 +31,47 @@ const ClientRegister = () => {
       return;
     }
 
-    const data = {
-      name,
-      phone,
-      password,
-      accountType: 'client',
-    };
+    setLoading(true);
 
-    // نحفظ البيانات مؤقتًا إلى أن يتم تأكيد الكود
-    localStorage.setItem('registerData', JSON.stringify(data));
+    try {
+      const res = await fetch('/api/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          fullName: name,
+          phone,
+          password,
+          role: 'client', // نوع الحساب الآن متوافق مع الباك
+        }),
+      });
 
-    // توجيه المستخدم لصفحة التحقق
-    router.push('/auth/verify');
+      let data;
+      try {
+        data = await res.json();
+      } catch {
+        data = { error: 'حدث خطأ أثناء معالجة الاستجابة من السيرفر' };
+      }
+
+      if (res.ok) {
+        localStorage.setItem('registerData', JSON.stringify({ phone, role: 'client' }));
+        router.push('/auth/verify');
+      } else {
+        setError(data.error || 'حدث خطأ أثناء إنشاء الحساب');
+      }
+    } catch (err) {
+      console.error('❌ Client-side error:', err);
+      setError('حدث خطأ أثناء إنشاء الحساب');
+    } finally {
+      setLoading(false);
+    }
   };
+
+  if (!mounted) return null;
 
   return (
     <div className={styles.container}>
       <div className={styles.formContainer}>
         <h2 className={styles.title}>إنشاء حساب عميل</h2>
-
         <form className={styles.form} onSubmit={handleSubmit}>
           <div className={styles.group}>
             <label className={styles.label}>الإسم ثنائي بالعربية</label>
@@ -74,17 +103,19 @@ const ClientRegister = () => {
             <label className={styles.label}>كلمة المرور</label>
             <input
               type="password"
+placeholder="اختار باسورد سهل عشان متنساهوش 😘"
               className={styles.input}
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
+              maxLength={6}
             />
           </div>
 
           {error && <p className={styles.errorText}>{error}</p>}
 
-          <button type="submit" className={styles.button}>
-            إنشاء حساب
+          <button type="submit" className={styles.button} disabled={loading}>
+            {loading ? 'جاري الإنشاء...' : 'إنشاء حساب'}
           </button>
         </form>
       </div>

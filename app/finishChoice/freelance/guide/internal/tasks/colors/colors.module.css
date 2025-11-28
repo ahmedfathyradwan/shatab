@@ -1,58 +1,78 @@
 .container {
-  max-width: 1000px;
+  max-width: 1100px;
   margin: 0 auto;
-  padding: 40px 20px;
+  padding: 50px 20px;
 }
 
 .title {
   font-size: 28px;
-  font-weight: bold;
-  margin-bottom: 10px;
+  font-weight: 700;
+  margin-bottom: 12px;
   text-align: center;
-  color: #333;
+  color: #2a2a2a;
 }
 
 .par {
   font-size: 16px;
-  color: #666;
+  color: #555;
   text-align: center;
-  margin-bottom: 30px;
+  margin-bottom: 40px;
+  line-height: 1.6;
 }
 
 .methodsGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
 }
 
 .methodCard {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: center;
-  background: #f8f8f8;
-  padding: 30px 20px;
+  justify-content: flex-start;
+  background: #f9f9f9;
+  padding: 25px 20px;
   border-radius: 16px;
   text-decoration: none;
   transition: all 0.3s ease;
-  border: 1px solid #e0e0e0;
+  border: 1px solid #e3e3e3;
   text-align: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+  overflow: hidden;
 }
 
 .methodCard:hover {
   background: #fff;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(0,0,0,0.1);
+  transform: translateY(-4px);
+}
+
+.methodImage {
+  width: 100%;
+  max-width: 180px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 16px;
+  transition: transform 0.3s ease;
+}
+
+.methodCard:hover .methodImage {
+  transform: scale(1.05);
 }
 
 .methodTitle {
   font-size: 18px;
   font-weight: 600;
   color: #222;
+  margin-bottom: 8px;
   line-height: 1.4;
 }
+
 .methodDesc {
   font-size: 14px;
   color: #555;
-  margin-top: 10px;
-  line-height: 1.5;
+  line-height: 1.6;
+  margin: 0;
 }

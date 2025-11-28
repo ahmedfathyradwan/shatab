@@ -1,105 +1,170 @@
 .container {
-    width: 100%;
-    margin: 0 auto;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
 }
 
 .imgContainer {
-    width: 100%;
-    height: 460px;
-    position: relative;
+  width: 100%;
+  min-height: 47vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
 .signImg {
-    width: 100%;
-    height: 100%;
-    z-index: -1;
-    position: absolute;
+  width: auto;
+  height: 200px;
+  z-index: -1;
 }
 
 .borderCont {
-    background: var(--whiteColor);
-    width: 100%;
-    border-radius: var(--br5);
-    padding: 0.1rem 0;
-    margin-top: -4.5rem;
+  min-height: 53vh;
+  background: var(--whiteColor);
+  border-radius: var(--br5);
+  padding: 0.1rem 0;
+  margin-top: -4.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .textContainer {
-    background: var(--backgroundColor);
-    width: calc(100% - 4rem);
-    border-radius: var(--br5);
-    padding: 3rem;
-    margin: 3rem 2rem 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+  background: var(--backgroundColor);
+  width: calc(100% - 4rem);
+  border-radius: var(--br5);
+  padding: 3rem;
+  margin: 3rem 2rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .title {
-    font-family: var(--en);
-    font-size: var(--fs35);
-    direction: ltr;
-    font-weight: 700;
+  font-family: var(--en);
+  font-size: var(--fs-h2);
+  direction: ltr;
+  font-weight: 700;
 }
 
 .titleSpan {
-    font-family: poppins;
-    font-size: var(--fs25);
-    direction: ltr;
-    font-weight: 400;
+  font-family: poppins;
+  font-size: var(--fs-h4);
+  direction: ltr;
+  font-weight: 400;
 }
 
 .description {
-    font-size: var(--fs25);
-    font-weight: 600;
-    text-align: center;
-    margin: -1.5rem 0 10rem;
+  font-size: var(--fs-h3);
+  font-weight: 600;
+  text-align: center;
+  margin: -0.5rem 0 7rem;
+}
+
+.clientButton,
+.providerButton {
+  width: 100%;
+  padding: 1rem 1.5rem;
+  border-radius: var(--br5);
+  font-size: var(--fs-h5);
+  font-weight: 600;
+  font-family: changa;
+  border: 1px solid var(--primaryColor);
+  cursor: pointer;
+  transition: 0.3s;
 }
 
 .clientButton {
-    width: 100%;
-    /* height: 4.5rem; */
-    background-color: var(--primaryColor);
-    color: var(--backgroundColor);
-    padding: 1rem 1.5rem;
-    border-radius: var(--br5);
-    font-size: var(--fs20);
-    font-family: changa;
-    font-weight: 600;
-    border: none;
-    cursor: pointer;
-    transition: 0.3s;
-    border: 1px solid var(--primaryColor);
-    margin-bottom: 1.5rem;
+  background-color: var(--primaryColor);
+  color: var(--backgroundColor);
+  margin-bottom: 1.5rem;
 }
 
 .clientButton:hover {
-    border: 1px solid var(--textColor);
+  border: 1px solid var(--textColor);
 }
 
 .providerButton {
-    width: 100%;
-    /* height: 10rem; */
-    background-color: var(--textColor);
-    color: var(--backgroundColor);
-    padding: 1rem 1.5rem;
-    border-radius: var(--br5);
-    font-size: var(--fs20);
-    font-family: changa;
-    font-weight: 600;
-    border: none;
-    cursor: pointer;
-    transition: 0.3s;
-    border: 1px solid var(--primaryColor);
-    line-height: 2.8rem;
-}
-
-.btnSpan {
-    font-size: var(--fs15);
-    font-weight: 500;
-    margin-top: 0.5rem;
+  background-color: var(--textColor);
+  color: var(--backgroundColor);
+  line-height: 2.8rem;
 }
 
 .providerButton:hover {
-    border: 1px solid var(--textColor);
+  border: 1px solid var(--textColor);
+}
+
+.btnSpan {
+  font-size: var(--fs-5);
+  font-weight: 500;
+  margin-top: 0.5rem;
+}
+
+
+
+@media (min-width: 375px) {
+  .signImg {
+    height: 220px;
+  }
+}
+
+@media (min-width: 430px) {
+  .signImg {
+    height: 240px;
+  }
+  .textContainer {
+    width: 80%;
+    padding: 3rem 6rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .signImg {
+    height: 260px;
+  }
+  .textContainer {
+    width: 60%;
+    padding: 3rem 6rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    flex-direction: row;
+    min-width: 100vw;
+    min-height: 100vh;
+  }
+
+  .imgContainer {
+    min-width: 45vw;
+  }
+
+  .borderCont {
+    min-width: 55vw;
+    padding: 0.1rem 0;
+    margin: 0 -4rem 0 0;
+  }
+
+  .textContainer {
+    width: 80%;
+    padding: 3rem 6rem;
+    margin: 3rem 2rem;
+    gap: 0.5rem;
+  }
+
+  .signImg {
+    height: 350px;
+  }
+}
+
+@media (min-width: 1280px) {
+    .textContainer {
+    width: 60%;
+    padding: 3rem 6rem;
+    margin: 3rem 2rem;
+    gap: 0.5rem;
+  }
 }

@@ -1,0 +1,50 @@
+/* ===== Root Container ===== */
+.cont {
+  background-color: var(--backgroundColor);
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+/* ===== SVG Loader Container ===== */
+.loaderContainer {
+  width: 3.25em;
+  transform-origin: center;
+  animation: rotate4 5s linear infinite;
+}
+
+/* ===== Loader Circle Style ===== */
+.loaderCircle {
+  fill: none;
+  stroke: #AB874B;
+  stroke-width: 4;
+  stroke-dasharray: 2, 200;
+  stroke-dashoffset: 0;
+  stroke-linecap: round;
+  animation: dash4 1.5s ease-in-out infinite;
+}
+
+/* ===== Animations ===== */
+@keyframes rotate4 {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dash4 {
+  0% {
+    stroke-dasharray: 1, 200;
+    stroke-dashoffset: 0;
+  }
+
+  50% {
+    stroke-dasharray: 90, 200;
+    stroke-dashoffset: -35px;
+  }
+
+  100% {
+    stroke-dashoffset: -125px;
+  }
+}

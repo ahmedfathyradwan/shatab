@@ -1,0 +1,134 @@
+.container {
+  width: 100%;
+  min-height: 100vh;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.formContainer {
+  background: var(--backgroundColor);
+  width: calc(100% - 4rem);
+  border-radius: var(--br5);
+  padding: 3rem;
+  margin: 0 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  font-size: var(--fs-h2);
+  margin-bottom: 2rem;
+  color: var(--primaryColor);
+  text-align: center;
+  line-height: 1.5;
+}
+
+.labelVerify {
+  font-size: var(--fs-h3);
+  font-weight: 500;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.input {
+  text-align: center;
+  border: none;
+  outline: none;
+  padding: 1rem 1.2rem;
+  border: 1px solid var(--primaryColor);
+  border-radius: var(--br5);
+  font-size: var(--fs-h4);
+  background-color: var(--whiteColor);
+  font-family: var(--ar);
+  color: var(--textColor);
+  appearance: none;
+  width: 100%;
+  margin: 1rem 0 -0.5rem 0;
+}
+
+.buttonVerify {
+  padding: 0.8rem;
+  background-color: var(--primaryColor);
+  border: none;
+  border-radius: 5rem;
+  border: 1px solid var(--primaryColor);
+  font-size: var(--fs-h3);
+  font-weight: 550;
+  cursor: pointer;
+  transition: 0.3s;
+  font-family: var(--ar);
+  color: var(--backgroundColor);
+  margin: 1.5rem 0 0;
+  width: 100%;
+}
+
+.buttonVerify:hover {
+  border: 1px solid var(--textColor);
+}
+
+.smallButtonVerify {
+  padding: 0.8rem 1.5rem;
+  background-color: var(--textColor);
+  border: none;
+  border-radius: 5rem;
+  border: 1px solid var(--textColor);
+  font-size: var(--fs-small);
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+  font-family: var(--ar);
+  color: var(--backgroundColor);
+  margin: 1rem 0 0;
+  width: 100%;
+}
+
+.smallButtonVerify:hover {
+  border: 1px solid var(--primaryColor);
+}
+
+@media (min-width: 375px) {
+.formContainer {
+  width: 80%;
+}
+}
+
+@media (min-width: 430px) {
+.formContainer {
+  width: 60%;
+}
+}
+
+@media (min-width: 768px) {
+.formContainer {
+  width: 50%;
+}
+}
+
+@media (min-width: 1024px) {
+.formContainer {
+  width: 40%;
+}
+}
+
+@media (min-width: 1280px) {
+.formContainer {
+  width: 30%;
+}
+}

@@ -13,7 +13,7 @@
 }
 
 .pageTitle {
-  font-size: var(--fs30);
+  font-size: var(--fs-h3);
   font-weight: 600;
   margin-bottom: 2rem;
   text-align: center;
@@ -48,18 +48,18 @@
 }
 
 .name {
-  font-size: var(--fs25);
+  font-size: var(--fs-h4);
   font-weight: 500;
   color: var(--primaryColor);
 }
 
 .price, .gov {
-  font-size: var(--fs20);
+  font-size: var(--fs-h5);
   font-weight: 500;
 }
 
 .label {
-  font-size: var(--fs20);
+  font-size: var(--fs-h5);
   color: var(--primaryColor);
   font-weight: 500;
 }
@@ -67,7 +67,7 @@
 .value {
   font-weight: 500;
   color: var(--textColor);
-  font-size: var(--fs20);
+  font-size: var(--fs-h5);
 }
 
 .works {
@@ -101,7 +101,7 @@
 
 .btn {
   padding: 0.5rem 1rem;
-  font-size: var(--fs15);
+  font-size: var(--fs-5);
   background-color: var(--primaryColor);
   color: var(--backgroundColor);
   border: 1px solid var(--primaryColor);

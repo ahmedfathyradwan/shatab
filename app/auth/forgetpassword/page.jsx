@@ -37,18 +37,25 @@ const ForgetPassword = () => {
         <h1 className={styles.title}>نسيت كلمة المرور؟</h1>
         <div className={styles.formGroup}>
           <p className={styles.label}>ادخل رقم الهاتف لإرسال كود التحقق</p>
-          <input
-            type="tel"
-            placeholder="رقم الهاتف"
-            value={phone}
-            onChange={(e) => {
-              const val = e.target.value;
-              if (/^\d*$/.test(val)) setPhone(val);
-            }}
-            maxLength={11}
-            required
-            className={styles.input}
-          />
+<input
+  type="tel"
+  placeholder="رقم الهاتف"
+  value={phone}
+  onChange={(e) => {
+    let val = e.target.value;
+
+    // تحويل الأرقام العربية إلى إنجليزية
+    val = val.replace(/[٠-٩]/g, (d) => "٠١٢٣٤٥٦٧٨٩".indexOf(d));
+
+    // السماح بالأرقام فقط
+    if (/^\d*$/.test(val)) {
+      setPhone(val);
+    }
+  }}
+  maxLength={11}
+  required
+  className={styles.input}
+/>
         </div>
 
         <button className={styles.button} onClick={handleSendCode}>

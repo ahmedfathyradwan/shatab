@@ -1,0 +1,89 @@
+/* ===========================
+   📱 الأساس: الموبايل الصغير جدًا (320px)
+   =========================== */
+html {
+  scroll-behavior: smooth;
+}
+
+.container {
+  /* الأساس هنا موبايل صغير جدًا */
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  text-align: center;
+}
+
+/* ===========================
+   📱 موبايل متوسط (375px)
+   =========================== */
+@media (min-width: 375px) {
+  .container {
+    padding: 15px;
+    gap: 12px;
+  }
+}
+
+/* ===========================
+   📱 موبايل كبير / فابلت (430px)
+   =========================== */
+@media (min-width: 430px) {
+  .container {
+    gap: 15px;
+    font-size: 1.05rem;
+  }
+}
+
+/* ===========================
+   💻 تابلت رأسي (768px)
+   =========================== */
+@media (min-width: 768px) {
+  .container {
+    flex-direction: row;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px 30px;
+  }
+}
+
+/* ===========================
+   💻 تابلت أفقي / لابتوب صغير (1024px)
+   =========================== */
+@media (min-width: 1024px) {
+  .container {
+    padding: 40px 60px;
+    gap: 30px;
+  }
+}
+
+/* ===========================
+   🖥️ ديسكتوب متوسط (1280px)
+   =========================== */
+@media (min-width: 1280px) {
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    gap: 40px;
+  }
+}
+
+
+@media (min-width: 375px) {
+
+}
+
+@media (min-width: 430px) {
+
+}
+
+@media (min-width: 768px) {
+
+}
+
+@media (min-width: 1024px) {
+
+}
+
+@media (min-width: 1280px) {
+
+}

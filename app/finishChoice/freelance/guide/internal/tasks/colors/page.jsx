@@ -5,42 +5,20 @@ import Link from 'next/link'
 
 export default function ColorsPage() {
   const methods = [
-        { 
-      id: 0,
-      title: "حسب نوع التشطيب (finish-type)", 
-      path: "/finishChoice/freelance/guide/internal/tasks/colors/finish-type", 
-      desc: "توليد بالتات ألوان متناسقة حسب الطراز: مودرن، كلاسيك، بوهو، أو سكندنافي." 
-    },
     { 
-      id: 1,
-      title: "بالتات شقق جاهزة",
-      path: "/finishChoice/freelance/guide/internal/tasks/colors/ready-palettes",
-      desc: "شاهد بالتات ألوان جاهزة لشقق مكتملة، كل اللي عليك تختار البالتة اللي تعجبك بدون أي مجهود."
-    },
-    { 
-      id: 2,
-      title: "Mood / إحساس", 
-      path: "/finishChoice/freelance/guide/internal/tasks/colors/mood", 
-      desc: "اختيار الألوان حسب الإحساس اللي عايز تحس بيه في الغرفة (مبهج، دافئ، هادئ...)." 
-    },
-    { 
-      id: 3, 
+      id: 1, 
       title: "التغذية البصرية",
       path: "/finishChoice/freelance/guide/internal/tasks/colors/visual", 
-      desc: "تصفح صور غرف حقيقية واختر بالتة الألوان اللي عجبتك لتطبيقها في شقتك." 
+      desc: "تصفح صور غرف حقيقية واختر بالتة الألوان اللي عجبتك لتطبيقها في شقتك.",
+      image: "/images/visual.jpg"
     },
     { 
-      id: 4, 
+      id: 2, 
       title: "استوحاء ألوان من قطعة أثاث موجودة",
       path: "/finishChoice/freelance/guide/internal/tasks/colors/extract", 
-      desc: "التقاط ألوان من قطعة أثاث، لوحة، أو ستارة عندك في البيت لتبني عليها باقي البالتة." 
-    },
-    { 
-      id: 5, 
-      title: "قريبا.... AI تلوين الغرفة", 
-      path: "/finishChoice/freelance/guide/internal/tasks/colors/ai", 
-      desc: "ارفع صورة غرفتك ودع الذكاء الاصطناعي يقترح ألوان حوائط وأثاث متناسقة." 
-    },
+      desc: "التقاط ألوان من قطعة أثاث، لوحة، أو ستارة عندك في البيت لتبني عليها باقي البالتة.",
+      image: "/images/extract.jpg"
+    }
   ]
 
   return (
@@ -51,7 +29,10 @@ export default function ColorsPage() {
       <div className={styles.methodsGrid}>
         {methods.map((m) => (
           <Link key={m.id} href={m.path} className={styles.methodCard}>
-            <div>
+            <div className={styles.imageWrapper}>
+              <img src={m.image} alt={m.title} className={styles.methodImage} />
+            </div>
+            <div className={styles.methodContent}>
               <h3 className={styles.methodTitle}>{m.title}</h3>
               <p className={styles.methodDesc}>{m.desc}</p>
             </div>

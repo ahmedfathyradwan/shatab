@@ -1,69 +1,145 @@
 const onlineServicesData = [
   {
     id: 1,
-    title: "استشارة تصميم داخلي أونلاين",
+    title: "Jotun Egypt",
+    category: "مستلزمات تشطيب",
     description:
-      "تقدر تحجز جلسة مع مصمم داخلي محترف يساعدك تختار الألوان، الخامات، والتصميم المناسب لمساحتك أونلاين بدون زيارة ميدانية.",
-    benefits: [
-      "جلسة فيديو مع مهندس ديكور",
-      "مراجعة المخطط والصور",
-      "اقتراحات ألوان وأثاث تناسب ميزانيتك",
+      "موقع دهانات جوتن مصر الرسمي لاختيار الألوان وطلب المنتجات أونلاين.",
+    image: "/images/online/jotun.png",
+    links: [
+      {
+        label: "زيارة الموقع",
+        url: "https://www.jotun.com/eg/ar/b2c",
+      },
     ],
-    image: "/images/online/interior-consult.jpg",
-    link: "https://www.pinterest.com/search/pins/?q=online%20interior%20consultation",
+    isBest: true,
   },
   {
     id: 2,
-    title: "تقدير تكلفة التشطيب أونلاين",
-    description:
-      "أداة تحسب تكلفة التشطيب بناءً على مساحة الشقة ونوع التشطيب، وتقدّر المصروفات بدقة.",
-    benefits: [
-      "إدخال مساحة الشقة ونوع التشطيب",
-      "عرض التكلفة الإجمالية فورًا",
-      "مقارنة بين الباقات المختلفة",
+    title: "Shattab Online",
+    category: "مستلزمات تشطيب",
+    description: "منصة تقدم مستلزمات تشطيب وديكور أونلاين.",
+    image: "https://assets.wuiltstore.com/clql54qa60rja01o14jy64lhx_Shattab-2000x1200.png",
+    links: [
+      {
+        label: "زيارة الموقع",
+        url: "https://shattabonline.com/en",
+      },
     ],
-    image: "/images/online/cost-calc.jpg",
-    link: "https://www.pinterest.com/search/pins/?q=home%20renovation%20cost%20calculator",
+    isBest: true,
   },
   {
     id: 3,
-    title: "تصميم ثلاثي الأبعاد (3D Rendering)",
-    description:
-      "خدمة عرض تصميم شقتك بصورة واقعية ثلاثية الأبعاد قبل التنفيذ، علشان تشوف النتيجة النهائية.",
-    benefits: [
-      "تصميم 3D احترافي لمساحتك",
-      "اختيار الخامات والألوان الواقعية",
-      "تعديل التصميم قبل التنفيذ الفعلي",
+    title: "Smart Home Egypt",
+    category: "خدمات تشطيب",
+    description: "متجر يقدم حلول المنزل الذكي (Smart Home) والتحكم عن بُعد.",
+    image: "https://smarthome-eg.com/wp-content/uploads/2025/07/cropped-smarthome-eg-logo.png",
+    links: [
+      {
+        label: "زيارة الموقع",
+        url: "https://smarthome-eg.com/",
+      },
     ],
-    image: "/images/online/3d-design.jpg",
-    link: "https://www.pinterest.com/search/pins/?q=3d%20interior%20design",
+    isBest: true,
   },
   {
     id: 4,
-    title: "اختيار الخامات والموردين أونلاين",
+    title: "IKEA Egypt",
+    category: "أثاث وديكور",
     description:
-      "منصات بتساعدك تختار الخامات (بويات، سيراميك، خشب...) وتشوف الأسعار والموردين من مكانك.",
-    benefits: [
-      "مقارنة بين أسعار الخامات",
-      "قراءة تقييمات الموردين",
-      "طلب عينات أو عروض أسعار أونلاين",
+      "تقدر تشتري أثاث وإضاءة ومطابخ جاهزة من IKEA مصر مع توصيل وتركيب.",
+    image: "/images/online/ikea.png",
+    links: [
+      {
+        label: "زيارة الموقع",
+        url: "https://www.ikea.com/eg/ar/",
+      },
     ],
-    image: "/images/online/materials.jpg",
-    link: "https://www.pinterest.com/search/pins/?q=interior%20materials%20selection",
+    isBest: true,
   },
   {
     id: 5,
-    title: "إدارة المشروع أونلاين",
-    description:
-      "لو عندك شقة بتتشطب عن بُعد، تقدر تتابع المراحل خطوة بخطوة أونلاين مع المهندس أو الشركة.",
-    benefits: [
-      "تقارير أسبوعية بالصور والفيديوهات",
-      "متابعة الجدول الزمني والميزانية",
-      "تواصل مباشر مع فريق التنفيذ",
+    title: "Homzmart",
+    category: "أثاث وديكور",
+    description: "منصة مصرية لشراء الأثاث والديكور أونلاين.",
+    image: "/images/online/homzmart.svg",
+    links: [
+      {
+        label: "زيارة الموقع",
+        url: "https://www.homzmart.com/",
+      },
     ],
-    image: "/images/online/project-management.jpg",
-    link: "https://www.pinterest.com/search/pins/?q=online%20construction%20management",
+    isBest: false,
   },
+  {
+    id: 6,
+    title: "Chic Homz",
+    category: "أثاث وديكور",
+    description:
+      "متجر أثاث وديكور مصري يقدم قطع عصرية وإكسسوارات للمنزل أونلاين.",
+    image: "/images/online/chichomz.png",
+    links: [
+      {
+        label: "زيارة الموقع",
+        url: "https://chichomz.com/",
+      },
+    ],
+    isBest: true,
+  },
+  {
+    id: 7,
+    title: "Jumia Home",
+    category: "أثاث وديكور",
+    description:
+      "قسم الأثاث والإضاءة داخل جوميا مصر، مع عروض وتوصيل سريع.",
+    image: "/images/online/Jumia.png",
+    links: [
+      {
+        label: "زيارة القسم",
+        url: "https://www.jumia.com.eg/home-office/",
+      },
+    ],
+    isBest: false,
+  },
+  {
+    id: 8,
+    title: "Bahaa Maher - المعمارجي",
+    category: "صناع محتوى",
+    description:
+      "مهندس معماري ومُنتِج محتوى مصري، ينشر فيديوهات ومعلومات عن التشطيب، الديكور، والخامات تحت هاشتاج #معلومة_من_المعمارجي.",
+    image: "/images/online/el_me3margy.jpg",
+    links: [
+      {
+        label: "إنستجرام",
+        url: "https://www.instagram.com/el_me3margy/",
+      },
+      {
+        label: "يوتيوب",
+        url: "https://www.youtube.com/@el_me3margy",
+      },
+    ],
+    isBest: false,
+  },
+{
+  id: 9,
+  title: "Circle Egypt - سيركل إيچيبت",
+  category: "صناع محتوى",
+  description:
+    "قناة متخصصة في التصميم الداخلي والتشطيب، بتقدم محتوى احترافي عن الديكور، اختيار الخامات، وتنفيذ المشاريع في السوق المصري.",
+  image: "/images/online/Circle.jpg",
+  links: [
+    {
+      label: "يوتيوب",
+      url: "https://www.youtube.com/@circle-eg",
+    },
+    {
+      label: "إنستجرام",
+      url: "https://www.instagram.com/circle.eg/",
+    },
+  ],
+  isBest: true,
+},
+
 ];
 
 export default onlineServicesData;

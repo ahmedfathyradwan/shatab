@@ -14,7 +14,7 @@
 }
 
 .description {
-  font-size: var(--fs-h5);
+  font-size: var(--fs-body);
   font-family: var(--ar);
   padding: 0.5rem 0 5rem 0;
 }
@@ -29,7 +29,7 @@
 
 .tabButton {
   padding: 0.5rem 1.2rem 0.6rem;
-  font-size: var(--fs-h5);
+  font-size: var(--fs-body);
   font-weight: 600;
   font-family: 'Changa';
   background-color: var(--whiteColor);
@@ -141,7 +141,7 @@
 }
 
 .notice {
-  font-size: var(--fs-h5);
+  font-size: var(--fs-body);
 }
 
 .linkButtons {
@@ -154,7 +154,7 @@
 
 .linkButton {
   display: inline-block;
-  font-size: var(--fs-5);
+  font-size: var(--fs-body);
   background-color: var(--primaryColor);
   color: var(--backgroundColor);
   padding: 0.6rem 1.8rem;

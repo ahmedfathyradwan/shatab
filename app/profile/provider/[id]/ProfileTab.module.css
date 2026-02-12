@@ -11,7 +11,7 @@
 }
 
 .profileTitle {
-  font-size: var(--fs-h5);
+  font-size: var(--fs-body);
   font-weight: 600;
   margin-bottom: 1rem;
   color: var(--textColor);
@@ -40,7 +40,7 @@
 }
 
 .worksTitle {
-  font-size: var(--fs-h5);
+  font-size: var(--fs-body);
   font-weight: 600;
   margin-bottom: 1rem;
   color: var(--textColor);

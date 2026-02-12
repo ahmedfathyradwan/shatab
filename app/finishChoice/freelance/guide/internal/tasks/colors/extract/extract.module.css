@@ -17,14 +17,14 @@
 }
 
 .par {
-  font-size: var(--fs-5);
+  font-size: var(--fs-body);
   font-weight: 500;
   color: var(--textColor);
 }
 
 .subTitle {
   margin: 3rem 0 0.5rem;
-  font-size: var(--fs-h5);
+  font-size: var(--fs-body);
   font-weight: 600;
   color: var(--textColor);
   text-align: center;
@@ -272,7 +272,7 @@
   border-radius: var(--br5);
   background-color: var(--primaryColor);
   color: var(--whiteColor);
-  font-size: var(--fs-5);
+  font-size: var(--fs-body);
   font-family: var(--ar);
   font-weight: 600;
   border: 1px solid var(--primaryColor);

@@ -38,7 +38,7 @@ export default function ContactUs() {
       <footer className={styles.footer}>
         جميع الحقوق محفوظة &copy; شطبها - SHATABHA.com
         <br />
-        2023.1.1.4
+        Since 2023.11.4
       </footer>
     </>
   );

@@ -18,7 +18,7 @@
     font-family: var(--ar);
 }
 .description {
-    font-size: var(--fs-5);
+    font-size: var(--fs-body);
     text-align: center;
     font-family: var(--ar);
 }
@@ -53,7 +53,7 @@
 }
 
 .cardTitle {
-    font-size: var(--fs-h5);
+    font-size: var(--fs-body);
     font-weight: 600;
     font-family: var(--ar);
 }

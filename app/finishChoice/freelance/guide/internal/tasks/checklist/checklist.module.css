@@ -22,12 +22,12 @@
 }
 
 .par {
-  font-size: var(--fs-5);
+  font-size: var(--fs-body);
   font-weight: 500;
 }
 
 .par2 {
-  font-size: var(--fs-5);
+  font-size: var(--fs-body);
   font-weight: 600;
   text-align: center;
   margin: 1.5rem 0 -1.5rem;
@@ -45,7 +45,7 @@
   border-radius: var(--br5);
   background-color: var(--primaryColor);
   color: var(--whiteColor);
-  font-size: var(--fs-5);
+  font-size: var(--fs-body);
   font-family: var(--ar);
   font-weight: 500;
   border: 1px solid var(--primaryColor);
@@ -62,7 +62,7 @@
   border-radius: var(--br5);
   background-color: var(--textColor);
   color: var(--whiteColor);
-  font-size: var(--fs-5);
+  font-size: var(--fs-body);
   font-family: var(--ar);
   font-weight: 500;
   border: 1px solid var(--textColor);

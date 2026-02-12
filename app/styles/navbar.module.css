@@ -20,7 +20,7 @@
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  
+
 }
 
 .icon {
@@ -46,4 +46,38 @@
   fill: var(--backgroundColor);
   stroke: var(--backgroundColor);
   background-color: var(--secondaryColor);
+}
+
+@media (min-width: 430px) {
+  .navbar {
+    width: 280px;
+  }
+}
+
+@media (min-width: 768px) {
+  .navbar {
+    width: 350px;
+    height: 60px;
+  }
+
+  .icon {
+    padding: 12px 30px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .navbar {
+    width: 400px;
+    height: 70px;
+  }
+
+  .icon {
+    padding: 15px 40px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .navbar {
+    width: 450px;
+  }
 }

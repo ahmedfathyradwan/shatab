@@ -47,14 +47,14 @@
   text-align: right;
   direction: rtl;
   margin-bottom: 0.5rem;
-  font-size: var(--fs-h5);
+  font-size: var(--fs-body);
   width: 100%;
 }
 .textarea {
   padding: 1.5rem 2rem;
   border: 1px solid var(--primaryColor);
   border-radius: var(--br5);
-  font-size: var(--fs-h5);
+  font-size: var(--fs-body);
   direction: rtl;
   font-family: var(--ar);
   resize: vertical;
@@ -72,10 +72,10 @@
   margin-right: 0.5rem;
 }
 .labelForm {
-    font-size: var(--fs-h5);
+    font-size: var(--fs-body);
 }
 .date {
-  font-size: var(--fs-h5);
+  font-size: var(--fs-body);
   margin-top: 0.5rem;
 }
 .form {
@@ -88,14 +88,14 @@
   padding: 0.5rem 1.5rem;
   border: 1px solid var(--primaryColor);
   border-radius: var(--br5);
-  font-size: var(--fs-h5);
+  font-size: var(--fs-body);
   direction: rtl;
   font-weight: 500;
   font-family: var(--ar);
 }
 
 .note {
-  font-size: var(--fs-h5);
+  font-size: var(--fs-body);
   color: var(--textColor);
   font-weight: 500;
   direction: rtl;
@@ -113,7 +113,7 @@
   text-align: right;
   padding-right: 1rem;
   font-weight: 500;
-  font-size: var(--fs-h5);
+  font-size: var(--fs-body);
 }
 
 .submitBtn {
@@ -135,7 +135,7 @@
 
 .success {
   text-align: center;
-  font-size: var(--fs-h5);
+  font-size: var(--fs-body);
   color: green;
   margin-top: 1rem;
   font-weight: bold;
@@ -145,6 +145,6 @@
   color: red;
   font-weight: 500;
   margin-top: 1rem;
-  font-size: var(--fs-h5);
+  font-size: var(--fs-body);
   font-family: var(--ar);
 }

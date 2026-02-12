@@ -40,7 +40,7 @@
 }
 
 .cardTitle {
-    font-size: var(--fs-h5);
+    font-size: var(--fs-body);
     font-weight: 600;
 }
 

@@ -17,7 +17,7 @@
 }
 
 .description {
-  font-size: var(--fs-5);
+  font-size: var(--fs-body);
   text-align: center;
   margin: 0 0 1rem;
 }
@@ -28,7 +28,7 @@
 }
 
 .label {
-  font-size: var(--fs-5);
+  font-size: var(--fs-body);
   font-weight: 500;
   margin-bottom: 0.5rem;
   margin: 0 1rem 0.5rem;
@@ -41,7 +41,7 @@
   padding: 1rem;
   border: 1px solid var(--primaryColor);
   border-radius: 5rem;
-  font-size: var(--fs-5);
+  font-size: var(--fs-body);
   background-color: var(--whiteColor);
   font-family: var(--ar);
   color: var(--textColor);
@@ -81,7 +81,7 @@
   border: none;
   border-radius: 5rem;
   border: 1px solid var(--primaryColor);
-  font-size: var(--fs-5);
+  font-size: var(--fs-body);
   font-weight: 600;
   cursor: pointer;
   transition: 0.3s;
@@ -100,7 +100,7 @@
   border-radius: 5rem;
   text-align: center;
   font-weight: 600;
-  font-size: var(--fs-5);
+  font-size: var(--fs-body);
   margin-top: 1rem;
 }
 .cash {
@@ -108,13 +108,13 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  font-size: var(--fs-5);
+  font-size: var(--fs-body);
   color: var(--textColor);
 }
 .cashNum {
   margin: 0 0.5rem;
   color: var(--primaryColor);
-  font-size: var(--fs-h5);
+  font-size: var(--fs-body);
 }
 .timestamp {
   font-size: var(--fs-small);
@@ -126,7 +126,7 @@
 }
 
 .sectionTitle {
-  font-size: var(--fs-h5);
+  font-size: var(--fs-body);
   margin-bottom: 1rem;
   text-align: center;
 }
@@ -140,7 +140,7 @@
 }
 
 .finishingTitle {
-  font-size: var(--fs-5);
+  font-size: var(--fs-body);
   margin-bottom: 0.5rem;
   color: var(--primaryColor);
 }

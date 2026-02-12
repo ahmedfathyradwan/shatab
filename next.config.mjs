@@ -1,5 +1,17 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  async rewrites() {
+    return [
+      {
+        source: '/admin',
+        destination: '/api/admin',
+      },
+      {
+        source: '/admin/:path*',
+        destination: '/api/admin/:path*',
+      },
+    ];
+  },
   trailingSlash: true,
   images: {
     unoptimized: true,
@@ -22,6 +34,13 @@ const nextConfig = {
         issuer: /\.[jt]sx?$/,
         use: ['@svgr/webpack'],
       });
+
+      // Fix for AdminJS README.md import issue
+      config.module.rules.push({
+        test: /\.md$/,
+        type: 'asset/source',
+      });
+
       return config;
     },
   }),

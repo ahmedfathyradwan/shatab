@@ -84,13 +84,13 @@
 
 .errorText {
   color: red;
-  font-size: var(--fs-h5);
+  font-size: var(--fs-body);
   margin-top: 0.5rem;
 }
 
 /* Verify */
 .labelVerify {
-  font-size: var(--fs-h5);
+  font-size: var(--fs-body);
   font-weight: 500;
   margin-bottom: 0.5rem;
   text-align: center;
@@ -102,7 +102,7 @@
   border: none;
   border-radius: 5rem;
   border: 1px solid var(--primaryColor);
-  font-size: var(--fs-h5);
+  font-size: var(--fs-body);
   font-weight: 600;
   cursor: pointer;
   transition: 0.3s;

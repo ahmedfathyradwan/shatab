@@ -28,13 +28,30 @@
   color: var(--primaryColor);
   margin: 0 0 0.5rem;
 }
+
 .shatabSpan {
-  font-size: var(--fs-h5);
+  font-size: var(--fs-body);
   font-weight: 400;
   font-family: var(--en);
 }
+
 .description {
-  font-size: var(--fs-5);
+  font-size: var(--fs-body);
   font-weight: 400;
   font-family: var(--ar);
+}
+
+@media (min-width: 768px) {
+  .aboutUsSection {
+    padding: 4rem;
+    max-width: 800px;
+    margin: 0 auto 3rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .aboutUsSection {
+    padding: 6rem;
+    max-width: 1000px;
+  }
 }

@@ -64,21 +64,23 @@
   background-color: var(--primaryColor);
   border-radius: var(--br5);
   color: var(--backgroundColor);
-  font-size: var(--fs-5);
+  font-size: var(--fs-body);
   border: none;
   cursor: pointer;
   padding: 0.5rem 1rem;
   transition: 0.3s;
 }
+
 .editButton:hover {
   opacity: 0.8;
 }
+
 .logoutBtn,
 .deleteBtn {
   background-color: var(--primaryColor);
   border-radius: var(--br5);
   color: var(--backgroundColor);
-  font-size: var(--fs-5);
+  font-size: var(--fs-body);
   border: none;
   cursor: pointer;
   padding: 0.5rem 1rem;
@@ -93,7 +95,8 @@
 
 /* تخصيص لون مميز لحذف الحساب */
 .deleteBtn {
-  background-color: #e74c3c; /* أحمر واضح */
+  background-color: #e74c3c;
+  /* أحمر واضح */
 }
 
 .deleteBtn:hover {
@@ -113,7 +116,7 @@
 
 .switchButton {
   padding: 0.6rem 1.5rem;
-  font-size: var(--fs-5);
+  font-size: var(--fs-body);
   background-color: var(--backgroundColor);
   color: var(--primaryColor);
   border: 1px solid var(--primaryColor);
@@ -122,6 +125,7 @@
   transition: 0.3s;
   font-weight: 600;
 }
+
 .switchButton:hover {
   border: 1px solid var(--textColor);
 }
@@ -159,4 +163,29 @@
   height: auto;
   border-radius: var(--br5);
   box-shadow: 0 0 20px black;
+}
+
+@media (min-width: 768px) {
+
+  .header,
+  .content {
+    width: 600px;
+    padding: 4rem;
+  }
+}
+
+@media (min-width: 1024px) {
+
+  .header,
+  .content {
+    width: 800px;
+  }
+}
+
+@media (min-width: 1280px) {
+
+  .header,
+  .content {
+    width: 1000px;
+  }
 }

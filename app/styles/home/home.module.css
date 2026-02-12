@@ -1,0 +1,225 @@
+.homeContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.heroSection {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.imgContainer {
+  min-height: 47vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.homeImg {
+  width: 200px;
+  height: auto;
+  z-index: -1;
+}
+
+.borderCont {
+  background: var(--whiteColor);
+  width: 100%;
+  border-radius: var(--br5);
+  padding: 0.1rem 0;
+  margin-top: -4.5rem;
+}
+
+.textContainer {
+  width: calc(100% - 4rem);
+  background-color: var(--backgroundColor);
+  border-radius: var(--br5);
+  padding: 3rem;
+  margin: 3rem 2rem 0;
+  font-family: var(--ar);
+}
+
+.h1a {
+  font-family: var(--en);
+  font-size: var(--fs-h2);
+  direction: ltr;
+  font-weight: 600;
+}
+
+.h1Span {
+  font-family: var(--en);
+  font-size: var(--fs-h4);
+  direction: ltr;
+  font-weight: 400;
+}
+
+.h3b {
+  color: var(--primaryColor);
+  font-weight: 500;
+  font-size: var(--fs-h4);
+  font-family: var(--ar);
+}
+
+.h1b {
+  font-size: var(--fs-h1);
+  font-weight: 600;
+  margin-top: -0.5rem;
+  font-family: var(--ar);
+}
+
+.h3c {
+  color: var(--primaryColor);
+  font-weight: 500;
+  font-size: var(--fs-h4);
+  line-height: 1;
+  margin-bottom: 1rem;
+  font-family: var(--ar);
+}
+
+.h4 {
+  font-size: var(--fs-small);
+  font-weight: 500;
+  margin-bottom: 2rem;
+}
+
+.ctaButton {
+  margin: 1rem 0 0 0;
+  background-color: var(--primaryColor);
+  color: var(--backgroundColor);
+  padding: 0rem 1rem;
+  border-radius: var(--br5);
+  font-size: var(--fs-h4);
+  font-family: var(--ar);
+  font-weight: 500;
+  outline: none;
+  border: 1px solid var(--primaryColor);
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.ctaButton :hover {
+  border: 1px solid var(--textColor);
+}
+
+.servicesSection {
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.sectionTitle {
+  color: var(--primaryColor);
+  font-weight: 600;
+  font-size: var(--fs-h1);
+  margin: 7rem 0 -1rem;
+}
+
+.FinishOrMaintenanceCard {
+  width: 100%;
+}
+
+.aboutUs {
+  width: 100%;
+}
+
+.contactUs {
+  width: 100%;
+}
+
+
+@media (min-width: 375px) {
+  .homeImg {
+    width: 230px;
+  }
+}
+
+@media (min-width: 430px) {
+  .homeImg {
+    width: 260px;
+  }
+
+  .textContainer {
+    padding: 4rem;
+    margin: 3rem 4rem 0;
+  }
+}
+
+@media (min-width: 768px) {
+  .heroSection {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 5%;
+  }
+
+  .imgContainer {
+    min-height: auto;
+    width: 45%;
+  }
+
+  .homeImg {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .borderCont {
+    margin-top: 0;
+    width: 50%;
+    background: transparent;
+  }
+
+  .textContainer {
+    width: 100%;
+    margin: 0;
+    padding: 2rem;
+  }
+
+  .servicesSection {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .sectionTitle {
+    grid-column: span 2;
+  }
+}
+
+@media (min-width: 1024px) {
+  .homeImg {
+    max-width: 500px;
+  }
+
+  .textContainer {
+    padding: 4rem;
+  }
+
+  .servicesSection {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 40px;
+  }
+
+  .sectionTitle {
+    grid-column: span 3;
+  }
+}
+
+@media (min-width: 1280px) {
+  .heroSection {
+    max-width: 1200px;
+  }
+
+  .homeImg {
+    max-width: 600px;
+  }
+
+  .servicesSection {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}

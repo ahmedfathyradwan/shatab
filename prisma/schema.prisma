@@ -1,3 +1,5 @@
+// Prisma Schema for Shatab.eg Platform (SQLite Compatible Version)
+
 generator client {
   provider = "prisma-client-js"
 }
@@ -7,32 +9,388 @@ datasource db {
   url      = "file:./dev.db"
 }
 
-enum ProviderType {
-  exhibition
-  company
-  freelancer
-}
+// ============================================
+// ENUMS
+// ============================================
 
 enum UserRole {
-  client
-  serviceProvider
+  siteOwner        // صاحب الموقع
+  serviceProvider  // مقدم خدمة
+  client           // عميل عادي
 }
+
+enum ProviderType {
+  freelancer  // فردي (مهندس، كهربائي، إلخ)
+  exhibition  // معرض (سيراميك، أدوات كهربائية)
+  company     // شركة أو مكتب
+}
+
+enum OfferStatus {
+  active
+  expired
+  deleted
+}
+
+enum RequestStatus {
+  open      // مفتوح لاستقبال العروض
+  inProgress // جاري التنفيذ
+  completed  // مكتمل
+  cancelled  // ملغي
+}
+
+enum ProposalStatus {
+  pending   // في الانتظار
+  accepted  // مقبول
+  rejected  // مرفوض
+}
+
+enum DonationStatus {
+  pending   // في انتظار الموافقة
+  approved  // معتمد
+  rejected  // مرفوض
+}
+
+enum NotificationType {
+  newProposal      // عرض سعر جديد
+  proposalAccepted // قبول عرض السعر
+  proposalRejected // رفض عرض السعر
+  newRating        // تقييم جديد
+  donationApproved // اعتماد تبرع
+  requestUpdate    // تحديث على الطلب
+  general          // عام
+}
+
+// ============================================
+// USER MODEL
+// ============================================
 
 model User {
-  id             Int          @id @default(autoincrement())
-  fullName       String
-  phone          String       @unique
-  password       String
-  role           UserRole
-  address        String?
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Basic Info
+  fullName String
+  phone    String  @unique
+  email    String? @unique
+  password String
+  role     UserRole
+
+  // Verification
+  otp        String?
+  isVerified Boolean @default(false)
+
+  // Profile
+  avatar      String?
+  coverImage  String?
+  bio         String? 
+  address     String?
+  city        String?
+  governorate String?
+
+  // Service Provider Specific
   providerType   ProviderType?
-  exhibitionType String?
-  specialization String?
-  jobTitle       String?
+  exhibitionType String? // نوع المعرض (سيراميك، أدوات، إلخ)
+  specialization String? // التخصص (سباكة، كهرباء، إلخ)
+  jobTitle       String? // المسمى الوظيفي
+  companyName    String? // اسم الشركة/المكتب
+  yearsExperience Int?
   avgPrice       Float?
-  otp            String?
-  isVerified     Boolean      @default(false)
-  avatar         String?
-  createdAt      DateTime     @default(now())
+  portfolio      String? // Converted from String[] to String?
+
+  // Ratings
+  averageRating Float @default(0)
+  totalRatings  Int   @default(0)
+
+  // Status
+  isActive  Boolean @default(true)
+  isBanned  Boolean @default(false)
+  banReason String?
+
+  // Relations
+  offers              Offer[]
+  finishingRequests   FinishingRequest[]
+  proposals           Proposal[]
+  maintenanceRequests MaintenanceRequest[]
+  ratingsGiven        Rating[]               @relation("RatingsGiven")
+  ratingsReceived     Rating[]               @relation("RatingsReceived")
+  donations           Donation[]
+  notifications       Notification[]
+  sentMessages        Message[]              @relation("SentMessages")
+  receivedMessages    Message[]              @relation("ReceivedMessages")
+
+  @@index([phone])
+  @@index([role])
+  @@index([providerType])
+  @@index([isActive])
 }
 
+// ============================================
+// OFFERS SYSTEM
+// ============================================
+
+model Offer {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  title       String
+  description String 
+  image       String
+  price       Float?
+  discount    Float? // نسبة الخصم
+
+  // Featured/Premium
+  isFeatured     Boolean   @default(false)
+  featuredUntil  DateTime?
+  featuredPaidAt DateTime?
+
+  // Status
+  status    OfferStatus @default(active)
+  expiresAt DateTime?
+
+  // Relations
+  providerId Int
+  provider   User @relation(fields: [providerId], references: [id], onDelete: Cascade)
+
+  @@index([providerId])
+  @@index([status])
+  @@index([isFeatured])
+  @@index([createdAt])
+}
+
+// ============================================
+// FINISHING SERVICES SYSTEM
+// ============================================
+
+model FinishingRequest {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  title       String
+  description String 
+  budget      Float?
+  location    String
+  city        String
+  governorate String
+
+  // Request Type
+  isCompanyRequest Boolean @default(false) // true = طلب شركة, false = طلب فردي
+  specialization   String? // التخصص المطلوب (للطلبات الفردية)
+
+  // Attachments
+  images String? // Converted from String[]
+
+  // Status
+  status       RequestStatus @default(open)
+  selectedProposalId Int?      @unique
+
+  // Relations
+  clientId  Int
+  client    User       @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  proposals Proposal[]
+
+  @@index([clientId])
+  @@index([status])
+  @@index([isCompanyRequest])
+  @@index([createdAt])
+}
+
+model Proposal {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  description String
+  price       Float
+  duration    String // مدة التنفيذ المتوقعة
+  notes       String?
+
+  // Attachments
+  attachments String? // Converted from String[]
+
+  // Status
+  status ProposalStatus @default(pending)
+
+  // Relations
+  requestId  Int
+  request    FinishingRequest @relation(fields: [requestId], references: [id], onDelete: Cascade)
+  providerId Int
+  provider   User             @relation(fields: [providerId], references: [id], onDelete: Cascade)
+
+  @@index([requestId])
+  @@index([providerId])
+  @@index([status])
+  @@index([createdAt])
+}
+
+// ============================================
+// MAINTENANCE SYSTEM
+// ============================================
+
+model MaintenanceRequest {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  title          String
+  description    String 
+  specialization String // نوع الصيانة المطلوبة
+  location       String
+  city           String
+  governorate    String
+  urgency        String  @default("normal") // normal, urgent, emergency
+
+  // Attachments
+  images String? // Converted from String[]
+
+  // Status
+  status RequestStatus @default(open)
+
+  // Relations
+  clientId Int
+  client   User @relation(fields: [clientId], references: [id], onDelete: Cascade)
+
+  @@index([clientId])
+  @@index([status])
+  @@index([specialization])
+  @@index([createdAt])
+}
+
+// ============================================
+// RATINGS SYSTEM
+// ============================================
+
+model Rating {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  rating  Int    @default(5) // 1-5
+  comment String?
+
+  // Relations
+  clientId   Int
+  client     User @relation("RatingsGiven", fields: [clientId], references: [id], onDelete: Cascade)
+  providerId Int
+  provider   User @relation("RatingsReceived", fields: [providerId], references: [id], onDelete: Cascade)
+
+  @@unique([clientId, providerId]) // عميل واحد يقيم مقدم خدمة مرة واحدة
+  @@index([providerId])
+  @@index([rating])
+}
+
+// ============================================
+// ONLINE SERVICES
+// ============================================
+
+model OnlineService {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  title       String
+  description String?
+  image       String
+  link        String
+  isActive    Boolean @default(true)
+  order       Int     @default(0) // ترتيب العرض
+
+  @@index([isActive])
+  @@index([order])
+}
+
+// ============================================
+// DONATIONS SYSTEM
+// ============================================
+
+model Donation {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  title       String
+  description String 
+  image       String
+  contactInfo String // معلومات التواصل
+
+  // Status
+  status       DonationStatus @default(pending)
+  rejectionReason String?
+
+  // Relations
+  userId Int
+  user   User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([status])
+  @@index([createdAt])
+}
+
+// ============================================
+// STATIC CONTENT
+// ============================================
+
+model StaticContent {
+  id        Int      @id @default(autoincrement())
+  updatedAt DateTime @updatedAt
+
+  key     String @unique // 'about' or 'contact'
+  title   String
+  content String 
+
+  // Contact specific fields
+  phone   String?
+  email   String?
+  address String?
+  social  String? // Changed from Json? to String? for checking
+
+  @@index([key])
+}
+
+// ============================================
+// NOTIFICATIONS SYSTEM
+// ============================================
+
+model Notification {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+
+  type    NotificationType
+  title   String
+  message String
+  link    String? // رابط للانتقال إليه عند الضغط
+
+  isRead Boolean @default(false)
+
+  // Relations
+  userId Int
+  user   User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId])
+  @@index([isRead])
+  @@index([createdAt])
+}
+
+// ============================================
+// MESSAGING SYSTEM
+// ============================================
+
+model Message {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+
+  content String
+  isRead  Boolean @default(false)
+
+  // Relations
+  senderId   Int
+  sender     User @relation("SentMessages", fields: [senderId], references: [id], onDelete: Cascade)
+  receiverId Int
+  receiver   User @relation("ReceivedMessages", fields: [receiverId], references: [id], onDelete: Cascade)
+
+  @@index([senderId])
+  @@index([receiverId])
+  @@index([createdAt])
+}

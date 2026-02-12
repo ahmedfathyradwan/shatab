@@ -50,13 +50,13 @@
 }
 
 .orderDetails {
-  font-size: var(--fs-5);
+  font-size: var(--fs-body);
   color: #555;
   margin-bottom: 0.3rem;
 }
 
 .orderDescription {
-  font-size: var(--fs-5);
+  font-size: var(--fs-body);
   color: #333;
   margin-top: 0.5rem;
   line-height: 1.5;
@@ -75,7 +75,7 @@
   border: none;
   border-radius: var(--br5);
   padding: 0.6rem 1.5rem;
-  font-size: var(--fs-5);
+  font-size: var(--fs-body);
   font-weight: 600;
   font-family: var(--ar);
   cursor: pointer;

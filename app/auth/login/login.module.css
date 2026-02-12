@@ -37,20 +37,19 @@
 }
 
 .title {
-    font-family: var(--ar);
+    font-family: var(--en);
     font-size: var(--fs-h1);
     direction: ltr;
-    font-weight: 550;
-    letter-spacing: 1.1;
+    font-weight: 600;
     color: var(--primaryColor);
 }
 
 .titleSpan {
-    font-family: poppins;
+    font-family: var(--en);
     font-size: var(--fs-h4);
     direction: ltr;
     font-weight: 400;
-    color: var(--textColor);
+    color: var(--primaryColor);
 }
 
 .description {
@@ -73,7 +72,7 @@
     padding: 0.5rem 1.5rem;
     border: 1px solid var(--primaryColor);
     border-radius: var(--br5);
-    font-size: var(--fs-h5);
+    font-size: var(--fs-body);
     font-weight: 500;
     cursor: pointer;
     margin: 0.5rem -1.5rem 0 0;
@@ -123,7 +122,7 @@
 }
 
 .forget {
-    font-size: var(--fs-5);
+    font-size: var(--fs-body);
     color: var(--grayText);
     margin-top: 0.5rem;
     cursor: pointer;

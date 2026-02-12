@@ -1,0 +1,300 @@
+// Prisma Schema for Shatab.eg Platform (SQLite Compatible Version)
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "./generated/sqlite-client"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:../dev.db"
+}
+
+// ============================================
+// USER MODEL
+// ============================================
+
+model User {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Basic Info
+  fullName String
+  phone    String  @unique
+  email    String? @unique
+  password String
+  role     String // Converted from Enum
+
+  // Verification
+  otp        String?
+  isVerified Boolean @default(false)
+
+  // Profile
+  avatar      String?
+  coverImage  String?
+  bio         String? // Removed @db.Text
+  address     String?
+  city        String?
+  governorate String?
+
+  // Service Provider Specific
+  providerType    String? // Converted from Enum
+  exhibitionType  String?
+  specialization  String?
+  jobTitle        String?
+  companyName     String?
+  yearsExperience Int?
+  avgPrice        Float?
+  portfolio       String // Converted from String[] to String (stored as JSON or comma separated)
+
+  // Ratings
+  averageRating Float @default(0)
+  totalRatings  Int   @default(0)
+
+  // Status
+  isActive  Boolean @default(true)
+  isBanned  Boolean @default(false)
+  banReason String?
+
+  // Relations
+  offers              Offer[]
+  finishingRequests   FinishingRequest[]
+  proposals           Proposal[]
+  maintenanceRequests MaintenanceRequest[]
+  ratingsGiven        Rating[]             @relation("RatingsGiven")
+  ratingsReceived     Rating[]             @relation("RatingsReceived")
+  donations           Donation[]
+  notifications       Notification[]
+  sentMessages        Message[]            @relation("SentMessages")
+  receivedMessages    Message[]            @relation("ReceivedMessages")
+}
+
+// ============================================
+// OFFERS SYSTEM
+// ============================================
+
+model Offer {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  title       String
+  description String // Removed @db.Text
+  image       String
+  price       Float?
+  discount    Float?
+
+  // Featured/Premium
+  isFeatured     Boolean   @default(false)
+  featuredUntil  DateTime?
+  featuredPaidAt DateTime?
+
+  // Status
+  status    String    @default("active") // Converted from Enum
+  expiresAt DateTime?
+
+  // Relations
+  providerId Int
+  provider   User @relation(fields: [providerId], references: [id], onDelete: Cascade)
+}
+
+// ============================================
+// FINISHING SERVICES SYSTEM
+// ============================================
+
+model FinishingRequest {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  title       String
+  description String // Removed @db.Text
+  budget      Float?
+  location    String
+  city        String
+  governorate String
+
+  // Request Type
+  isCompanyRequest Boolean @default(false)
+  specialization   String?
+
+  // Attachments
+  images String // Converted from String[]
+
+  // Status
+  status             String @default("open") // Converted from Enum
+  selectedProposalId Int?   @unique
+
+  // Relations
+  clientId  Int
+  client    User       @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  proposals Proposal[]
+}
+
+model Proposal {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  description String // Removed @db.Text
+  price       Float
+  duration    String
+  notes       String? // Removed @db.Text
+
+  // Attachments
+  attachments String // Converted from String[]
+
+  // Status
+  status String @default("pending") // Converted from Enum
+
+  // Relations
+  requestId  Int
+  request    FinishingRequest @relation(fields: [requestId], references: [id], onDelete: Cascade)
+  providerId Int
+  provider   User             @relation(fields: [providerId], references: [id], onDelete: Cascade)
+}
+
+// ============================================
+// MAINTENANCE SYSTEM
+// ============================================
+
+model MaintenanceRequest {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  title          String
+  description    String // Removed @db.Text
+  specialization String
+  location       String
+  city           String
+  governorate    String
+  urgency        String @default("normal")
+
+  // Attachments
+  images String // Converted from String[]
+
+  // Status
+  status String @default("open") // Converted from Enum
+
+  // Relations
+  clientId Int
+  client   User @relation(fields: [clientId], references: [id], onDelete: Cascade)
+}
+
+// ============================================
+// RATINGS SYSTEM
+// ============================================
+
+model Rating {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  rating  Int     @default(5)
+  comment String? // Removed @db.Text
+
+  // Relations
+  clientId   Int
+  client     User @relation("RatingsGiven", fields: [clientId], references: [id], onDelete: Cascade)
+  providerId Int
+  provider   User @relation("RatingsReceived", fields: [providerId], references: [id], onDelete: Cascade)
+}
+
+// ============================================
+// ONLINE SERVICES
+// ============================================
+
+model OnlineService {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  title       String
+  description String? // Removed @db.Text
+  image       String
+  link        String
+  isActive    Boolean @default(true)
+  order       Int     @default(0)
+}
+
+// ============================================
+// DONATIONS SYSTEM
+// ============================================
+
+model Donation {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  title       String
+  description String // Removed @db.Text
+  image       String
+  contactInfo String
+
+  // Status
+  status          String  @default("pending") // Converted from Enum
+  rejectionReason String? // Removed @db.Text
+
+  // Relations
+  userId Int
+  user   User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+// ============================================
+// STATIC CONTENT
+// ============================================
+
+model StaticContent {
+  id        Int      @id @default(autoincrement())
+  updatedAt DateTime @updatedAt
+
+  key     String @unique
+  title   String
+  content String // Removed @db.Text
+
+  // Contact specific fields
+  phone   String?
+  email   String?
+  address String?
+  social  String? // Converted from Json
+}
+
+// ============================================
+// NOTIFICATIONS SYSTEM
+// ============================================
+
+model Notification {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+
+  type    String // Converted from Enum
+  title   String
+  message String // Removed @db.Text
+  link    String?
+
+  isRead Boolean @default(false)
+
+  // Relations
+  userId Int
+  user   User @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+// ============================================
+// MESSAGING SYSTEM
+// ============================================
+
+model Message {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+
+  content String // Removed @db.Text
+  isRead  Boolean @default(false)
+
+  // Relations
+  senderId   Int
+  sender     User @relation("SentMessages", fields: [senderId], references: [id], onDelete: Cascade)
+  receiverId Int
+  receiver   User @relation("ReceivedMessages", fields: [receiverId], references: [id], onDelete: Cascade)
+}

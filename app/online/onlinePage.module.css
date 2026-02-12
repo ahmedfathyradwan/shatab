@@ -1,28 +1,34 @@
-.pageSection {
-  padding: 3rem 1.5rem;
+.section {
+  width: 100%;
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 2rem;
   background-color: #f9f9f9;
+  border-radius: 16px;
 }
+
+/* ================= TITLE ================= */
 
 .title {
   text-align: center;
   font-size: 2rem;
+  font-weight: 700;
   margin-bottom: 0.5rem;
   color: #222;
-  font-weight: 700;
 }
 
 .intro {
   text-align: center;
   color: #666;
   margin-bottom: 2rem;
-  font-size: 1rem;
-  max-width: 600px;
+  max-width: 650px;
   margin-left: auto;
   margin-right: auto;
   line-height: 1.6;
 }
 
-/* فلتر الفئات */
+/* ================= FILTER ================= */
+
 .filterContainer {
   display: flex;
   flex-wrap: wrap;
@@ -38,8 +44,7 @@
   padding: 0.5rem 1.2rem;
   cursor: pointer;
   font-size: 0.95rem;
-  color: #333;
-  transition: 0.3s ease;
+  transition: 0.2s ease;
 }
 
 .filterBtn:hover {
@@ -52,14 +57,30 @@
   border-color: #0070f3;
 }
 
-/* شبكة الكروت */
+/* ================= GRID (Page) ================= */
+
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.8rem;
 }
 
-/* الكارد */
+/* ================= HORIZONTAL (Home) ================= */
+
+.horizontal {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding-bottom: 1rem;
+  scroll-behavior: smooth;
+}
+
+.horizontal > .card {
+  flex: 0 0 280px;
+}
+
+/* ================= CARD ================= */
+
 .card {
   background: #fff;
   border-radius: 14px;
@@ -75,7 +96,8 @@
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
 }
 
-/* الصورة */
+/* ================= IMAGE ================= */
+
 .imageWrapper {
   width: 100%;
   height: 180px;
@@ -93,43 +115,88 @@
   transform: scale(1.05);
 }
 
-/* النصوص داخل الكارد */
+/* ================= CONTENT ================= */
+
 .cardBody {
   padding: 1rem 1.2rem;
-  flex: 1;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  flex-grow: 1;
 }
 
 .cardTitle {
   font-size: 1.2rem;
   font-weight: 600;
-  color: #222;
   margin-bottom: 0.5rem;
+  color: #222;
 }
 
 .cardDesc {
   font-size: 0.95rem;
   color: #555;
-  margin-bottom: 1rem;
+  margin-bottom: 0.8rem;
   line-height: 1.5;
 }
 
-/* زر "تصفح الموقع" */
+.benefits {
+  font-size: 0.85rem;
+  color: #333;
+  margin-bottom: 1rem;
+  padding-left: 1.2rem;
+}
+
+/* ================= LINKS ================= */
+
+.linksContainer {
+  margin-top: auto;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
 .moreLink {
-  color: white;
   background-color: #0070f3;
+  color: white;
   text-decoration: none;
-  padding: 0.5rem 1.2rem;
+  padding: 0.5rem 1rem;
   border-radius: 8px;
-  font-size: 0.9rem;
-  text-align: center;
-  transition: background 0.3s;
-  display: inline-block;
-  align-self: flex-start;
+  font-size: 0.85rem;
+  transition: 0.2s ease;
 }
 
 .moreLink:hover {
   background-color: #005bb5;
+}
+
+/* ================= SHOW ALL BUTTON ================= */
+
+.buttonContainer {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.showAllBtn {
+  background-color: #0070f3;
+  color: white;
+  padding: 0.7rem 1.8rem;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.showAllBtn:hover {
+  background-color: #005bb5;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 480px) {
+  .grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+
+  .filterBtn {
+    font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
+  }
 }

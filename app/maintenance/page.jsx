@@ -28,7 +28,7 @@ const Maintenance = () => {
   return (
     <>
       <div className={styles.container}>
-        <h2 className={styles.title}>الصيانة المنزلية</h2>
+        <h2 className={styles.title}>قسم الصيانة</h2>
         <p className={styles.par}>أعمال الصيانة المنزلية وصيانة الأجهزة المنزلية</p>
         <div className={styles.cardsGrid}>
           {cards.map((card, index) => (

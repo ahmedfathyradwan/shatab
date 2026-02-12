@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Image from "next/image";
 import donationData from "../mockData/donationData";
-import styles from "../styles/home/DonationSection.module.css";
+import styles from "../donationPosts/DonationPosts.module.css";
 
 export default function DonationSection() {
   const router = useRouter();
@@ -18,7 +18,7 @@ export default function DonationSection() {
 
   return (
     <div className={styles.container}>
-      <h2 className={styles.title}>تبرعات التشطيب</h2>
+      <h2 className={styles.title}>التبرعات</h2>
 
       <div className={styles.filterButtons}>
         {["الكل", "المساجد", "الأشخاص"].map((type) => (
@@ -28,14 +28,13 @@ export default function DonationSection() {
               filter === type ? styles.active : ""
             }`}
             onClick={() => setFilter(type)}
-            aria-pressed={filter === type}
           >
             {type}
           </button>
         ))}
       </div>
 
-      <div className={styles.horizontalScroll}>
+      <div className={`${styles.horizontal}`}>
         {visibleDonations.map((item) => (
           <div key={item.id} className={styles.card}>
             <Image
@@ -43,30 +42,26 @@ export default function DonationSection() {
               alt={item.title || "صورة تبرع"}
               width={260}
               height={160}
-              style={{ objectFit: "cover" }}
-              priority={false}
+              className={styles.image}
             />
-            <h3>{item.title}</h3>
-            <p>{item.description}</p>
 
-            {/* 🔹 أزرار الاتصال والواتساب */}
-            <div className={styles.contactButtons}>
-              <a
-                href={`tel:${item.phone}`}
-                className={styles.callButton}
-                aria-label="اتصال"
-              >
-                📞 اتصال
-              </a>
-              <a
-                href={`https://wa.me/${item.phone.replace(/^0/, "2")}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.whatsappButton}
-                aria-label="واتساب"
-              >
-                💬 واتساب
-              </a>
+            <div className={styles.content}>
+              <h3 className={styles.cardTitle}>{item.title}</h3>
+              <p className={styles.description}>{item.description}</p>
+
+              <div className={styles.contactButtons}>
+                <a href={`tel:${item.phone}`} className={styles.callButton}>
+                  📞 اتصال
+                </a>
+                <a
+                  href={`https://wa.me/${item.phone.replace(/^0/, "2")}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.whatsappButton}
+                >
+                  💬 واتساب
+                </a>
+              </div>
             </div>
           </div>
         ))}

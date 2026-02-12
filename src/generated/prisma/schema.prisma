@@ -1,0 +1,43 @@
+// Prisma schema file
+// Docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./dev.db"
+}
+
+// ===========================
+// 🧩 موديل العميل (CLINTE)
+// ===========================
+model CLINTE {
+  id         Int      @id @default(autoincrement())
+  fullName   String
+  phone      String   @unique
+  password   String
+  otp        String?
+  isVerified Boolean  @default(false)
+  createdAt  DateTime @default(now())
+}
+
+// ===========================
+// 🧩 موديل مقدمي الخدمات (ServiceProvider)
+// ===========================
+model ServiceProvider {
+  id             Int      @id @default(autoincrement())
+  fullName       String
+  phone          String   @unique
+  password       String
+  address        String
+  providerType   String // "exhibition" | "company" | "freelancer"
+  exhibitionType String? // للمعارض
+  specialization String? // للشركات والمكاتب
+  jobTitle       String? // للمستقلين
+  avgPrice       Float? // للمستقلين
+  isVerified     Boolean  @default(false)
+  createdAt      DateTime @default(now())
+}

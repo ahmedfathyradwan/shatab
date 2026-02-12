@@ -54,14 +54,14 @@
 .label {
   color: var(--primaryColor);
   font-weight: 600;
-  font-size: var(--fs-h5);
+  font-size: var(--fs-body);
   display: inline;
   margin-left: 0.5rem;
 }
 
 .value {
   font-weight: 500;
-  font-size: var(--fs-h5);
+  font-size: var(--fs-body);
   display: inline;
 }
 
@@ -78,7 +78,7 @@
   color: var(--backgroundColor);
   padding: 0.5rem 1rem;
   border-radius: var(--br5);
-  font-size: var(--fs-5);
+  font-size: var(--fs-body);
   border: 1px solid var(--primaryColor);
   font-weight: 500;
 }

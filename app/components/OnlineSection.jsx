@@ -1,15 +1,12 @@
 "use client";
-
 import { useState } from "react";
 import Link from "next/link";
-import styles from "../styles/home/OnlineSection.module.css";
 import onlineServicesData from "../data/onlineServicesData";
+import styles from "../online/onlinePage.module.css";
 
 export default function OnlineSection() {
-  // ✅ الفلتر الافتراضي هو "الأفضل"
   const [filter, setFilter] = useState("الأفضل");
 
-  // ✅ ترتيب الفئات
   const categories = [
     "الأفضل",
     "الكل",
@@ -19,7 +16,6 @@ export default function OnlineSection() {
     "صناع محتوى",
   ];
 
-  // ✅ فلترة البيانات
   const filteredServices =
     filter === "الكل"
       ? onlineServicesData
@@ -27,14 +23,15 @@ export default function OnlineSection() {
       ? onlineServicesData.filter((s) => s.isBest)
       : onlineServicesData.filter((s) => s.category === filter);
 
+  const visibleServices = filteredServices.slice(0, 5);
+
   return (
-    <section className={styles.onlineSection}>
-      <h2 className={styles.title}>خدمات التشطيب الأونلاين</h2>
+    <section className={styles.section}>
+      <h2 className={styles.title}>خدمات تشطيب أونلاين</h2>
       <p className={styles.intro}>
         خدمات رقمية تساعدك في تنفيذ أو متابعة التشطيب بسهولة من أي مكان.
       </p>
 
-      {/* 🔹 الفلتر */}
       <div className={styles.filterContainer}>
         {categories.map((cat) => (
           <button
@@ -49,34 +46,34 @@ export default function OnlineSection() {
         ))}
       </div>
 
-      {/* 🔹 الكروت الأفقية */}
-      <div className={styles.cardsContainer}>
-        {filteredServices.map((service) => (
+      <div className={styles.horizontal}>
+        {visibleServices.map((service) => (
           <div key={service.id} className={styles.card}>
-            <img
-              src={service.image}
-              alt={service.title}
-              className={styles.image}
-              loading="lazy"
-            />
-            <h3 className={styles.cardTitle}>{service.title}</h3>
-            <p className={styles.cardDesc}>{service.description}</p>
+            <div className={styles.imageWrapper}>
+              <img
+                src={service.image}
+                alt={service.title}
+                className={styles.image}
+                loading="lazy"
+              />
+            </div>
 
-            {/* ✅ المميزات إن وجدت */}
-            {service.benefits && (
-              <ul className={styles.benefits}>
-                {service.benefits.slice(0, 2).map((b, index) => (
-                  <li key={index}>{b}</li>
-                ))}
-              </ul>
-            )}
+            <div className={styles.cardBody}>
+              <h3 className={styles.cardTitle}>{service.title}</h3>
+              <p className={styles.cardDesc}>{service.description}</p>
 
-            {/* ✅ عرض اللينكات — يدعم link أو links */}
-            <div className={styles.linksContainer}>
-              {service.links ? (
-                service.links.map((link, index) => (
+              {service.benefits && (
+                <ul className={styles.benefits}>
+                  {service.benefits.slice(0, 2).map((b, i) => (
+                    <li key={i}>{b}</li>
+                  ))}
+                </ul>
+              )}
+
+              <div className={styles.linksContainer}>
+                {service.links?.map((link, i) => (
                   <a
-                    key={index}
+                    key={i}
                     href={link.url}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -84,23 +81,13 @@ export default function OnlineSection() {
                   >
                     {link.label}
                   </a>
-                ))
-              ) : service.link ? (
-                <a
-                  href={service.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={styles.moreLink}
-                >
-                  تصفح
-                </a>
-              ) : null}
+                ))}
+              </div>
             </div>
           </div>
         ))}
       </div>
 
-      {/* 🔹 زر عرض الكل */}
       <div className={styles.buttonContainer}>
         <Link href="/online" className={styles.showAllBtn}>
           عرض كل الخدمات

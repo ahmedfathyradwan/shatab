@@ -1,9 +1,15 @@
 .container {
-  max-width: 1000px;
-  margin: 0 auto;
+  width: 100%;
+  max-width: 1100px;
+  margin: 2rem auto;
   padding: 2rem;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
   text-align: center;
 }
+
+/* ================= TITLE ================= */
 
 .title {
   font-size: 2rem;
@@ -12,17 +18,17 @@
   color: #222;
 }
 
-/* 🔹 أزرار الفلترة */
+/* ================= FILTER BUTTONS ================= */
+
 .filterButtons {
   display: flex;
-  flex-wrap: wrap;          /* السماح للزر بالانتقال للسطر التالي عند ضيق الشاشة */
+  flex-wrap: wrap;
   justify-content: center;
   align-items: center;
   gap: 0.6rem;
   margin-bottom: 1.5rem;
-  overflow-x: auto;         /* تفعيل التمرير الأفقي إذا زادت الأزرار عن العرض */
+  overflow-x: auto;
   padding-bottom: 0.5rem;
-  -webkit-overflow-scrolling: touch; /* Smooth scroll للأجهزة اللمسية */
 }
 
 .filterButton {
@@ -33,8 +39,8 @@
   cursor: pointer;
   transition: 0.2s ease;
   font-size: 0.95rem;
-  white-space: nowrap; /* يمنع النص من النزول لسطرين */
-  flex-shrink: 0;     /* يمنع الزر من الانكماش عند ضيق المساحة */
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .filterButton:hover {
@@ -47,13 +53,28 @@
   border-color: #0070f3;
 }
 
-/* 🔹 شبكة العروض */
+/* ================= GRID LAYOUT ================= */
+
 .offersGrid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
   gap: 1.2rem;
   margin-top: 1rem;
 }
+
+/* Optional: لو عايز تستخدمه كسكرول أفقي في الكومبوننت */
+.horizontal {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  padding: 1rem 0;
+}
+
+.horizontal > .offerCard {
+  flex: 0 0 240px;
+}
+
+/* ================= CARD ================= */
 
 .offerCard {
   background: #fff;
@@ -70,38 +91,27 @@
 
 .image {
   width: 100%;
-  height: 160px;
+  height: 170px;
   object-fit: cover;
   border-bottom: 1px solid #eee;
-  border-radius: 10px 10px 0 0;
 }
 
-/* 🔹 النص داخل البطاقة */
+/* ================= TEXT ================= */
+
 .textBox {
   padding: 1rem;
 }
 
-.textBox h3 {
-  margin: 0 0 0.5rem;
-  font-size: 1.1rem;
-  color: #333;
-}
-
-.textBox p {
-  margin: 0.3rem 0;
+.description {
   font-size: 0.95rem;
   color: #555;
+  margin-bottom: 0.8rem;
 }
 
-/* 🔹 نوع العرض */
-.type {
-  font-weight: bold;
-  color: #0070f3;
-}
+/* ================= CONTACT BUTTONS ================= */
+
 .contactButtons {
   display: flex;
-  justify-content: space-between;
-  margin-top: 0.8rem;
   gap: 0.6rem;
 }
 
@@ -109,40 +119,57 @@
 .whatsappButton {
   flex: 1;
   text-align: center;
-  padding: 0.5rem;
+  padding: 0.6rem;
   border-radius: 8px;
   font-weight: bold;
-  cursor: pointer;
+  text-decoration: none;
+  color: #fff;
   transition: 0.2s ease;
 }
 
 .callButton {
   background-color: #0070f3;
-  color: white;
-}
-
-.whatsappButton {
-  background-color: #25d366;
-  color: white;
 }
 
 .callButton:hover {
   background-color: #0059c1;
 }
 
+.whatsappButton {
+  background-color: #25d366;
+}
+
 .whatsappButton:hover {
   background-color: #1ea955;
 }
 
+/* ================= MORE BUTTON ================= */
 
-/* 🔹 استجابة للموبايل */
+.moreButton {
+  margin-top: 1.5rem;
+  padding: 0.7rem 1.8rem;
+  background-color: #0070f3;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: 0.2s;
+}
+
+.moreButton:hover {
+  background-color: #0059c1;
+}
+
+/* ================= RESPONSIVE ================= */
+
 @media (max-width: 480px) {
+  .offersGrid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  }
+
   .filterButton {
     font-size: 0.85rem;
     padding: 0.4rem 0.8rem;
-  }
-
-  .offersGrid {
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   }
 }

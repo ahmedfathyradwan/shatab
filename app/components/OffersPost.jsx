@@ -2,18 +2,17 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import offersData from "../mockData/offersData";
-import styles from "../styles/home/OffersPost.module.css";
+import styles from "../offersPost/OffersPost.module.css";
 
 export default function OffersPost() {
   const router = useRouter();
   const [filter, setFilter] = useState("الأفضل");
 
-  // 🔹 فلترة حسب الاختيار
   const filteredOffers =
     filter === "الكل"
       ? offersData
       : filter === "الأفضل"
-      ? offersData.filter((offer) => offer.isBest) // هنضيف حقل isBest في البيانات
+      ? offersData.filter((offer) => offer.isBest)
       : offersData.filter((offer) => offer.type === filter);
 
   const visibleOffers = filteredOffers.slice(0, 5);
@@ -22,7 +21,6 @@ export default function OffersPost() {
     <div className={styles.container}>
       <h2 className={styles.title}>عروض الشهر</h2>
 
-      {/* 🔹 أزرار الفلترة */}
       <div className={styles.filterButtons}>
         {["الأفضل", "الكل", "سيراميك", "خشب", "أبواب", "دهانات", "تشطيب"].map(
           (type) => (
@@ -39,8 +37,8 @@ export default function OffersPost() {
         )}
       </div>
 
-      {/* 🔹 شبكة العروض */}
-      <div className={styles.offersGrid}>
+      {/* استخدم horizontal لو عايزها سكرول */}
+      <div className={`${styles.offersGrid} ${styles.horizontal}`}>
         {visibleOffers.map((offer) => (
           <div key={offer.id} className={styles.offerCard}>
             <img
@@ -48,20 +46,23 @@ export default function OffersPost() {
               alt={offer.title || "صورة عرض"}
               className={styles.image}
             />
-            <p>{offer.description}</p>
 
-            <div className={styles.contactButtons}>
-              <a href={`tel:${offer.phone}`} className={styles.callButton}>
-                📞 اتصل الآن
-              </a>
-              <a
-                href={`https://wa.me/${offer.phone.replace(/^0/, "2")}`}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={styles.whatsappButton}
-              >
-                💬 واتساب
-              </a>
+            <div className={styles.textBox}>
+              <p className={styles.description}>{offer.description}</p>
+
+              <div className={styles.contactButtons}>
+                <a href={`tel:${offer.phone}`} className={styles.callButton}>
+                  📞 اتصل الآن
+                </a>
+                <a
+                  href={`https://wa.me/${offer.phone.replace(/^0/, "2")}`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.whatsappButton}
+                >
+                  💬 واتساب
+                </a>
+              </div>
             </div>
           </div>
         ))}

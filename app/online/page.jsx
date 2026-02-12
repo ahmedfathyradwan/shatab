@@ -1,13 +1,11 @@
 "use client";
 import { useState } from "react";
-import styles from "./onlinePage.module.css";
 import onlineServicesData from "../data/onlineServicesData";
+import styles from "./onlinePage.module.css";
 
 export default function OnlinePage() {
-  // ✅ الفلتر الافتراضي هو "الأفضل"
   const [filter, setFilter] = useState("الأفضل");
 
-  // ✅ الفئات بما فيها "الأفضل"
   const categories = [
     "الأفضل",
     "الكل",
@@ -17,7 +15,6 @@ export default function OnlinePage() {
     "صناع محتوى",
   ];
 
-  // ✅ الفلترة حسب الفئة أو الأفضل
   const filteredServices =
     filter === "الكل"
       ? onlineServicesData
@@ -26,13 +23,12 @@ export default function OnlinePage() {
       : onlineServicesData.filter((s) => s.category === filter);
 
   return (
-    <section className={styles.pageSection}>
-      <h1 className={styles.title}>كل الخدمات الأونلاين في التشطيب</h1>
+    <section className={styles.section}>
+      <h1 className={styles.title}>خدمات تشطيب الأونلاين</h1>
       <p className={styles.intro}>
-        تصفح أفضل الخدمات الأونلاين اللي تقدر تستخدمها في مصر — من أول التصميم لحد التنفيذ والتشطيب الكامل.
+        تصفح أفضل الخدمات الأونلاين اللي تقدر تستخدمها في مصر — من أول التصميم لحد التنفيذ.
       </p>
 
-      {/* 🔹 فلتر الفئات */}
       <div className={styles.filterContainer}>
         {categories.map((cat) => (
           <button
@@ -47,7 +43,6 @@ export default function OnlinePage() {
         ))}
       </div>
 
-      {/* 🔹 شبكة الخدمات */}
       <div className={styles.grid}>
         {filteredServices.map((service) => (
           <div key={service.id} className={styles.card}>
@@ -64,11 +59,10 @@ export default function OnlinePage() {
               <h3 className={styles.cardTitle}>{service.title}</h3>
               <p className={styles.cardDesc}>{service.description}</p>
 
-              {/* 🔗 عرض كل اللينكات */}
               <div className={styles.linksContainer}>
-                {service.links?.map((link, index) => (
+                {service.links?.map((link, i) => (
                   <a
-                    key={index}
+                    key={i}
                     href={link.url}
                     target="_blank"
                     rel="noopener noreferrer"

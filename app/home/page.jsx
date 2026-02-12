@@ -1,4 +1,4 @@
-import styles from '../styles/home/page.module.css';
+import styles from '../styles/home/home.module.css';
 import AboutUs from '../components/AboutUs';
 import ContactUs from '../components/ContactUs';
 import Image from "next/image";
@@ -30,10 +30,10 @@ export default async function HomePage() {
       <div className={styles.heroSection}>
         <div className={styles.imgContainer}>
           <Image
-            src="/images/homeMob.jpg"
-            alt="Home"
-            width={390}
-            height={390}
+            src="/images/logo.png"
+            alt="Logo"
+            width={176}
+            height={200}
             className={styles.homeImg}
           />
         </div>
@@ -52,31 +52,34 @@ export default async function HomePage() {
               <br />
               في مكان واحد… اتبنى بحب واحترام لوقتك وفلوسك.
             </h4>
+            <a href="#chooseService" className={styles.ctaButton}>
+              ابدء الآن
+            </a>
           </div>
         </div>
       </div>
 
       <section id="services" className={styles.servicesSection}>
-        <h2 className={styles.sectionTitle}>خدماتنا</h2>
+        {/* <h2 className={styles.sectionTitle}>خدماتنا</h2> */}
         <div className={styles.aboutUs}>
-            <MonthlyOffers />
+          <MonthlyOffers />
         </div>
-        <div className={styles.FinishOrMaintenanceCard}>
-            <FinishOrMaintenanceCard />
-        </div>
-        <div className={styles.aboutUs}>
-            <OnlineSection />
+        <div className={styles.FinishOrMaintenanceCard} id="chooseService">
+          <FinishOrMaintenanceCard />
         </div>
         <div className={styles.aboutUs}>
-            <DonationSection />
+          <OnlineSection />
+        </div>
+        <div className={styles.aboutUs}>
+          <DonationSection />
         </div>
       </section>
 
-      <div className={styles.aboutUs}>
-          <AboutUs />
+      <div className={styles.aboutUs} id="about-us">
+        <AboutUs />
       </div>
-      <div className={styles.contactUs}>
-          <ContactUs />
+      <div className={styles.contactUs} id="contact-us">
+        <ContactUs />
       </div>
     </div>
   );

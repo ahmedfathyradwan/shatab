@@ -54,12 +54,12 @@
 }
 
 .price, .gov {
-  font-size: var(--fs-h5);
+  font-size: var(--fs-body);
   font-weight: 500;
 }
 
 .label {
-  font-size: var(--fs-h5);
+  font-size: var(--fs-body);
   color: var(--primaryColor);
   font-weight: 500;
 }
@@ -67,7 +67,7 @@
 .value {
   font-weight: 500;
   color: var(--textColor);
-  font-size: var(--fs-h5);
+  font-size: var(--fs-body);
 }
 
 .works {
@@ -101,7 +101,7 @@
 
 .btn {
   padding: 0.5rem 1rem;
-  font-size: var(--fs-5);
+  font-size: var(--fs-body);
   background-color: var(--primaryColor);
   color: var(--backgroundColor);
   border: 1px solid var(--primaryColor);

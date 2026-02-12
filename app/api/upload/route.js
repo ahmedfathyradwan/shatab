@@ -7,11 +7,9 @@ import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 const SECRET = process.env.JWT_SECRET || 'supersecret';
 
-export const config = {
-    api: {
-        bodyParser: false,
-    },
-};
+// Next.js Route Segment Config
+export const dynamic = 'force-dynamic';
+export const runtime = 'nodejs';
 
 export async function POST(req) {
     try {

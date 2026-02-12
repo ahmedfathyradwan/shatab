@@ -1,7 +1,7 @@
 'use client';
 
 import React from "react";
-import styles from "../../styles/freelance/tPost.module.css"; // يفترض أنه نفس ملف التنسيق أو تخصص له ملف جديد لو حبيت
+import styles from "../../../styles/freelance/freelance.module.css";
 
 const TermsPage = () => {
   return (

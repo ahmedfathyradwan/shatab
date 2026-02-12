@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import clientRequests from "../../mockData/clientRequests.js";
 import styles from "./availableRequests.module.css";
-import serviceToProviderMap from "../../data/serviceToProviderMap.js/index.js";
+import serviceToProviderMap from "../../data/serviceToProviderMap.js";
 import MySelect from "../../components/MySelect.jsx";
 
 const AvailableRequests = () => {
@@ -51,9 +51,9 @@ const AvailableRequests = () => {
           filteredRequests.map((req) => (
             <div key={req.id} className={styles.card}>
               {req.image && (
-                <img 
-                  src={req.image} 
-                  alt="صورة المكان" 
+                <img
+                  src={req.image}
+                  alt="صورة المكان"
                   className={styles.image}
                   onError={(e) => {
                     e.target.style.display = 'none';

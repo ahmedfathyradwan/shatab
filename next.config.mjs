@@ -12,38 +12,36 @@ const nextConfig = {
       },
     ];
   },
-  trailingSlash: true,
   images: {
     unoptimized: true,
   },
   typescript: {
     ignoreBuildErrors: true,
   },
-  typescript: {
-    ignoreBuildErrors: true,
-  },
-  basePath: '',
-  assetPrefix: '/',
-
-  turbopack: {},
-
-  ...(process.env.NEXT_RUNTIME === 'nodejs' && {
-    webpack(config) {
-      config.module.rules.push({
-        test: /\.svg$/i,
-        issuer: /\.[jt]sx?$/,
-        use: ['@svgr/webpack'],
-      });
-
-      // Fix for AdminJS README.md import issue
-      config.module.rules.push({
-        test: /\.md$/,
-        type: 'asset/source',
-      });
-
-      return config;
+  // Turbopack config (Next.js 16+ default bundler)
+  turbopack: {
+    rules: {
+      '*.svg': {
+        loaders: ['@svgr/webpack'],
+        as: '*.js',
+      },
     },
-  }),
+  },
+  // Webpack config (used during Vercel production builds & when turbopack is disabled)
+  webpack(config) {
+    config.module.rules.push({
+      test: /\.svg$/i,
+      issuer: /\.[jt]sx?$/,
+      use: ['@svgr/webpack'],
+    });
+
+    config.module.rules.push({
+      test: /\.md$/,
+      type: 'asset/source',
+    });
+
+    return config;
+  },
 };
 
 export default nextConfig;

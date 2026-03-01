@@ -1,11 +1,11 @@
 'use client';
 
-import Select from 'react-select';
 import React, { useState } from "react";
 import styles from "../../../styles/freelance/finishingRequest.module.css";
 import dynamic from "next/dynamic";
 import Link from "next/link";
 import serviceToProviderMap from "../../../data/serviceToProviderMap.js";
+import governoratesData from "../../../data/governorates.js";
 
 const MySelectClient = dynamic(
   () => import("../../../components/ClientMySelectWrapper"),
@@ -27,11 +27,14 @@ const FinishingRequestPage = () => {
   const [serviceType, setServiceType] = useState(null);
   const [area, setArea] = useState("");
   const [address, setAddress] = useState("");
+  const [governorate, setGovernorate] = useState(null);
   const [providerType, setProviderType] = useState(null);
   const [description, setDescription] = useState("");
   const [agreed, setAgreed] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState("");
+
+  const governorateOptions = governoratesData.map((item) => ({ label: item, value: item }));
 
   const handleSubmit = () => {
     if (!serviceType || !area.trim() || !address.trim() || !providerType || !agreed) {
@@ -80,15 +83,17 @@ const FinishingRequestPage = () => {
         />
 
         <label className={styles.label}>اختر اسم مدينتك</label>
-            <MySelect
-              key="gov-select"
-              value={governorate}
-              onChange={setGovernorate}
-              options={governorateOptions}
-              placeholder="اختر اسم مدينتك"
-              isSearchable={true}
-              isClearable={true}
-            />
+        <div className={styles.selectContainer}>
+          <MySelectClient
+            key="gov-select"
+            value={governorate}
+            onChange={setGovernorate}
+            options={governorateOptions}
+            placeholder="اختر اسم مدينتك"
+            isSearchable={true}
+            isClearable={true}
+          />
+        </div>
 
         <label className={styles.label}>نوع مقدمي الخدمة المراد التعامل معهم</label>
         <div className={styles.selectContainer}>

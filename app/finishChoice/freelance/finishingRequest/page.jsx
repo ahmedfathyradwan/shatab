@@ -1,6 +1,6 @@
 'use client';
 
-import Select from 'react-select'; 
+import Select from 'react-select';
 import React, { useState } from "react";
 import styles from "../../../styles/freelance/finishingRequest.module.css";
 import dynamic from "next/dynamic";
@@ -66,8 +66,8 @@ const FinishingRequestPage = () => {
             onChange={setServiceType}
             options={serviceOptions}
             placeholder="اختر نوع الخدمة"
-                          isSearchable={true}
-              isClearable={true}
+              //             isSearchable={true}
+              // isClearable={true}
           />
         </div>
 

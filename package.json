@@ -30,6 +30,7 @@
     "html-to-image": "^1.11.13",
     "joi": "^18.0.2",
     "jsonwebtoken": "^9.0.2",
+    "lucide-react": "^0.575.0",
     "multer": "^2.0.2",
     "next": "^16.1.6",
     "node-vibrant": "^4.0.3",

@@ -1,5 +1,6 @@
 'use client';
 
+import Select from 'react-select'; 
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import styles from '../../form.module.css';
@@ -111,17 +112,21 @@ export default function MaterialsRegisterPage() {
               onChange={setType}
               options={materialTypeOptions}
               placeholder="قائمة اختيار"
+                            isSearchable={true}
+              isClearable={true}
             />
           </div>
 
           <div className={styles.group}>
             <label className={styles.label}>العنوان</label>
             <MySelect
-              key="materials-gov-select"
+              key="gov-select"
               value={governorate}
               onChange={setGovernorate}
               options={governorateOptions}
-              placeholder="اختيار من قائمة محافظات مصر"
+              placeholder="اختر اسم مدينتك"
+              isSearchable={true}
+              isClearable={true}
             />
           </div>
 
@@ -143,7 +148,6 @@ export default function MaterialsRegisterPage() {
             <label className={styles.label}>كلمة المرور</label>
             <input
               type="password"
-placeholder="اختار باسورد سهل عشان متنساهوش 😘"
               className={styles.input}
               value={password}
               onChange={(e) => setPassword(e.target.value)}

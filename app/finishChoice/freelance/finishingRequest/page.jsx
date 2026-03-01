@@ -1,5 +1,6 @@
 'use client';
 
+import Select from 'react-select'; 
 import React, { useState } from "react";
 import styles from "../../../styles/freelance/finishingRequest.module.css";
 import dynamic from "next/dynamic";
@@ -65,6 +66,8 @@ const FinishingRequestPage = () => {
             onChange={setServiceType}
             options={serviceOptions}
             placeholder="اختر نوع الخدمة"
+                          isSearchable={true}
+              isClearable={true}
           />
         </div>
 
@@ -76,13 +79,16 @@ const FinishingRequestPage = () => {
           onChange={(e) => setArea(e.target.value)}
         />
 
-        <label className={styles.label}>العنوان تفصيلاً قدر الإمكان</label>
-        <input
-          type="text"
-          className={styles.input}
-          value={address}
-          onChange={(e) => setAddress(e.target.value)}
-        />
+        <label className={styles.label}>اختر اسم مدينتك</label>
+            <MySelect
+              key="gov-select"
+              value={governorate}
+              onChange={setGovernorate}
+              options={governorateOptions}
+              placeholder="اختر اسم مدينتك"
+              isSearchable={true}
+              isClearable={true}
+            />
 
         <label className={styles.label}>نوع مقدمي الخدمة المراد التعامل معهم</label>
         <div className={styles.selectContainer}>

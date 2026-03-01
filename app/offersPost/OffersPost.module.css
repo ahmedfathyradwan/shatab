@@ -48,9 +48,9 @@
 }
 
 .active {
-  background-color: #0070f3;
+  background-color: var(--primaryColor);
   color: white;
-  border-color: #0070f3;
+  border-color: var(--primaryColor);
 }
 
 /* ================= GRID LAYOUT ================= */
@@ -128,19 +128,12 @@
 }
 
 .callButton {
-  background-color: #0070f3;
+  background-color: var(--primaryColor);
 }
 
-.callButton:hover {
-  background-color: #0059c1;
-}
 
 .whatsappButton {
-  background-color: #25d366;
-}
-
-.whatsappButton:hover {
-  background-color: #1ea955;
+  background-color: var(--textColor);
 }
 
 /* ================= MORE BUTTON ================= */
@@ -148,28 +141,11 @@
 .moreButton {
   margin-top: 1.5rem;
   padding: 0.7rem 1.8rem;
-  background-color: #0070f3;
+  background-color: var(--primaryColor);
   color: white;
   border: none;
   border-radius: 12px;
   cursor: pointer;
   font-size: 1rem;
   transition: 0.2s;
-}
-
-.moreButton:hover {
-  background-color: #0059c1;
-}
-
-/* ================= RESPONSIVE ================= */
-
-@media (max-width: 480px) {
-  .offersGrid {
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  }
-
-  .filterButton {
-    font-size: 0.85rem;
-    padding: 0.4rem 0.8rem;
-  }
 }

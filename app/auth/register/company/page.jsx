@@ -1,5 +1,6 @@
 'use client';
 
+import Select from 'react-select'; 
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import styles from '../../form.module.css';
@@ -110,6 +111,8 @@ export default function MaintenanceCompanyRegisterPage() {
               onChange={setJobTitle}
               options={jobTitleOptions}
               placeholder="شركة تشطيب - شركة صيانة ..."
+                            isSearchable={true}
+              isClearable={true}
             />
           </div>
 
@@ -120,7 +123,9 @@ export default function MaintenanceCompanyRegisterPage() {
               value={governorate}
               onChange={setGovernorate}
               options={governorateOptions}
-              placeholder="اختيار من قائمة محافظات مصر"
+              placeholder="اختر اسم مدينتك"
+              isSearchable={true}
+              isClearable={true}
             />
           </div>
 
@@ -143,7 +148,6 @@ export default function MaintenanceCompanyRegisterPage() {
             <input
               type="password"
               className={styles.input}
-              placeholder="اختار باسورد سهل عشان متنساهوش 😘"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required

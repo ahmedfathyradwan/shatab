@@ -103,7 +103,6 @@ const ClientRegister = () => {
             <label className={styles.label}>كلمة المرور</label>
             <input
               type="password"
-placeholder="اختار باسورد سهل عشان متنساهوش 😘"
               className={styles.input}
               value={password}
               onChange={(e) => setPassword(e.target.value)}

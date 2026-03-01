@@ -6,25 +6,8 @@ import MonthlyOffers from '../components/OffersPost';
 import DonationSection from '../components/DonationSection';
 import FinishOrMaintenanceCard from '../components/FinishOrMaintenanceCard';
 import OnlineSection from '../components/OnlineSection';
-import { cookies } from "next/headers";
-import { redirect } from "next/navigation";
-import jwt from "jsonwebtoken";
-
-const SECRET = process.env.JWT_SECRET || "supersecret";
 
 export default async function HomePage() {
-  const token = (await cookies()).get("token")?.value ?? null;
-
-  if (!token) {
-    redirect("/login");
-  }
-
-  try {
-    jwt.verify(token, SECRET);
-  } catch {
-    redirect("/login");
-  }
-
   return (
     <div className={styles.homeContainer}>
       <div className={styles.heroSection}>

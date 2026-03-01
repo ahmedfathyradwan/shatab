@@ -52,7 +52,7 @@ export default function OffersPost() {
 
               <div className={styles.contactButtons}>
                 <a href={`tel:${offer.phone}`} className={styles.callButton}>
-                  📞 اتصل الآن
+                   اتصل الآن
                 </a>
                 <a
                   href={`https://wa.me/${offer.phone.replace(/^0/, "2")}`}
@@ -60,7 +60,7 @@ export default function OffersPost() {
                   rel="noopener noreferrer"
                   className={styles.whatsappButton}
                 >
-                  💬 واتساب
+                   واتساب
                 </a>
               </div>
             </div>

@@ -11,18 +11,18 @@ export function middleware(request) {
     const token = request.cookies.get("token")?.value || null;
 
     if (!token) {
-      // لا يوجد توكن → redirect مباشرة للـ login
-      const loginUrl = new URL("/login", request.url);
-      return NextResponse.redirect(loginUrl);
+      // لا يوجد توكن → redirect مباشرة للـ home
+      const homeUrl = new URL("/home", request.url);
+      return NextResponse.redirect(homeUrl);
     }
 
     try {
       jwt.verify(token, SECRET);
       return NextResponse.next(); // توكن صالح → السماح بالدخول
     } catch {
-      // توكن غير صالح → redirect للـ login
-      const loginUrl = new URL("/login", request.url);
-      return NextResponse.redirect(loginUrl);
+      // توكن غير صالح → redirect للـ home
+      const homeUrl = new URL("/home", request.url);
+      return NextResponse.redirect(homeUrl);
     }
   }
 

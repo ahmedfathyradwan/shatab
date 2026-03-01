@@ -48,6 +48,8 @@ export default function MySelect({
   onChange,
   options,
   placeholder,
+  isSearchable = true,  // ← افتراضياً true
+  isClearable = false,  // ← افتراضياً false، تقدر تغيره من الـ props
 }) {
   return (
     <Select
@@ -57,7 +59,8 @@ export default function MySelect({
       options={options}
       styles={customStyles}
       placeholder={placeholder}
-      isSearchable={false}
+      isSearchable={isSearchable}
+      isClearable={isClearable}
     />
   );
 }

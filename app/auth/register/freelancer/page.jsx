@@ -1,5 +1,6 @@
 'use client';
 
+import Select from 'react-select'; 
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import styles from '../../form.module.css';
@@ -111,7 +112,9 @@ export default function FreelancerRegisterPage() {
               value={jobTitle}
               onChange={setJobTitle}
               options={jobTitleOptions}
-              placeholder="مهندس - مقاول - مصمم - فني ..."
+              placeholder="مهندس - مقاول - فني ..."
+                            isSearchable={true}
+              isClearable={true}
             />
           </div>
 
@@ -122,7 +125,9 @@ export default function FreelancerRegisterPage() {
               value={governorate}
               onChange={setGovernorate}
               options={governorateOptions}
-              placeholder="اختيار من قائمة محافظات مصر"
+              placeholder="اختر اسم مدينتك"
+              isSearchable={true}
+              isClearable={true}
             />
           </div>
 
@@ -168,7 +173,6 @@ export default function FreelancerRegisterPage() {
             <label className={styles.label}>كلمة المرور</label>
             <input
               type="password"
-placeholder="اختار باسورد سهل عشان متنساهوش 😘"
               className={styles.input}
               value={password}
               onChange={(e) => setPassword(e.target.value)}

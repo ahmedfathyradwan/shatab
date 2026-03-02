@@ -27,7 +27,6 @@
   padding: 1.5rem;
   border-top: 4px solid var(--accent);
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .statCard:hover {

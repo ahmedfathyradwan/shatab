@@ -1,10 +1,10 @@
 import styles from "./page.module.css";
 
 const stats = [
-  { label: "إجمالي المستخدمين", value: "1,284", change: "+12%", color: "#3b82f6" },
-  { label: "المنتجات النشطة", value: "348", change: "+5%", color: "#10b981" },
-  { label: "الطلبات اليوم", value: "73", change: "+18%", color: "#f59e0b" },
-  { label: "الإيرادات", value: "24,500 ج", change: "+9%", color: "#8b5cf6" },
+  { label: "إجمالي المستخدمين", value: "1,284", change: "+12%", color: "#AB874B" },
+  { label: "المنتجات النشطة", value: "348", change: "+5%", color: "#AB874B" },
+  { label: "الطلبات اليوم", value: "73", change: "+18%", color: "#AB874B" },
+  { label: "الإيرادات", value: "24,500 ج", change: "+9%", color: "#AB874B" },
 ];
 
 export default function AdminDashboard() {

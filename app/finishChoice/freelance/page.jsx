@@ -83,7 +83,6 @@ const Freelance = () => {
           ))}
         </div>
       </div>
-      <div className={styles.marginBottom}></div>
     </>
   );
 };

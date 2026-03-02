@@ -20,8 +20,9 @@
   }
   
   .card {
-    width: calc(100% / 2.2);
-    aspect-ratio: 7 / 6;
+  /* width: calc(100% / 2.2); */
+  width: 100%;
+      aspect-ratio: 7 / 6;
     border-radius: var(--br5);
     overflow: hidden;
     background-color: var(--whiteColor);

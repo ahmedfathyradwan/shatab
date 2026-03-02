@@ -3,23 +3,28 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import {
-  LayoutDashboard,
   Users,
+  DollarSign,
+  BookImage,
+  PanelsTopLeft,
   ShoppingBag,
+  HandCoins,
   FileText,
   Settings,
   BarChart2,
   LogOut,
 } from "lucide-react";
 import styles from "./layout.module.css";
+import Image from "next/image";
 
 const navItems = [
-  { label: "الرئيسية", href: "/admin-dashboard", icon: LayoutDashboard },
   { label: "المستخدمون", href: "/admin-dashboard/users", icon: Users },
-  { label: "المنتجات", href: "/admin-dashboard/products", icon: ShoppingBag },
-  { label: "الطلبات", href: "/admin-dashboard/orders", icon: FileText },
-  { label: "التقارير", href: "/admin-dashboard/reports", icon: BarChart2 },
-  { label: "الإعدادات", href: "/admin-dashboard/settings", icon: Settings },
+  { label: "أسعار باقات التشطيب", href: "/admin-dashboard/pricing", icon: DollarSign },
+  { label: "الطلبات", href: "/admin-dashboard/orders", icon: ShoppingBag },
+  { label: "العروض", href: "/admin-dashboard/offers", icon: FileText },
+  { label: "إعلانات", href: "/admin-dashboard/ads", icon: BookImage },
+  { label: "الخدمات", href: "/admin-dashboard/services", icon: PanelsTopLeft },
+  { label: "التبرع", href: "/admin-dashboard/donations", icon: HandCoins },
   { label: "تسجيل الخروج", href: "/admin-dashboard/logout", icon: LogOut, danger: true },
 ];
 
@@ -31,8 +36,10 @@ export default function AdminLayout({ children }) {
       {/* Sidebar */}
       <aside className={styles.sidebar}>
         <div className={styles.logo}>
-          <span className={styles.logoIcon}>⚡</span>
-          <span className={styles.logoText}>لوحة التحكم</span>
+          <Image className={styles.logoImg} src="/favicon.ico" alt="Logo" width={25} height={25} />
+          <Link className={styles.logoTextCont} href="/admin-dashboard">
+            <span className={styles.logoText}>لوحة التحكم</span>
+          </Link>
         </div>
 
         <nav className={styles.nav}>

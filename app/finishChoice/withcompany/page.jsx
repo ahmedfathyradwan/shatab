@@ -48,7 +48,6 @@ const withcompany = () => {
           ))}
         </div>
       </div>
-      <div className={styles.marginBottom}></div>
     </>
   );
 };

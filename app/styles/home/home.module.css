@@ -99,14 +99,12 @@
   text-decoration: none;
 }
 
-.ctaButton :hover {
-  border: 1px solid var(--textColor);
-}
-
 .servicesSection {
   width: 100%;
   margin: 0 auto;
   text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .sectionTitle {
@@ -116,7 +114,19 @@
   margin: 7rem 0 -1rem;
 }
 
-.FinishOrMaintenanceCard {
+.monthlyOffers {
+  width: 100%;
+}
+
+.finishOrMaintenanceCard {
+  width: 100%;
+}
+
+.onlineSection {
+  width: 100%;
+}
+
+.donationSection {
   width: 100%;
 }
 
@@ -129,7 +139,7 @@
 }
 
 
-@media (min-width: 375px) {
+/* @media (min-width: 375px) {
   .homeImg {
     width: 230px;
   }
@@ -222,4 +232,4 @@
     max-width: 1200px;
     margin: 0 auto;
   }
-}
+} */

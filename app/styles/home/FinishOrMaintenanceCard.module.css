@@ -24,6 +24,7 @@
 }
 .card {
     width: 100%;
+    max-width: 50rem;
     aspect-ratio: 7 / 6;
     border-radius: var(--br5);
     overflow: hidden;

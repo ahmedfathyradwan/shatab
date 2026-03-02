@@ -29,23 +29,20 @@
 }
 
 .filterButton {
+    font-family: var(--ar);
   border: 1px solid #ccc;
   background: white;
   padding: 0.5rem 1rem;
   border-radius: 10px;
   cursor: pointer;
-  transition: 0.2s ease;
   font-size: 0.95rem;
 }
 
-.filterButton:hover {
-  background-color: #f0f0f0;
-}
 
 .active {
-  background-color: #0070f3;
+  background-color: var(--primaryColor);
   color: white;
-  border-color: #0070f3;
+  border-color: var(--primaryColor);
 }
 
 /* ================= GRID (Page Layout) ================= */
@@ -78,7 +75,6 @@
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   text-align: right;
-  transition: transform 0.2s ease;
   display: flex;
   flex-direction: column;
 }
@@ -133,48 +129,21 @@
 }
 
 .callButton {
-  background-color: #0070f3;
-}
-
-.callButton:hover {
-  background-color: #0059c1;
+  background-color: var(--primaryColor);
 }
 
 .whatsappButton {
-  background-color: #25d366;
+  background-color: var(--textColor);
 }
-
-.whatsappButton:hover {
-  background-color: #1ea955;
-}
-
-/* ================= MORE BUTTON ================= */
 
 .moreButton {
   margin-top: 1.5rem;
   padding: 0.7rem 1.8rem;
-  background-color: #0070f3;
+  background-color: var(--primaryColor);
   color: white;
   border: none;
   border-radius: 12px;
   cursor: pointer;
   font-size: 1rem;
   transition: 0.2s;
-}
-
-.moreButton:hover {
-  background-color: #0059c1;
-}
-
-/* ================= RESPONSIVE ================= */
-
-@media (max-width: 480px) {
-  .grid {
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  }
-
-  .filterButton {
-    font-size: 0.85rem;
-    padding: 0.4rem 0.8rem;
-  }
 }

@@ -5,6 +5,7 @@
     justify-content: center;
     flex-direction: column;
     padding: 3rem;
+    width: 100%;
     width: calc(100% - 4rem);
     gap: 4rem;
     margin: 0rem 2rem 3rem;
@@ -34,10 +35,6 @@
     border: 1px solid var(--primaryColor);
     transition: transform 0.3s ease;
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
-}
-
-.card:hover {
-    transform: translateY(-3px);
 }
 
 .cardImage {

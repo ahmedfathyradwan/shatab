@@ -51,7 +51,7 @@ export default function DonationSection() {
 
               <div className={styles.contactButtons}>
                 <a href={`tel:${item.phone}`} className={styles.callButton}>
-                  📞 اتصال
+                   اتصال
                 </a>
                 <a
                   href={`https://wa.me/${item.phone.replace(/^0/, "2")}`}
@@ -59,7 +59,7 @@ export default function DonationSection() {
                   rel="noopener noreferrer"
                   className={styles.whatsappButton}
                 >
-                  💬 واتساب
+                   واتساب
                 </a>
               </div>
             </div>

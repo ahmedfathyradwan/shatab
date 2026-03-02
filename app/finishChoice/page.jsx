@@ -23,11 +23,11 @@ export default function Page() {
   return (
     <div className={styles.container}>
       <h2 className={styles.title}>إختيار طريقة التشطيب</h2>
-      <h3 className={styles.description}>
+      {/* <h3 className={styles.description}>
         ريح دماغك وإختار شركة تشطيب تريحك من كل التفاصيل
         <br />
         أو شطب بنفسك واختار كل حاجه في شقتك بنفسك
-      </h3>
+      </h3> */}
       {cards.map((card, index) => (
         <div key={index} className={styles.card}>
           <img src={card.image} alt={card.title} className={styles.cardImage} />

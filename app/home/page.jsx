@@ -44,20 +44,20 @@ export default async function HomePage() {
 
       <section id="services" className={styles.servicesSection}>
         {/* <h2 className={styles.sectionTitle}>خدماتنا</h2> */}
-        <div className={styles.aboutUs}>
+        <div className={styles.monthlyOffers}>
           <MonthlyOffers />
         </div>
-        <div className={styles.FinishOrMaintenanceCard} id="chooseService">
+        <div className={styles.finishOrMaintenanceCard} id="chooseService">
           <FinishOrMaintenanceCard />
         </div>
-        <div className={styles.aboutUs}>
+        <div className={styles.onlineSection}>
           <OnlineSection />
         </div>
-        <div className={styles.aboutUs}>
+        <div className={styles.donationSection}>
           <DonationSection />
         </div>
       </section>
-
+      
       <div className={styles.aboutUs} id="about-us">
         <AboutUs />
       </div>

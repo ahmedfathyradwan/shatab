@@ -47,7 +47,7 @@ export default function DonationPosts() {
 
               <div className={styles.contactButtons}>
                 <a href={`tel:${item.phone}`} className={styles.callButton}>
-                  📞 اتصل الآن
+                 اتصل الآن
                 </a>
                 <a
                   href={`https://wa.me/${item.phone.replace(/^0/, "2")}`}
@@ -55,7 +55,7 @@ export default function DonationPosts() {
                   rel="noopener noreferrer"
                   className={styles.whatsappButton}
                 >
-                  💬 واتساب
+                 واتساب
                 </a>
               </div>
             </div>
